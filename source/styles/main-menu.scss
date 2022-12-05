@@ -1,0 +1,9 @@
+@use "theme";
+
+.main-menu {
+  .menu-item {
+    cursor: pointer;
+    display: block;
+    font-size: theme.font-size(1);
+  }
+}

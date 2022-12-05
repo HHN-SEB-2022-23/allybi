@@ -1,0 +1,12 @@
+@use "reset";
+@use "theme";
+@use "main-menu";
+
+:root {
+  background-color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: theme.font-size(1);
+  font-weight: 400;
+  line-height: 1.5;
+  color: whitesmoke;
+}
