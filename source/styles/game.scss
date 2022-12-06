@@ -23,6 +23,10 @@
 .dialog-input {
   margin-top: 2rem;
 
+  .dialog-speaker {
+    opacity: 0.5;
+  }
+
   .dialog-input-choice {
     display: block;
     @include theme.button;

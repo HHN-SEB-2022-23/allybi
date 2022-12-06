@@ -33,7 +33,7 @@ export const GameView = observer(() => {
       <div className="dialog-input">
         {vm.currentDialog ? (
           <>
-            <span>{vm.currentDialog.speaker}</span>
+            <span className="dialog-speaker">{vm.currentDialog.speaker}</span>
             {vm.currentDialog.choices.map((choice, index) => (
               <button
                 className="dialog-input-choice"
