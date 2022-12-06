@@ -45,7 +45,17 @@ export const GameView = observer(() => {
             ))}
           </>
         ) : (
-          "Ende"
+          <>
+            <h2 className="dialog-speaker">Ende</h2>
+            {!vm.isFinished && (
+              <button className="dialog-input-choice" onClick={vm.nextChapter}>
+                Nächstes Kapitel
+              </button>
+            )}
+            <button className="dialog-input-choice" onClick={vm.mainMenu}>
+              Zum Hauptmenü
+            </button>
+          </>
         )}
       </div>
     </>

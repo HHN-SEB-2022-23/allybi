@@ -6,6 +6,7 @@ import type { Dialog } from "../types/Dialog";
 import { DialogType } from "../types/DialogType";
 
 export class GameModel {
+  private readonly _endedChapters = new Set<number>();
   private _chapter: Chapter = {
     title: "not initialized",
     player: "not initialized",
@@ -30,9 +31,11 @@ export class GameModel {
     return this._currentDialog;
   }
 
-  constructor() {
-    this.initChapter(chapters[0]);
+  public get isFinished() {
+    return this._endedChapters.size >= chapters.length;
+  }
 
+  constructor() {
     makeAutoObservable(this);
   }
 
@@ -74,9 +77,26 @@ export class GameModel {
     this._currentDialog = dialog || null;
   }
 
-  public initChapter(chapter: Chapter) {
-    this._chapter = chapter;
+  public reset() {
+    this._endedChapters.clear();
     this._dialogHistory.length = 0;
-    this.continueDialog(chapter.headDialog);
+    this._currentDialog = null;
+  }
+
+  public initChapter(): boolean {
+    const avChapters = chapters
+      .map((_, i) => i)
+      .filter((i) => !this._endedChapters.has(i));
+
+    if (avChapters.length === 0) {
+      return false;
+    }
+
+    const i = avChapters[Math.floor(Math.random() * avChapters.length)];
+    this._chapter = chapters[i];
+    this._endedChapters.add(i);
+    this._dialogHistory.length = 0;
+    this.continueDialog(this._chapter.headDialog);
+    return true;
   }
 }

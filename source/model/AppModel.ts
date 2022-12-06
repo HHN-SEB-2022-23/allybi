@@ -22,4 +22,8 @@ export class AppModel {
   openOptions() {
     this.state = AppState.OPTIONS;
   }
+
+  openMainMenu() {
+    this.state = AppState.MAIN_MENU;
+  }
 }

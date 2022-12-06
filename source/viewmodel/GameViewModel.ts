@@ -1,10 +1,20 @@
 import { DialogType } from "../types/DialogType";
 import { inject } from "../lib/globalDI";
 import type { GameModel } from "../model/GameModel";
+import type { AppModel } from "../model/AppModel";
 import { makeAutoObservable } from "mobx";
 
 export class GameViewModel {
   private _gameModel = inject<GameModel>("GameModel");
+  private _appModel = inject<AppModel>("AppModel");
+
+  public readonly nextChapter = () => {
+    this._gameModel.initChapter();
+  };
+
+  public readonly mainMenu = () => {
+    this._appModel.openMainMenu();
+  };
 
   public get dialogHistory() {
     return this._gameModel.dialogHistory;
@@ -29,6 +39,10 @@ export class GameViewModel {
     } else {
       return null;
     }
+  }
+
+  public get isFinished() {
+    return this._gameModel.isFinished;
   }
 
   constructor() {

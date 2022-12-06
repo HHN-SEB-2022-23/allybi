@@ -12,10 +12,16 @@ export class MainMenuViewModel {
 
   public readonly startGame: MouseEventHandler<Element> = () => {
     this._appModel.startGame();
+    this._gameModel.reset();
+    this._gameModel.initChapter();
   };
 
   public readonly openOptions: MouseEventHandler<Element> = () => {
     this._appModel.openOptions();
+  };
+
+  public readonly quit: MouseEventHandler<Element> = () => {
+    window.close();
   };
 
   constructor() {

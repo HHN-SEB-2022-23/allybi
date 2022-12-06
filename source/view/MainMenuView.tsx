@@ -17,6 +17,10 @@ export const MainMenuView = observer(() => {
       <button className="menu-item" onClick={vm.openOptions}>
         Optionen
       </button>
+
+      <button className="menu-item" onClick={vm.quit}>
+        Beenden
+      </button>
     </nav>
   );
 });
