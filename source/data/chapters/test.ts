@@ -5,7 +5,7 @@ import { Tag } from "../../types/Tags";
 export const test: Chapter = {
   title: "Test Chapter",
   player: "René",
-  tags: [Tag["Diskriminierungstyp 2"]],
+  tags: [Tag.diskriminierungstyp1],
   headDialog: {
     dialogType: DialogType.NPCDialog,
     speaker: "Felix",
