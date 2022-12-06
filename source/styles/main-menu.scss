@@ -2,14 +2,19 @@
 
 .main-menu {
   height: 100%;
-  justify-content: center;
   display: grid;
+  place-content: space-evenly;
+  justify-content: start;
   align-items: center;
-  align-content: space-evenly;
+  justify-items: start;
+
+  .menu-title {
+    font-size: theme.font-size(2.2);
+  }
 
   .menu-item {
-    cursor: pointer;
     display: block;
     font-size: theme.font-size(1);
+    @include theme.button;
   }
 }

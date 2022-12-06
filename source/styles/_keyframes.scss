@@ -1,0 +1,13 @@
+@keyframes button-hover {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(0.4rem);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

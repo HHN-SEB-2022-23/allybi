@@ -7,6 +7,8 @@ export const MainMenuView = observer(() => {
 
   return (
     <nav className="main-menu">
+      <h1 className="menu-title">{document.title}</h1>
+
       <button className="menu-item" onClick={vm.startGame}>
         Spiel Starten
       </button>
