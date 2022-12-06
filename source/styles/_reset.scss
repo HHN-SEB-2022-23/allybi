@@ -12,3 +12,7 @@
   text-rendering: optimizeLegibility;
   cursor: default;
 }
+
+:root {
+  user-select: none;
+}

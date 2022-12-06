@@ -1,6 +1,12 @@
 @use "theme";
 
 .main-menu {
+  height: 100%;
+  justify-content: center;
+  display: grid;
+  align-items: center;
+  align-content: space-evenly;
+
   .menu-item {
     cursor: pointer;
     display: block;
