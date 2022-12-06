@@ -1,10 +1,11 @@
-import { modelContainer } from "../model";
+import { makeAutoObservable } from "mobx";
+import { inject } from "../lib/globalDI";
 import type { OptionsModel } from "../model/OptionsModel";
 
 export class OptionsViewModel {
-  private _optionsModel: OptionsModel;
+  private _optionsModel = inject<OptionsModel>("OptionsModel");
 
   public constructor() {
-    this._optionsModel = modelContainer.resolve("OptionsModel");
+    makeAutoObservable(this);
   }
 }

@@ -1,9 +1,10 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { viewModelContainer } from "../viewmodel";
+import { inject } from "../lib/globalDI";
+import type { MainMenuViewModel } from "../viewmodel/MainMenuViewModel";
 
 export const MainMenuView = observer(() => {
-  const vm = viewModelContainer.resolve("MainMenuViewModel");
+  const vm = inject<MainMenuViewModel>("MainMenuViewModel");
 
   return (
     <nav className="main-menu">
