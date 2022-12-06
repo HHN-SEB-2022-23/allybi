@@ -1,0 +1,30 @@
+@use "theme";
+
+.dialog-history {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 1rem 1rem;
+
+  .dialog-speaker {
+    opacity: 0.5;
+  }
+
+  .dialog-text {
+    &:not(.player-voice) {
+      text-align: left;
+    }
+
+    &.player-voice {
+      text-align: right;
+    }
+  }
+}
+
+.dialog-input {
+  margin-top: 2rem;
+
+  .dialog-input-choice {
+    display: block;
+    @include theme.button;
+  }
+}

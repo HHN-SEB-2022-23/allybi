@@ -45,18 +45,21 @@ export class GameModel {
           this._dialogHistory.push({
             speaker: dialog.speaker,
             text: dialog.text,
+            isPlayer: false,
           });
           break;
         case DialogType.NarratorDialog:
           this._dialogHistory.push({
             speaker: "Erzähler",
             text: dialog.text,
+            isPlayer: false,
           });
           break;
         case DialogType.PlayerDialog:
           this._dialogHistory.push({
             speaker: this._chapter.player,
             text: dialog.text,
+            isPlayer: true,
           });
           break;
       }

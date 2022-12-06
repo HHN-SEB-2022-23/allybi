@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { observer } from "mobx-react";
 import { inject } from "../lib/globalDI";
 import type { GameViewModel } from "../viewmodel/GameViewModel";
@@ -9,20 +9,37 @@ export const GameView = observer(() => {
   return (
     <>
       <h1 className="chapter-title">{vm.sceneTitle}</h1>
-      <ul className="dialog-history">
+      <div className="dialog-history">
         {vm.dialogHistory.map((el, index) => (
-          <li key={index}>
-            <span className="dialog-speaker">{el.speaker}:</span>
-            <span className="dialog-text">{el.text}</span>
-          </li>
+          <Fragment key={index}>
+            {el.isPlayer ? (
+              <>
+                <span />
+                <span className="dialog-text player-voice">{el.text}</span>
+                <span className="dialog-speaker player-voice">
+                  {el.speaker}
+                </span>
+              </>
+            ) : (
+              <>
+                <span className="dialog-speaker">{el.speaker}</span>
+                <span className="dialog-text">{el.text}</span>
+                <span />
+              </>
+            )}
+          </Fragment>
         ))}
-      </ul>
-      <div>
+      </div>
+      <div className="dialog-input">
         {vm.currentDialog ? (
           <>
             <span>{vm.currentDialog.speaker}</span>
             {vm.currentDialog.choices.map((choice, index) => (
-              <button onClick={choice.onClick} key={index}>
+              <button
+                className="dialog-input-choice"
+                onClick={choice.onClick}
+                key={index}
+              >
                 {choice.text}
               </button>
             ))}
