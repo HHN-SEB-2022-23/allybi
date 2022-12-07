@@ -1,3 +1,5 @@
+@use "theme";
+
 *,
 *:before,
 *:after {
@@ -12,6 +14,17 @@
   text-rendering: optimizeLegibility;
   cursor: default;
   background: none;
+}
+
+fieldset {
+  overflow: visible;
+  border: {
+    width: 1px;
+    style: solid;
+    color: rgba(theme.$foreground, 0.25);
+    radius: 0.25rem;
+  }
+  padding: 0.5rem;
 }
 
 :root {

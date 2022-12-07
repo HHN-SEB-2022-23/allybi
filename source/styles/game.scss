@@ -1,63 +1,84 @@
 @use "theme";
 
-.chapter-title {
-  font-size: theme.font-size(2);
-  border: {
-    bottom: {
-      width: 1px;
-      style: solid;
-      color: rgba(theme.$foreground, 0.25);
-    }
-  }
-  margin: {
-    bottom: 0.5rem;
-  }
-}
-
-.dialog-history {
+.game-view {
+  height: 100%;
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-gap: 1rem 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 0px 0px;
+  grid-template-areas:
+    "chapter-title"
+    "dialog-history"
+    "dialog-input";
+  align-items: start;
+  justify-items: stretch;
+  align-content: space-between;
 
-  > * {
-    animation: {
-      duration: 500ms;
-      timing-function: linear;
+  .chapter-title {
+    grid-area: chapter-title;
+    font-size: theme.font-size(2);
+    border: {
+      bottom: {
+        width: 1px;
+        style: solid;
+        color: rgba(theme.$foreground, 0.25);
+      }
+    }
+    margin: {
+      bottom: 0.5rem;
+    }
+  }
+
+  .dialog-history {
+    grid-area: dialog-history;
+    max-height: 100%;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 1rem 1rem;
+
+    > * {
+      height: fit-content;
+      animation: {
+        duration: 500ms;
+        timing-function: linear;
+      }
+
+      &:not(.player-speaker) {
+        animation-name: dialog-in-npc;
+      }
+
+      &.player-voice {
+        animation-name: dialog-in-player;
+      }
     }
 
-    &:not(.player-speaker) {
-      animation-name: dialog-in-npc;
+    .dialog-speaker {
+      opacity: 0.5;
     }
 
-    &.player-voice {
-      animation-name: dialog-in-player;
+    .dialog-text {
+      &:not(.player-voice) {
+        text-align: left;
+      }
+
+      &.player-voice {
+        text-align: right;
+      }
     }
   }
 
-  .dialog-speaker {
-    opacity: 0.5;
-  }
+  .dialog-input {
+    grid-area: dialog-input;
+    margin-top: 2rem;
 
-  .dialog-text {
-    &:not(.player-voice) {
-      text-align: left;
+    .dialog-speaker {
+      opacity: 0.5;
     }
 
-    &.player-voice {
-      text-align: right;
+    .dialog-input-choice {
+      display: block;
+      @include theme.button;
     }
-  }
-}
-
-.dialog-input {
-  margin-top: 2rem;
-
-  .dialog-speaker {
-    opacity: 0.5;
-  }
-
-  .dialog-input-choice {
-    display: block;
-    @include theme.button;
   }
 }
