@@ -11,3 +11,17 @@
     transform: translateX(0);
   }
 }
+
+@keyframes dialog-in-npc {
+  from {
+    opacity: 0;
+    transform: translateX(-1rem);
+  }
+}
+
+@keyframes dialog-in-player {
+  from {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+}

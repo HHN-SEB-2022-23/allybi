@@ -3,4 +3,5 @@ export enum DialogType {
   PlayerDialog,
   PlayerOptionDialog,
   NPCDialog,
+  ChapterEnd,
 }

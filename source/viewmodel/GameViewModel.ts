@@ -24,18 +24,50 @@ export class GameViewModel {
     return this._gameModel.chapter.title;
   }
 
+  private chapterEndInput() {
+    const d = {
+      speaker: "Ende",
+      choices: [
+        {
+          text: "Hauptmenü",
+          onClick: this.mainMenu,
+        },
+      ],
+    };
+
+    if (this.isFinished) {
+      d.choices.push({
+        text: "Spiel beenden",
+        onClick: () => window.close(),
+      });
+    } else {
+      d.choices.push({
+        text: "Nächstes Kapitel",
+        onClick: this.nextChapter,
+      });
+    }
+
+    return d;
+  }
+
   public get currentDialog() {
-    if (
-      this._gameModel.currentDialog &&
-      this._gameModel.currentDialog.dialogType === DialogType.PlayerOptionDialog
-    ) {
-      return {
-        speaker: this._gameModel.chapter.player,
-        choices: this._gameModel.currentDialog.choices.map((choice) => ({
-          text: choice.text,
-          onClick: () => this._gameModel.continueDialog(choice),
-        })),
-      };
+    if (this._gameModel.currentDialog) {
+      switch (this._gameModel.currentDialog.dialogType) {
+        case DialogType.PlayerOptionDialog:
+          return {
+            speaker: this._gameModel.chapter.player,
+            choices: this._gameModel.currentDialog.choices.map((choice) => ({
+              text: choice.text,
+              onClick: () => this._gameModel.continueDialog(choice),
+            })),
+          };
+
+        case DialogType.ChapterEnd:
+          return this.chapterEndInput();
+
+        default:
+          return null;
+      }
     } else {
       return null;
     }

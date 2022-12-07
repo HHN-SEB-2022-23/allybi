@@ -24,8 +24,13 @@ type NPCDialog = {
   next?: Dialog;
 };
 
+type ChapterEnd = {
+  dialogType: DialogType.ChapterEnd;
+};
+
 export type Dialog =
   | NarratorDialog
   | PlayerDialog
   | NPCDialog
-  | PlayerOptionDialog;
+  | PlayerOptionDialog
+  | ChapterEnd;

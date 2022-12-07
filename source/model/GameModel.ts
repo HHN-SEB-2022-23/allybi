@@ -23,12 +23,28 @@ export class GameModel {
     return this._chapter;
   }
 
-  public get dialogHistory(): ReadonlyArray<DialogHistoryEntry> {
+  private set chapter(chapter: Chapter) {
+    this._chapter = chapter;
+  }
+
+  public get dialogHistory(): Array<DialogHistoryEntry> {
     return this._dialogHistory;
+  }
+
+  private set dialogHistory(history: Array<DialogHistoryEntry>) {
+    this._dialogHistory = history;
+  }
+
+  private pushDialogHistory(entry: DialogHistoryEntry) {
+    this._dialogHistory.push(entry);
   }
 
   public get currentDialog(): Readonly<Dialog | null> {
     return this._currentDialog;
+  }
+
+  private set currentDialog(dialog: Dialog | null) {
+    this._currentDialog = dialog;
   }
 
   public get isFinished() {
@@ -40,26 +56,27 @@ export class GameModel {
   }
 
   public async continueDialog(nextDialog: Dialog) {
+    this._currentDialog = null;
     let dialog: Dialog | undefined = nextDialog;
 
     while (dialog) {
       switch (dialog.dialogType) {
         case DialogType.NPCDialog:
-          this._dialogHistory.push({
+          this.pushDialogHistory({
             speaker: dialog.speaker,
             text: dialog.text,
             isPlayer: false,
           });
           break;
         case DialogType.NarratorDialog:
-          this._dialogHistory.push({
+          this.pushDialogHistory({
             speaker: "Erzähler",
             text: dialog.text,
             isPlayer: false,
           });
           break;
         case DialogType.PlayerDialog:
-          this._dialogHistory.push({
+          this.pushDialogHistory({
             speaker: this._chapter.player,
             text: dialog.text,
             isPlayer: true,
@@ -77,13 +94,25 @@ export class GameModel {
       }
     }
 
-    this._currentDialog = dialog || null;
+    if (dialog) {
+      if (dialog.dialogType === DialogType.PlayerOptionDialog) {
+        this.currentDialog = dialog;
+      } else {
+        this.currentDialog = {
+          dialogType: DialogType.ChapterEnd,
+        };
+      }
+    } else {
+      this._currentDialog = {
+        dialogType: DialogType.ChapterEnd,
+      };
+    }
   }
 
   public reset() {
     this._endedChapters.clear();
-    this._dialogHistory.length = 0;
-    this._currentDialog = null;
+    this.dialogHistory.length = 0;
+    this.currentDialog = null;
   }
 
   public initChapter(): boolean {
@@ -96,9 +125,9 @@ export class GameModel {
     }
 
     const i = avChapters[Math.floor(Math.random() * avChapters.length)];
-    this._chapter = chapters[i];
+    this.chapter = chapters[i];
     this._endedChapters.add(i);
-    this._dialogHistory.length = 0;
+    this.dialogHistory.length = 0;
     this.continueDialog(this._chapter.headDialog);
     return true;
   }

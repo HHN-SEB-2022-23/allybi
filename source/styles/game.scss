@@ -1,9 +1,38 @@
 @use "theme";
 
+.chapter-title {
+  font-size: theme.font-size(2);
+  border: {
+    bottom: {
+      width: 1px;
+      style: solid;
+      color: rgba(theme.$foreground, 0.25);
+    }
+  }
+  margin: {
+    bottom: 0.5rem;
+  }
+}
+
 .dialog-history {
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-gap: 1rem 1rem;
+
+  > * {
+    animation: {
+      duration: 500ms;
+      timing-function: linear;
+    }
+
+    &:not(.player-speaker) {
+      animation-name: dialog-in-npc;
+    }
+
+    &.player-voice {
+      animation-name: dialog-in-player;
+    }
+  }
 
   .dialog-speaker {
     opacity: 0.5;
