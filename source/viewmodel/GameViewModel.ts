@@ -26,10 +26,10 @@ export class GameViewModel {
 
   private chapterEndInput() {
     const d = {
-      speaker: "Ende",
+      speaker: "Kapitel abgeschlossen",
       choices: [
         {
-          text: "Hauptmenü",
+          text: "Zurück zum Hauptmenü",
           onClick: this.mainMenu,
         },
       ],
@@ -42,7 +42,7 @@ export class GameViewModel {
       });
     } else {
       d.choices.push({
-        text: "Nächstes Kapitel",
+        text: "Nächstes Kapitel spielen",
         onClick: this.nextChapter,
       });
     }
