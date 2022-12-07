@@ -33,7 +33,9 @@ export const GameView = observer(() => {
       <div className="dialog-input">
         {vm.currentDialog ? (
           <>
-            <span className="dialog-speaker">{vm.currentDialog.speaker}</span>
+            <span className="dialog-speaker">
+              Wähle als {vm.currentDialog.speaker}:
+            </span>
             {vm.currentDialog.choices.map((choice, index) => (
               <button
                 className="dialog-input-choice"
@@ -44,19 +46,7 @@ export const GameView = observer(() => {
               </button>
             ))}
           </>
-        ) : (
-          <>
-            <h2 className="dialog-speaker">Ende</h2>
-            {!vm.isFinished && (
-              <button className="dialog-input-choice" onClick={vm.nextChapter}>
-                Nächstes Kapitel
-              </button>
-            )}
-            <button className="dialog-input-choice" onClick={vm.mainMenu}>
-              Zum Hauptmenü
-            </button>
-          </>
-        )}
+        ) : null}
       </div>
     </>
   );

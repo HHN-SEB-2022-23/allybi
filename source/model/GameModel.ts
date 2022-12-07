@@ -39,7 +39,7 @@ export class GameModel {
     makeAutoObservable(this);
   }
 
-  public continueDialog(nextDialog: Dialog) {
+  public async continueDialog(nextDialog: Dialog) {
     let dialog: Dialog | undefined = nextDialog;
 
     while (dialog) {
@@ -69,6 +69,9 @@ export class GameModel {
 
       if ("next" in dialog) {
         dialog = dialog.next;
+        await new Promise((resp) => {
+          setTimeout(resp, 500);
+        });
       } else {
         break;
       }
