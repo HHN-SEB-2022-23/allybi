@@ -2,7 +2,7 @@
   "scripts": {
     "dev": "parcel source/index.html",
     "build": "parcel build source/index.html",
-    "lint": "eslint source --ext .ts,.tsx --fix"
+    "lint": "eslint source --ext .ts,.tsx"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.0",
