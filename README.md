@@ -1,4 +1,4 @@
-# Text Based Adventuer Game
+# Allybi – vom Alibi zum Ally
 
 [![Test](https://github.com/HHN-SEB-2022-23/text-based-adventure-game/actions/workflows/test.yml/badge.svg)](https://github.com/HHN-SEB-2022-23/text-based-adventure-game/actions/workflows/test.yml)
 
