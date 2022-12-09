@@ -7,6 +7,11 @@ $foreground: whitesmoke;
 
 @mixin button {
   cursor: pointer;
+  padding: {
+    top: 1rem;
+    right: 2.5rem;
+    bottom: 1rem;
+  }
 
   &::before {
     content: ">";
