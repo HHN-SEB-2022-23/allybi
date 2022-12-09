@@ -35,12 +35,7 @@ export class GameViewModel {
       ],
     };
 
-    if (this.isFinished) {
-      d.choices.push({
-        text: "Spiel beenden",
-        onClick: () => window.close(),
-      });
-    } else {
+    if (!this.isFinished) {
       d.choices.push({
         text: "Nächstes Kapitel spielen",
         onClick: this.nextChapter,

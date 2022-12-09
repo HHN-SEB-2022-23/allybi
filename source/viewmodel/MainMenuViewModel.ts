@@ -20,9 +20,7 @@ export class MainMenuViewModel {
     this._appModel.openOptions();
   };
 
-  public readonly quit: MouseEventHandler<Element> = () => {
-    window.close();
-  };
+
 
   constructor() {
     makeAutoObservable(this);
