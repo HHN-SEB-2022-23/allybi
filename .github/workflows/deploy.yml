@@ -28,13 +28,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for tests to succeed
-        uses: lewagon/wait-on-check-action@v1.2.0
+      - name: Wait For Other Pipelines
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: otto-de/github-actions-wait@v1.0
         with:
-          ref: ${{ github.ref }}
-          check-name: 'Test'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          wait-interval: 10
+          step-name: 'Test'
       - name: Checkout
         uses: actions/checkout@v3
       - name: Use Node.js
