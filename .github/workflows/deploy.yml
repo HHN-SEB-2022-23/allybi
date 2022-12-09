@@ -33,7 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: otto-de/github-actions-wait@v1.0
         with:
-          step-name: 'Test'
+          step-name: "Test"
       - name: Checkout
         uses: actions/checkout@v3
       - name: Use Node.js
@@ -44,7 +44,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Build
-        run: npm run build
+        run: npm run publish
       - name: Lint
         run: npm run lint
       - name: Setup Pages
@@ -53,7 +53,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: './dist'
+          path: "./dist"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
