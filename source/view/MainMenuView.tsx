@@ -8,7 +8,9 @@ export const MainMenuView = observer(() => {
 
   return (
     <nav className="main-menu">
-      <h1 className="menu-title">{document.title}</h1>
+      <h1 className="menu-title">
+        Allybi <span className="menu-subtitle">vom Alibi zum Ally</span>
+      </h1>
 
       <button className="menu-item" onClick={vm.startGame}>
         Spiel Starten
