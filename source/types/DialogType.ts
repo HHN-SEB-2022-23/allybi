@@ -1,7 +1,7 @@
 export enum DialogType {
-  NarratorDialog,
-  PlayerDialog,
-  PlayerOptionDialog,
-  NPCDialog,
-  ChapterEnd,
+    NarratorDialog,
+    PlayerDialog,
+    PlayerOptionDialog,
+    NPCDialog,
+    ChapterEnd,
 }

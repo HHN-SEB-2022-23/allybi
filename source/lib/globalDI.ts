@@ -1,10 +1,29 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { DIContainer } from "@frank-mayer/dilight";
+import { DIContainer } from "@frank-mayer/dilight"
 
-(globalThis as any).globalDI = new DIContainer();
+import { AppModel } from "../model/AppModel"
+import { GameModel } from "../model/GameModel"
+import { MainMenuModel } from "../model/MainMenuModel"
+import { OptionsModel } from "../model/OptionsModel"
 
-export const globalDI = (): DIContainer<{ [key: string]: object }> =>
-  (globalThis as any).globalDI;
+import { AppViewModel } from "../viewmodel/AppViewModel"
+import { GameViewModel } from "../viewmodel/GameViewModel"
+import { MainMenuViewModel } from "../viewmodel/MainMenuViewModel"
+import { OptionsViewModel } from "../viewmodel/OptionsViewModel"
 
-export const inject = <T extends object>(service: string): T =>
-  globalDI().resolve<string, T>(service);
+const globalDI = new DIContainer()
+    // model
+    .addSingleton(AppModel, "AppModel")
+    .addSingleton(GameModel, "GameModel")
+    .addSingleton(MainMenuModel, "MainMenuModel")
+    .addSingleton(OptionsModel, "OptionsModel")
+    // viewmodel
+    .addSingleton(AppViewModel, "AppViewModel")
+    .addSingleton(MainMenuViewModel, "MainMenuViewModel")
+    .addSingleton(GameViewModel, "GameViewModel")
+    .addSingleton(OptionsViewModel, "OptionsViewModel")
+
+globalThis.globalDI = globalDI
+
+export const inject: typeof globalDI.resolve = (service) =>
+    globalThis.globalDI.resolve(service)

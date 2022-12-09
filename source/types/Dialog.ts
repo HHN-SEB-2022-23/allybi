@@ -1,36 +1,36 @@
-import type { DialogType } from "./DialogType";
+import type { DialogType } from "./DialogType"
 
 type NarratorDialog = {
-  dialogType: DialogType.NarratorDialog;
-  text: string;
-  next?: Dialog;
+    dialogType: DialogType.NarratorDialog;
+    text: string;
+    next?: Dialog;
 };
 
 type PlayerDialog = {
-  dialogType: DialogType.PlayerDialog;
-  text: string;
-  next?: Dialog;
+    dialogType: DialogType.PlayerDialog;
+    text: string;
+    next?: Dialog;
 };
 
 type PlayerOptionDialog = {
-  dialogType: DialogType.PlayerOptionDialog;
-  choices: Array<PlayerDialog>;
+    dialogType: DialogType.PlayerOptionDialog;
+    choices: Array<PlayerDialog>;
 };
 
 type NPCDialog = {
-  dialogType: DialogType.NPCDialog;
-  speaker: string;
-  text: string;
-  next?: Dialog;
+    dialogType: DialogType.NPCDialog;
+    speaker: string;
+    text: string;
+    next?: Dialog;
 };
 
 type ChapterEnd = {
-  dialogType: DialogType.ChapterEnd;
+    dialogType: DialogType.ChapterEnd;
 };
 
 export type Dialog =
-  | NarratorDialog
-  | PlayerDialog
-  | NPCDialog
-  | PlayerOptionDialog
-  | ChapterEnd;
+    | NarratorDialog
+    | PlayerDialog
+    | NPCDialog
+    | PlayerOptionDialog
+    | ChapterEnd;

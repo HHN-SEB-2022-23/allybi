@@ -3,30 +3,30 @@
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  border: none;
-  outline: none;
-  filter: none;
-  box-shadow: none;
-  text-shadow: none;
-  text-rendering: optimizeLegibility;
-  cursor: default;
-  background: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    filter: none;
+    box-shadow: none;
+    text-shadow: none;
+    text-rendering: optimizeLegibility;
+    cursor: default;
+    background: none;
 }
 
 fieldset {
-  overflow: visible;
-  border: {
-    width: 1px;
-    style: solid;
-    color: rgba(theme.$foreground, 0.25);
-    radius: 0.25rem;
-  }
-  padding: 0.5rem;
+    overflow: visible;
+    border: {
+        width: 1px;
+        style: solid;
+        color: rgba(theme.$foreground, 0.25);
+        radius: 0.25rem;
+    }
+    padding: 0.5rem;
 }
 
 :root {
-  user-select: none;
+    user-select: none;
 }

@@ -1,27 +1,27 @@
 @keyframes button-hover {
-  0% {
-    transform: translateX(0);
-  }
+    0% {
+        transform: translateX(0);
+    }
 
-  50% {
-    transform: translateX(0.4rem);
-  }
+    50% {
+        transform: translateX(0.4rem);
+    }
 
-  100% {
-    transform: translateX(0);
-  }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 @keyframes dialog-in-npc {
-  from {
-    opacity: 0;
-    transform: translateX(-1rem);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(-1rem);
+    }
 }
 
 @keyframes dialog-in-player {
-  from {
-    opacity: 0;
-    transform: translateX(1rem);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(1rem);
+    }
 }

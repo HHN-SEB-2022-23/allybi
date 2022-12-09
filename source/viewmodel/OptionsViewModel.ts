@@ -1,11 +1,10 @@
-import { makeAutoObservable } from "mobx";
-import { inject } from "../lib/globalDI";
-import type { OptionsModel } from "../model/OptionsModel";
+import { makeAutoObservable } from "mobx"
+import { inject } from "../lib/globalDI"
 
 export class OptionsViewModel {
-  private _optionsModel = inject<OptionsModel>("OptionsModel");
+    private _optionsModel = inject("OptionsModel")
 
-  public constructor() {
-    makeAutoObservable(this);
-  }
+    public constructor() {
+        makeAutoObservable(this)
+    }
 }

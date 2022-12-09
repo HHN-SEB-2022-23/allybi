@@ -1,5 +1,5 @@
 export type DialogHistoryEntry = {
-  speaker: string;
-  isPlayer: boolean;
-  text: string;
-};
+    speaker: string;
+    isPlayer: boolean;
+    text: string;
+}

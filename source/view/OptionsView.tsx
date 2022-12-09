@@ -1,6 +1,6 @@
-import React from "react";
-import { observer } from "mobx-react";
+import React from "react"
+import { observer } from "mobx-react"
 
 export const OptionsView = observer(() => {
-  return <h1>Options</h1>;
-});
+    return <h1>Options</h1>
+})

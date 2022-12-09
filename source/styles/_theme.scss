@@ -2,33 +2,33 @@ $background: #050506;
 $foreground: whitesmoke;
 
 @function font-size($size) {
-  @return $size * 1.1rem;
+    @return $size * 1.1rem;
 }
 
 @mixin button {
-  cursor: pointer;
-  padding: {
-    top: 1rem;
-    right: 2.5rem;
-    bottom: 1rem;
-  }
-
-  &::before {
-    content: ">";
-    display: inline-block;
-    margin-right: 0.5rem;
-  }
-
-  &:not(:hover)::before {
-    visibility: hidden;
-  }
-
-  &:hover::before {
-    animation: {
-      name: button-hover;
-      duration: 500ms;
-      timing-function: linear;
-      iteration-count: infinite;
+    cursor: pointer;
+    padding: {
+        top: 1rem;
+        right: 2.5rem;
+        bottom: 1rem;
     }
-  }
+
+    &::before {
+        content: ">";
+        display: inline-block;
+        margin-right: 0.5rem;
+    }
+
+    &:not(:hover)::before {
+        visibility: hidden;
+    }
+
+    &:hover::before {
+        animation: {
+            name: button-hover;
+            duration: 500ms;
+            timing-function: linear;
+            iteration-count: infinite;
+        }
+    }
 }
