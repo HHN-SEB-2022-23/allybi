@@ -4,6 +4,7 @@ import type { Chapter } from "../types/Chapter"
 import type { DialogHistoryEntry } from "../types/DialogHistoryEntry"
 import type { Dialog } from "../types/Dialog"
 import { DialogType } from "../types/DialogType"
+import { delay } from "@frank-mayer/magic/Timing"
 
 export class GameModel {
     private readonly _endedChapters = new Set<number>()
@@ -87,9 +88,7 @@ export class GameModel {
 
             if ("next" in dialog) {
                 dialog = dialog.next
-                await new Promise((resp) => {
-                    setTimeout(resp, 500)
-                })
+                await delay(750)
             } else {
                 break
             }
