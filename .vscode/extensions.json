@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "magnobiet.sass-extension-pack",
+    "ms-vscode.vscode-typescript-next"
+  ]
+}
