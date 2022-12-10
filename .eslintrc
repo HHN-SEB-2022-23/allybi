@@ -8,6 +8,23 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
+    "array-callback-return": ["error", { "allowImplicit": true }],
+    "constructor-super": "error",
+    "no-undef": "error",
+    "curly": ["error", "multi-line"],
+    "for-direction": "error",
+    "guard-for-in": "off",
+    "no-alert": "error",
+    "no-caller": "error",
+    "no-self-assign": "error",
+    "no-self-compare": "error",
+    "no-sequences": "error",
+    "no-unreachable": "error",
+    "no-unsafe-finally": "error",
+    "no-throw-literal": "error",
+    "no-unused-expressions": "error",
+    "no-async-promise-executor": "error",
+    "getter-return": "error",
     "semi": ["error", "never"],
     "quotes": ["error", "double"],
     "max-depth": ["error", 3],
@@ -17,6 +34,7 @@
     "no-console": "error",
     "unused-imports/no-unused-imports": "error",
     "@typescript-eslint/no-unused-vars": "error",
+    "no-else-return": ["error", { "allowElseIf": false }],
     "unused-imports/no-unused-vars": [
       "warn",
       {
