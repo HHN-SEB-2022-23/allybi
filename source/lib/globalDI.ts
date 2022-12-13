@@ -25,5 +25,4 @@ const globalDI = new DIContainer()
 
 globalThis.globalDI = globalDI
 
-export const inject: typeof globalDI.resolve = (service) =>
-    globalThis.globalDI.resolve(service)
+export const inject = globalDI.getInjector()
