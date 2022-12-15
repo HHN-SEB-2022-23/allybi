@@ -20,6 +20,7 @@
     "array-callback-return": ["error", { "allowImplicit": true }],
     "constructor-super": "error",
     "no-undef": "error",
+    "indent": ["error", 4],
     "curly": ["error", "multi-line"],
     "for-direction": "error",
     "guard-for-in": "off",
