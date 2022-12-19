@@ -8,7 +8,7 @@ Projekt der Vorlesung Design Thinking an der Hochschule Heilbronn, nach Auftrag 
 
 ## Nice to know
 
-Wir verwenden MobX für das State Management, dazu wird im Konstruktor die `makeAutoObservable` Funktion ausgeführt. Diese sorgt dafür, dass alle Properties des Objektes, die nicht mit einem `_` beginnen, als Observable deklariert werden. Außerdem werden alle Setter automatisch als Actions deklariert. Das heißt, dass alle Änderungen an den Properties über die Setter vorgenommen werden müssen. Das ist wichtig, da sonst die Observer nicht über Änderungen informiert werden.
+Wir verwenden MobX für das State Management, dazu wird im Konstruktor der ViewModels und Models die `makeAutoObservable` Funktion ausgeführt. Diese sorgt dafür, dass alle Properties des Objektes, die nicht mit einem `_` beginnen, als Observable deklariert werden. Außerdem werden alle Setter automatisch als Actions deklariert. Das heißt, dass alle Änderungen an den Properties über die Setter vorgenommen werden müssen. Das ist wichtig, da sonst die Observer nicht über Änderungen informiert werden.
 
 Die Views sind functional components (React), die über die `observer` Funktion von MobX deklariert werden. Diese sorgt dafür, dass die View bei Änderungen der Observables (Model / ViewModel) neu gerendert wird.
 
