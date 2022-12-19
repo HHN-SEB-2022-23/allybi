@@ -63,27 +63,27 @@ export class GameModel {
 
         while (dialog) {
             switch (dialog.dialogType) {
-                case DialogType.NPCDialog:
-                    this.pushDialogHistory({
-                        speaker: dialog.speaker,
-                        text: dialog.text,
-                        isPlayer: false,
-                    })
-                    break
-                case DialogType.NarratorDialog:
-                    this.pushDialogHistory({
-                        speaker: "Erzähler",
-                        text: dialog.text,
-                        isPlayer: false,
-                    })
-                    break
-                case DialogType.PlayerDialog:
-                    this.pushDialogHistory({
-                        speaker: this._chapter.player,
-                        text: dialog.text,
-                        isPlayer: true,
-                    })
-                    break
+            case DialogType.NPCDialog:
+                this.pushDialogHistory({
+                    speaker: dialog.speaker,
+                    text: dialog.text,
+                    isPlayer: false,
+                })
+                break
+            case DialogType.NarratorDialog:
+                this.pushDialogHistory({
+                    speaker: "Erzähler",
+                    text: dialog.text,
+                    isPlayer: false,
+                })
+                break
+            case DialogType.PlayerDialog:
+                this.pushDialogHistory({
+                    speaker: this._chapter.player,
+                    text: dialog.text,
+                    isPlayer: true,
+                })
+                break
             }
 
             if ("next" in dialog) {

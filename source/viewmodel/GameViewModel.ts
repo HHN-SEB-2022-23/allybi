@@ -47,20 +47,20 @@ export class GameViewModel {
     public get currentDialog() {
         if (this._gameModel.currentDialog) {
             switch (this._gameModel.currentDialog.dialogType) {
-                case DialogType.PlayerOptionDialog:
-                    return {
-                        speaker: this._gameModel.chapter.player,
-                        choices: this._gameModel.currentDialog.choices.map(
-                            (choice) => ({
-                                text: choice.text,
-                                onClick: () =>
-                                    this._gameModel.continueDialogAsync(choice),
-                            })
-                        ),
-                    }
+            case DialogType.PlayerOptionDialog:
+                return {
+                    speaker: this._gameModel.chapter.player,
+                    choices: this._gameModel.currentDialog.choices.map(
+                        (choice) => ({
+                            text: choice.text,
+                            onClick: () =>
+                                this._gameModel.continueDialogAsync(choice),
+                        })
+                    ),
+                }
 
-                case DialogType.ChapterEnd:
-                    return this.chapterEndInput()
+            case DialogType.ChapterEnd:
+                return this.chapterEndInput()
             }
         }
 

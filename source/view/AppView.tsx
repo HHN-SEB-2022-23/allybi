@@ -10,16 +10,16 @@ export const AppView = observer(() => {
     const vm = inject("AppViewModel")
 
     switch (vm.state) {
-        case AppState.MAIN_MENU:
-            return <MainMenuView />
+    case AppState.MAIN_MENU:
+        return <MainMenuView />
 
-        case AppState.IN_GAME:
-            return <GameView />
+    case AppState.IN_GAME:
+        return <GameView />
 
-        case AppState.OPTIONS:
-            return <OptionsView />
+    case AppState.OPTIONS:
+        return <OptionsView />
 
-        default:
-            return <div>Unknown state {vm.state}</div>
+    default:
+        return <div>Unknown state {vm.state}</div>
     }
 })
