@@ -1,6 +1,11 @@
 import { makeAutoObservable } from "mobx"
 import { inject } from "../lib/globalDI"
 
+/**
+ * View model for the app
+ *
+ * Changes the state of the app (which view is currently active)
+ */
 export class AppViewModel {
     private _appModel = inject("AppModel")
 

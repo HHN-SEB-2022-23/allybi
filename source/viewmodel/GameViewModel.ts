@@ -3,6 +3,11 @@ import type { DialogChoice } from "../types/DialogChoice"
 import { inject } from "../lib/globalDI"
 import { makeAutoObservable } from "mobx"
 
+/**
+ * View model for the interactive game
+ *
+ * Contains the core logic for the game itself
+ */
 export class GameViewModel {
     private _gameModel = inject("GameModel")
     private _appModel = inject("AppModel")

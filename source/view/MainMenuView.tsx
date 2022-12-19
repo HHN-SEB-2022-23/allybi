@@ -2,6 +2,11 @@ import React from "react"
 import { observer } from "mobx-react"
 import { inject } from "../lib/globalDI"
 
+/**
+ * The main menu view.
+ *
+ * This view is responsible for rendering the main menu.
+ */
 export const MainMenuView = observer(() => {
     const vm = inject("MainMenuViewModel")
 

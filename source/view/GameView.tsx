@@ -4,49 +4,11 @@ import { inject } from "../lib/globalDI"
 import type { DialogHistoryEntry } from "../types/DialogHistoryEntry"
 import type { DialogChoice } from "../types/DialogChoice"
 
-const dialogHistoryEntryView = (el: DialogHistoryEntry, index: number) => (
-    <Fragment key={index}>
-        {el.isPlayer ? (
-            <>
-                <span />
-                <span
-                    id={`dialog-text-${index}`}
-                    className="dialog-text player-voice"
-                >
-                    {el.text}
-                </span>
-                <span className="dialog-speaker player-voice">
-                    {el.speaker}
-                </span>
-            </>
-        ) : (
-            <>
-                <span className="dialog-speaker">{el.speaker}</span>
-                <span id={`dialog-text-${index}`} className="dialog-text">
-                    {el.text}
-                </span>
-                <span />
-            </>
-        )}
-    </Fragment>
-)
-
-const dialogChoiceView = (choice: DialogChoice, index: number) => (
-    <button
-        className="dialog-input-choice"
-        onClick={choice.onClick}
-        key={index}
-    >
-        {choice.text}
-    </button>
-)
-
-const smoothScrollOptions: ScrollIntoViewOptions = {
-    behavior: "smooth",
-    block: "end",
-    inline: "nearest",
-}
-
+/**
+ * The game view.
+ *
+ * This view is responsible for rendering the interactive game.
+ */
 export const GameView = observer(() => {
     const vm = inject("GameViewModel")
 
@@ -79,3 +41,60 @@ export const GameView = observer(() => {
         </div>
     )
 })
+
+/**
+ * Renders one dialog choice.
+ *
+ * Used for a map function of `Array<DialogChoice>`.
+ */
+const dialogChoiceView = (choice: DialogChoice, index: number) => (
+    <button
+        className="dialog-input-choice"
+        onClick={choice.onClick}
+        key={index}
+    >
+        {choice.text}
+    </button>
+)
+
+/**
+ * Renders a dialog history entry.
+ *
+ * Used for a map function of `Array<DialogHistoryEntry>`.
+ */
+const dialogHistoryEntryView = (el: DialogHistoryEntry, index: number) => (
+    <Fragment key={index}>
+        {el.isPlayer ? (
+            <>
+                <span />
+                <span
+                    id={`dialog-text-${index}`}
+                    className="dialog-text player-voice"
+                >
+                    {el.text}
+                </span>
+                <span className="dialog-speaker player-voice">
+                    {el.speaker}
+                </span>
+            </>
+        ) : (
+            <>
+                <span className="dialog-speaker">{el.speaker}</span>
+                <span id={`dialog-text-${index}`} className="dialog-text">
+                    {el.text}
+                </span>
+                <span />
+            </>
+        )}
+    </Fragment>
+)
+
+/**
+ * Scroll settings for smooth scrolling.
+ * This is used to scroll the dialog history to the latest entry.
+ */
+const smoothScrollOptions: ScrollIntoViewOptions = {
+    behavior: "smooth",
+    block: "end",
+    inline: "nearest",
+}

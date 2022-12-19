@@ -6,6 +6,12 @@ import { GameView } from "./GameView"
 import { OptionsView } from "./OptionsView"
 import { inject } from "../lib/globalDI"
 
+/**
+ * The main view of the application.
+ *
+ * This view is responsible for rendering the correct view
+ * based on the app state.
+ */
 export const AppView = observer(() => {
     const vm = inject("AppViewModel")
 
