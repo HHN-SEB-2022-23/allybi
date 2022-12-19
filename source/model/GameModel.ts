@@ -39,10 +39,6 @@ export class GameModel {
         this._dialogHistory = history
     }
 
-    private pushDialogHistory(entry: DialogHistoryEntry) {
-        this._dialogHistory.push(entry)
-    }
-
     public get currentDialog(): Readonly<Dialog | null> {
         return this._currentDialog
     }
@@ -133,5 +129,9 @@ export class GameModel {
         this.dialogHistory.length = 0
         this.continueDialogAsync(this._chapter.headDialog)
         return true
+    }
+
+    private pushDialogHistory(entry: DialogHistoryEntry) {
+        this._dialogHistory.push(entry)
     }
 }
