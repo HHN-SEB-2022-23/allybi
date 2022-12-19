@@ -16,13 +16,17 @@ Die Views sind functional components (React), die über die `observer` Funktion 
 
 ### JavaScript Runtime installieren
 
-[Node](https://nodejs.org)
+Empfohlen: [Node](https://nodejs.org)
 
 #### Alternativen
 
 - [Bun](https://bun.sh)
-- [Volta](https://volta.sh)
 - [Deno](https://deno.land)
+
+#### Node Version Manager
+
+- Empfohlen: [Volta](https://volta.sh)
+- [NVM](https://github.com/nvm-sh/nvm#readme)
 
 ### Installieren der Dependencies
 
