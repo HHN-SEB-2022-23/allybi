@@ -1,14 +1,15 @@
 import React from "react"
-import { createRoot, type Root } from "react-dom/client"
+import { createRoot } from "react-dom/client"
 import { AppView } from "./view/AppView"
+
+// initialize the react root
 
 const appEl = document.getElementById("app")
 
 if (appEl) {
-    (globalThis as unknown as { reactRoot: Root }).reactRoot =
-        createRoot(appEl);
+    globalThis.reactRoot = createRoot(appEl)
 
-    (globalThis as unknown as { reactRoot: Root }).reactRoot.render(
+    globalThis.reactRoot.render(
         <React.StrictMode>
             <AppView />
         </React.StrictMode>

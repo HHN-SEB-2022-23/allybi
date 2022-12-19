@@ -6,6 +6,9 @@ import type { Dialog } from "../types/Dialog"
 import { DialogType } from "../types/DialogType"
 import { delay } from "@frank-mayer/magic/Timing"
 
+/**
+ * Model of the interactive game itself
+ */
 export class GameModel {
     private readonly _endedChapters = new Set<number>()
     private _chapter: Chapter = {

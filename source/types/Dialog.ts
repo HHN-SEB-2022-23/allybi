@@ -28,6 +28,9 @@ type ChapterEnd = {
     dialogType: DialogType.ChapterEnd;
 };
 
+/**
+ * A Dialog is a message that is shown during a chapter.
+ */
 export type Dialog =
     | NarratorDialog
     | PlayerDialog

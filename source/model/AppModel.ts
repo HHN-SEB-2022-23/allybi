@@ -1,6 +1,9 @@
 import { makeAutoObservable } from "mobx"
 import { AppState } from "../types/AppState"
 
+/**
+ * Main model of the application.
+ */
 export class AppModel {
     private _state: AppState = AppState.MAIN_MENU
 

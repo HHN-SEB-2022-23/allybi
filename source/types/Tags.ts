@@ -1,3 +1,7 @@
+/**
+ * Tags are used to classify chapters.
+ * @enum
+ */
 export class Tag<S extends string = string> {
     public static readonly diskriminierungstyp1 = new Tag(
         "Diskriminierungstyp 1"

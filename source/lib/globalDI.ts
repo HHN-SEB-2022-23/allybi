@@ -11,6 +11,7 @@ import { GameViewModel } from "../viewmodel/GameViewModel"
 import { MainMenuViewModel } from "../viewmodel/MainMenuViewModel"
 import { OptionsViewModel } from "../viewmodel/OptionsViewModel"
 
+// Global dependency injection container
 const globalDI = new DIContainer()
     // model
     .addSingleton(AppModel, "AppModel")
@@ -25,4 +26,7 @@ const globalDI = new DIContainer()
 
 globalThis.globalDI = globalDI
 
+/**
+ * Resolved services from the global dependency injection container
+ */
 export const inject = globalDI.getInjector()
