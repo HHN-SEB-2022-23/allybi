@@ -1,5 +1,10 @@
 name: Test
 
+# Only run one deployment at a time
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches: ["main"]
