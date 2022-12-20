@@ -23,11 +23,6 @@ Empfohlen: [Node](https://nodejs.org)
 - [Bun](https://bun.sh)
 - [Deno](https://deno.land)
 
-#### Node Version Manager
-
-- Empfohlen: [Volta](https://volta.sh)
-- [NVM](https://github.com/nvm-sh/nvm#readme)
-
 ### Installieren der Dependencies
 
 ```bash
@@ -64,3 +59,7 @@ npm run build
 - [MobX](https://mobx.js.org) State Management
 - [dilight](https://github.com/Frank-Mayer/dilight) Dependency Injection
 - [ESLint](https://eslint.org) Linter
+
+## Klassendiagramm
+
+![](https://raw.githubusercontent.com/HHN-SEB-2022-23/allybi/main/uml/Class%20Diagram.svg)
