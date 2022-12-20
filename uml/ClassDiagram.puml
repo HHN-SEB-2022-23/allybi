@@ -1,0 +1,173 @@
+@startuml Class Diagram
+package types {
+    enum AppState {
+        MAIN_MENU
+        IN_GAME
+        OPTIONS
+    }
+
+    enum DialogType {
+        NarratorDialog
+        PlayerDialog
+        PlayerOptionDialog
+        NPCDialog
+        ChapterEnd
+    }
+
+    enum Tag {
+        diskriminierungstyp1
+    }
+
+    interface Chapter {
+        +title: string
+        +player: string
+        +tags: Array<Tag<string>>
+        +headDialog: Dialog
+    }
+    Chapter --> "1" Tag
+    Chapter o-- Dialog
+
+    interface Dialog {
+        +dialogType: DialogType
+    }
+
+    interface NarratorDialog extends Dialog {
+        +dialogType: DialogType.NarratorDialog
+        +text: string
+        +next: Dialog?
+    }
+    NarratorDialog o-- Dialog
+
+    interface PlayerDialog extends Dialog {
+        +dialogType: DialogType.PlayerDialog
+        +text: string
+        +next: Dialog?
+    }
+    PlayerDialog o-- Dialog
+
+    interface PlayerOptionDialog extends Dialog {
+        +dialogType: DialogType.PlayerOptionDialog
+        +choices: Array<PlayerDialog>
+    }
+    PlayerOptionDialog o-- PlayerDialog
+
+    interface NPCDialog extends Dialog {
+        +dialogType: DialogType.NPCDialog
+        +speaker: string
+        +text: string
+        +next: Dialog?
+    }
+    NPCDialog o-- Dialog
+
+    interface DialogChoice {
+        +text: string
+        +onClick: () => void
+    }
+
+    interface DialogHistoryEntry {
+        +speaker: string
+        +isPlayer: boolean
+        +text: string
+    }
+}
+
+package model {
+    class AppModel {
+        - _state: AppState
+        +state: AppState
+        +state: AppState
+        +startGame(): void
+        +openOptions(): void
+        +openMainMenu(): void
+    }
+    AppModel --> "1" AppState
+
+    class GameModel {
+        -_endedChapters: any
+        -_chapter: Chapter
+        -_dialogHistory: DialogHistoryEntry[]
+        -_currentDialog: Dialog
+        +chapter: Chapter
+        -chapter: Chapter
+        +dialogHistory: DialogHistoryEntry[]
+        -dialogHistory: DialogHistoryEntry[]
+        +currentDialog: Readonly<Dialog>
+        -currentDialog: Readonly<Dialog>
+        +isFinished: boolean
+        +continueDialogAsync(nextDialog: Dialog): Promise<void>
+        +reset(): void
+        +initChapter(): boolean
+        -pushDialogHistory(entry: DialogHistoryEntry): void
+    }
+    GameModel *-- "1" Chapter
+
+    class MainMenuModel
+    class OptionsModel
+}
+
+package viewmodel {
+    class AppViewModel {
+        -_appModel: AppModel
+        +state: AppState
+    }
+    AppViewModel *-- "1" AppModel
+    AppViewModel *-- "1" AppState
+
+    class GameViewModel {
+        -_gameModel: GameModel
+        -_appModel: AppModel
+        +nextChapter: () => void
+        +mainMenu: () => void
+        +dialogHistory: DialogHistoryEntry[]
+        +sceneTitle: string
+        -chapterEndInput(): { speaker: string; choices: Array<DialogChoice>; }
+        +currentDialog: { speaker: string; choices: DialogChoice[]; }
+        +isFinished: boolean
+    }
+    GameViewModel *-- "1" GameModel
+    GameViewModel *-- "1" AppModel
+
+    class MainMenuViewModel {
+        -_mainMenuModel: MainMenuModel
+        -_gameModel: GameModel
+        -_appModel: AppModel
+        +startGame: MouseEventHandler<Element>
+        +openOptions: MouseEventHandler<Element>
+    }
+    MainMenuViewModel *-- "1" MainMenuModel
+    MainMenuViewModel *-- "1" GameModel
+    MainMenuViewModel *-- "1" AppModel
+
+    class OptionsViewModel {
+        -_optionsModel: OptionsModel
+    }
+    OptionsViewModel *-- "1" OptionsModel
+}
+
+package view {
+    class AppView {
+        -_appViewModel: AppViewModel
+        +render(): void
+    }
+    AppView *-- "1" AppViewModel
+
+    class GameView {
+        -_gameViewModel: GameViewModel
+        +render(): void
+    }
+    GameView *-- "1" GameViewModel
+
+    class MainMenuView {
+        -_mainMenuViewModel: MainMenuViewModel
+        +render(): void
+    }
+    MainMenuView *-- "1" MainMenuViewModel
+
+    class OptionsView {
+        -_optionsViewModel: OptionsViewModel
+        +render(): void
+    }
+    OptionsView *-- "1" OptionsViewModel
+}
+
+@enduml
