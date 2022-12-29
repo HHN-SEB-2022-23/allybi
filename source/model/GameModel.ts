@@ -88,7 +88,8 @@ export class GameModel {
             if ("next" in dialog) {
                 dialog = dialog.next
                 await delay(750)
-            } else {
+            }
+            else {
                 break
             }
         }
@@ -96,12 +97,14 @@ export class GameModel {
         if (dialog) {
             if (dialog.dialogType === DialogType.PlayerOptionDialog) {
                 this.currentDialog = dialog
-            } else {
+            }
+            else {
                 this.currentDialog = {
                     dialogType: DialogType.ChapterEnd,
                 }
             }
-        } else {
+        }
+        else {
             this._currentDialog = {
                 dialogType: DialogType.ChapterEnd,
             }
