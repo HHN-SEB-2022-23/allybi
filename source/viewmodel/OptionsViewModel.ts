@@ -7,9 +7,14 @@ import { inject } from "../lib/globalDI"
  * Sets the options in the options model
  */
 export class OptionsViewModel {
-    private _optionsModel = inject("OptionsModel")
+    //private readonly _optionsModel = inject("OptionsModel")
+    private readonly _appModel = inject("AppModel")
 
     public constructor() {
         makeAutoObservable(this)
+    }
+
+    public readonly onClickBack = () => {
+        this._appModel.openMainMenu()
     }
 }

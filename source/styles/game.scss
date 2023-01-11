@@ -1,6 +1,6 @@
 @use "theme";
 
-.game-view {
+.game {
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
@@ -14,7 +14,7 @@
     justify-items: stretch;
     align-content: space-between;
 
-    .chapter-title {
+    &__chapter-title {
         grid-area: chapter-title;
         font-size: theme.font-size(2);
         border: {
@@ -29,6 +29,22 @@
         }
     }
 
+    &__dialog-input {
+        grid-area: dialog-input;
+        margin-top: 2rem;
+    }
+
+    .dialog-input {
+        &__choice {
+            display: block;
+            @include theme.button;
+        }
+    }
+
+    &__dialog-speaker {
+        opacity: 0.5;
+    }
+
     .dialog-history {
         grid-area: dialog-history;
         max-height: 100%;
@@ -37,48 +53,41 @@
         grid-template-columns: auto 1fr auto;
         grid-gap: 1rem 1rem;
 
-        > * {
+        &__speaker > * {
+            display: block;
+        }
+
+        &__text,
+        &__speaker {
             height: fit-content;
             animation: {
                 duration: 500ms;
                 timing-function: linear;
             }
 
-            &:not(.player-speaker) {
+            &--npc-voice {
                 animation-name: dialog-in-npc;
             }
 
-            &.player-voice {
+            &--player-voice {
                 animation-name: dialog-in-player;
+            }
+
+            &--image {
+                width: 2rem;
+                height: 2rem;
             }
         }
 
-        .dialog-speaker {
-            opacity: 0.5;
-        }
-
-        .dialog-text {
-            &:not(.player-voice) {
+        &__text,
+        &__speaker {
+            &--npc-voice {
                 text-align: left;
             }
 
-            &.player-voice {
+            &--player-voice {
                 text-align: right;
             }
-        }
-    }
-
-    .dialog-input {
-        grid-area: dialog-input;
-        margin-top: 2rem;
-
-        .dialog-speaker {
-            opacity: 0.5;
-        }
-
-        .dialog-input-choice {
-            display: block;
-            @include theme.button;
         }
     }
 }

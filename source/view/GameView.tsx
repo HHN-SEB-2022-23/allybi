@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from "react"
 import { observer } from "mobx-react"
 import { inject } from "../lib/globalDI"
+import { Avatar } from "../components/Avatar"
 import type { DialogHistoryEntry } from "../types/DialogHistoryEntry"
 import type { DialogChoice } from "../types/DialogChoice"
 
@@ -23,15 +24,15 @@ export const GameView = observer(() => {
     })
 
     return (
-        <div className="game-view">
-            <h1 className="chapter-title">{vm.sceneTitle}</h1>
-            <div className="dialog-history">
+        <div className="game">
+            <h1 className="game__chapter-title">{vm.sceneTitle}</h1>
+            <div className="game__dialog-history dialog-history">
                 {vm.dialogHistory.map(dialogHistoryEntryView)}
             </div>
-            <div className="dialog-input">
+            <div className="game__dialog-input">
                 {vm.currentDialog ? (
-                    <fieldset>
-                        <legend className="dialog-speaker">
+                    <fieldset className="dialog-input">
+                        <legend className="game__dialog-speaker">
                             {vm.currentDialog.speaker}
                         </legend>
                         {vm.currentDialog.choices.map(dialogChoiceView)}
@@ -49,7 +50,7 @@ export const GameView = observer(() => {
  */
 const dialogChoiceView = (choice: DialogChoice, index: number) => (
     <button
-        className="dialog-input-choice"
+        className="dialog-input__choice"
         onClick={choice.onClick}
         key={index}
     >
@@ -69,18 +70,21 @@ const dialogHistoryEntryView = (el: DialogHistoryEntry, index: number) => (
                 <span />
                 <span
                     id={`dialog-text-${index}`}
-                    className="dialog-text player-voice"
+                    className="dialog-history__text dialog-history__text--player-voice"
                 >
                     {el.text}
                 </span>
-                <span className="dialog-speaker player-voice">
+                <span className="game__dialog-speaker dialog-history__speaker--player-voice">
                     {el.speaker}
                 </span>
             </>
         ) : (
             <>
-                <span className="dialog-speaker">{el.speaker}</span>
-                <span id={`dialog-text-${index}`} className="dialog-text">
+                <span className="dialog-history__speaker">
+                    <Avatar className="dialog-history__speaker--image" seed={el.speaker} />
+                    <span className="game__dialog-speaker">{el.speaker}</span>
+                </span>
+                <span id={`dialog-text-${index}`} className="dialog-history__text dialog-history__text--npc-voice">
                     {el.text}
                 </span>
                 <span />

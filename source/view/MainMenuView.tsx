@@ -11,16 +11,16 @@ export const MainMenuView = observer(() => {
     const vm = inject("MainMenuViewModel")
 
     return (
-        <nav className="main-menu">
-            <h1 className="menu-title">
-                Allybi <span className="menu-subtitle">vom Alibi zum Ally</span>
+        <nav className="menu">
+            <h1 className="menu-menu__title">
+                Allybi <span className="menu__subtitle">vom Alibi zum Ally</span>
             </h1>
 
-            <button className="menu-item" onClick={vm.startGame}>
+            <button className="menu__item" onClick={vm.startGame}>
                 Spiel Starten
             </button>
 
-            <button className="menu-item" onClick={vm.openOptions}>
+            <button className="menu__item" onClick={vm.openOptions}>
                 Optionen
             </button>
         </nav>
