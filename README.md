@@ -59,6 +59,7 @@ npm run build
 - [MobX](https://mobx.js.org) State Management
 - [dilight](https://github.com/Frank-Mayer/dilight) Dependency Injection
 - [ESLint](https://eslint.org) Linter
+- [DiceBear](https://dicebear.com)
 
 ## Klassendiagramm
 
