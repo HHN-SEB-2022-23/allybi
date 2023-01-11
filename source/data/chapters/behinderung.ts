@@ -7,7 +7,16 @@ const hrMorina = "Herr Morina (Lehrer)"
 
 const rejoin_001: Dialog = {
     dialogType: DialogType.PlayerOptionDialog,
-    choices: []
+    choices: [
+        {
+            dialogType: DialogType.PlayerDialog,
+            text: "Ich könnte während des Ausfluges auf sie achten, dann müssen Sie das nicht Herr Morina."
+        },
+        {
+            dialogType: DialogType.PlayerDialog,
+            text: "(Nichts sagen)"
+        }
+    ]
 }
 
 const mainChoice_001: Dialog = {
