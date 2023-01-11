@@ -7,11 +7,7 @@ const hrMorina = "Herr Morina (Lehrer)"
 
 const rejoin_001: Dialog = {
     dialogType: DialogType.PlayerOptionDialog,
-    choices: [
-        {
-            ""
-        }
-    ]
+    choices: []
 }
 
 const mainChoice_001: Dialog = {
