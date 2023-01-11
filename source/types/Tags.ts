@@ -7,6 +7,14 @@ export class Tag<S extends string = string> {
         "Diskriminierungstyp 1"
     )
 
+    public static readonly geschlecht = new Tag(
+        "Geschlecht"
+    )
+
+    public static readonly sexualitaet = new Tag(
+        "Sexualität"
+    )
+
     private readonly _display: S
 
     private constructor(display: S) {
