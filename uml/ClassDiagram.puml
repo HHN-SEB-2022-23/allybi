@@ -1,4 +1,7 @@
 @startuml Class Diagram
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
 package types {
     enum AppState {
         MAIN_MENU
@@ -61,7 +64,7 @@ package types {
 
     interface DialogChoice {
         +text: string
-        +onClick: () => void
+        +onClick: Function<void>
     }
 
     interface DialogHistoryEntry {
@@ -71,11 +74,17 @@ package types {
     }
 }
 
+package components {
+    class Avatar {
+        + render(): HTMLElement
+    }
+}
+
 package model {
     class AppModel {
-        - _state: AppState
-        +state: AppState
-        +state: AppState
+        -_state: AppState
+        +get state: AppState
+        -set state: AppState
         +startGame(): void
         +openOptions(): void
         +openMainMenu(): void
@@ -83,17 +92,17 @@ package model {
     AppModel --> "1" AppState
 
     class GameModel {
-        -_endedChapters: any
+        -_endedChapters: Set<number>
         -_chapter: Chapter
-        -_dialogHistory: DialogHistoryEntry[]
-        -_currentDialog: Dialog
-        +chapter: Chapter
-        -chapter: Chapter
-        +dialogHistory: DialogHistoryEntry[]
-        -dialogHistory: DialogHistoryEntry[]
-        +currentDialog: Readonly<Dialog>
-        -currentDialog: Readonly<Dialog>
-        +isFinished: boolean
+        -_dialogHistory: Array<DialogHistoryEntry>
+        -_currentDialog: Dialog?
+        +get chapter: Chapter
+        -set chapter: Chapter
+        +get dialogHistory: Array<DialogHistoryEntry>
+        -set dialogHistory: Array<DialogHistoryEntry>
+        +get currentDialog: Readonly<Dialog>
+        -set currentDialog: Readonly<Dialog>
+        +get isFinished: boolean
         +continueDialogAsync(nextDialog: Dialog): Promise<void>
         +reset(): void
         +initChapter(): boolean
@@ -108,18 +117,18 @@ package model {
 package viewmodel {
     class AppViewModel {
         -_appModel: AppModel
-        +state: AppState
+        +get state: AppState
     }
     AppViewModel *-- "1" AppModel
-    AppViewModel *-- "1" AppState
+    AppViewModel --- "1" AppState
 
     class GameViewModel {
         -_gameModel: GameModel
         -_appModel: AppModel
-        +nextChapter: () => void
-        +mainMenu: () => void
-        +dialogHistory: DialogHistoryEntry[]
-        +sceneTitle: string
+        +nextChapter: Function<void>
+        +mainMenu: Function<void>
+        +get dialogHistory: Array<DialogHistoryEntry>
+        +get sceneTitle: Array<string>
         -chapterEndInput(): { speaker: string; choices: Array<DialogChoice>; }
         +currentDialog: { speaker: string; choices: DialogChoice[]; }
         +isFinished: boolean
@@ -140,6 +149,8 @@ package viewmodel {
 
     class OptionsViewModel {
         -_optionsModel: OptionsModel
+        -_appModel: AppModel
+        +onClickBack: MouseEventHandler<Element>
     }
     OptionsViewModel *-- "1" OptionsModel
 }
@@ -147,25 +158,26 @@ package viewmodel {
 package view {
     class AppView {
         -_appViewModel: AppViewModel
-        +render(): void
+        +render(): HTMLElement
     }
     AppView *-- "1" AppViewModel
 
     class GameView {
         -_gameViewModel: GameViewModel
-        +render(): void
+        +render(): HTMLElement
     }
     GameView *-- "1" GameViewModel
+    Avatar "1..*" -down-* "1" GameView
 
     class MainMenuView {
         -_mainMenuViewModel: MainMenuViewModel
-        +render(): void
+        +render(): HTMLElement
     }
     MainMenuView *-- "1" MainMenuViewModel
 
     class OptionsView {
         -_optionsViewModel: OptionsViewModel
-        +render(): void
+        +render(): HTMLElement
     }
     OptionsView *-- "1" OptionsViewModel
 }

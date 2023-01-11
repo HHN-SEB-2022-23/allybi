@@ -1,5 +1,6 @@
 import { makeAutoObservable } from "mobx"
 import { inject } from "../lib/globalDI"
+import { MouseEventHandler } from "react"
 
 /**
  * View model for the options menu
@@ -14,7 +15,7 @@ export class OptionsViewModel {
         makeAutoObservable(this)
     }
 
-    public readonly onClickBack = () => {
+    public readonly onClickBack: MouseEventHandler<Element> = () => {
         this._appModel.openMainMenu()
     }
 }

@@ -13,9 +13,9 @@ import { inject } from "../lib/globalDI"
  * based on the app state.
  */
 export const AppView = observer(() => {
-    const vm = inject("AppViewModel")
+    const _appViewModel = inject("AppViewModel")
 
-    switch (vm.state) {
+    switch (_appViewModel.state) {
     case AppState.MAIN_MENU:
         return <MainMenuView />
 
@@ -26,6 +26,6 @@ export const AppView = observer(() => {
         return <OptionsView />
 
     default:
-        return <div>Unknown state {vm.state}</div>
+        return <div>Unknown state {_appViewModel.state}</div>
     }
 })

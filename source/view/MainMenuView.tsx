@@ -8,7 +8,7 @@ import { inject } from "../lib/globalDI"
  * This view is responsible for rendering the main menu.
  */
 export const MainMenuView = observer(() => {
-    const vm = inject("MainMenuViewModel")
+    const _mainMenuViewModel = inject("MainMenuViewModel")
 
     return (
         <nav className="menu">
@@ -16,11 +16,11 @@ export const MainMenuView = observer(() => {
                 Allybi <span className="menu__subtitle">vom Alibi zum Ally</span>
             </h1>
 
-            <button className="menu__item" onClick={vm.startGame}>
+            <button className="menu__item" onClick={_mainMenuViewModel.startGame}>
                 Spiel Starten
             </button>
 
-            <button className="menu__item" onClick={vm.openOptions}>
+            <button className="menu__item" onClick={_mainMenuViewModel.openOptions}>
                 Optionen
             </button>
         </nav>

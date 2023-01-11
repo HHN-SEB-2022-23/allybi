@@ -11,11 +11,11 @@ import type { DialogChoice } from "../types/DialogChoice"
  * This view is responsible for rendering the interactive game.
  */
 export const GameView = observer(() => {
-    const vm = inject("GameViewModel")
+    const _gameViewModel = inject("GameViewModel")
 
     useEffect(() => {
         const latestDialog = document.getElementById(
-            `dialog-text-${vm.dialogHistory.length - 1}`
+            `dialog-text-${_gameViewModel.dialogHistory.length - 1}`
         )
 
         if (latestDialog) {
@@ -25,17 +25,17 @@ export const GameView = observer(() => {
 
     return (
         <div className="game">
-            <h1 className="game__chapter-title">{vm.sceneTitle}</h1>
+            <h1 className="game__chapter-title">{_gameViewModel.sceneTitle}</h1>
             <div className="game__dialog-history dialog-history">
-                {vm.dialogHistory.map(dialogHistoryEntryView)}
+                {_gameViewModel.dialogHistory.map(dialogHistoryEntryView)}
             </div>
             <div className="game__dialog-input">
-                {vm.currentDialog ? (
+                {_gameViewModel.currentDialog ? (
                     <fieldset className="dialog-input">
                         <legend className="game__dialog-speaker">
-                            {vm.currentDialog.speaker}
+                            {_gameViewModel.currentDialog.speaker}
                         </legend>
-                        {vm.currentDialog.choices.map(dialogChoiceView)}
+                        {_gameViewModel.currentDialog.choices.map(dialogChoiceView)}
                     </fieldset>
                 ) : null}
             </div>

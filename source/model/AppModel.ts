@@ -10,7 +10,8 @@ export class AppModel {
     public get state() {
         return this._state
     }
-    public set state(state: AppState) {
+
+    private set state(state: AppState) {
         this._state = state
     }
 

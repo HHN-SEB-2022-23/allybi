@@ -7,7 +7,7 @@ import { inject } from "../lib/globalDI"
  * Changes the state of the app (which view is currently active)
  */
 export class AppViewModel {
-    private _appModel = inject("AppModel")
+    private readonly _appModel = inject("AppModel")
 
     public get state() {
         return this._appModel.state

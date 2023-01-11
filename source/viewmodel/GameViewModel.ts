@@ -9,8 +9,8 @@ import { makeAutoObservable } from "mobx"
  * Contains the core logic for the game itself
  */
 export class GameViewModel {
-    private _gameModel = inject("GameModel")
-    private _appModel = inject("AppModel")
+    private readonly _gameModel = inject("GameModel")
+    private readonly _appModel = inject("AppModel")
 
     public readonly nextChapter = () => {
         this._gameModel.initChapter()

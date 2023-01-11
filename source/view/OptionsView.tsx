@@ -8,10 +8,10 @@ import { inject } from "../lib/globalDI"
  * This view is responsible for rendering the options menu.
  */
 export const OptionsView = observer(() => {
-    const vm = inject("OptionsViewModel")
+    const _optionsViewModel = inject("OptionsViewModel")
 
     return <nav className="menu">
         <h1 className="menu__title">Optionen</h1>
-        <button onClick={vm.onClickBack} className="menu__item">Zurück</button>
+        <button onClick={_optionsViewModel.onClickBack} className="menu__item">Zurück</button>
     </nav>
 })
