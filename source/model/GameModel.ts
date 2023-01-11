@@ -87,7 +87,7 @@ export class GameModel {
 
             if ("next" in dialog) {
                 dialog = dialog.next
-                await delay(750)
+                await delay(2000)
             }
             else {
                 break
