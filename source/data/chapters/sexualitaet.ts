@@ -2,7 +2,7 @@ import type { Chapter } from "../../types/Chapter"
 import { DialogType } from "../../types/DialogType"
 import { Tag } from "../../types/Tags"
 
-export const sexualität: Chapter = {
+export const sexualitaet: Chapter = {
     title: "Homosexualität",
     tags: [Tag.sexualitaet],
     headDialog: {
