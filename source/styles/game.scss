@@ -37,6 +37,7 @@
     .dialog-input {
         &__choice {
             display: block;
+            text-align: left;
             @include theme.button;
         }
     }
