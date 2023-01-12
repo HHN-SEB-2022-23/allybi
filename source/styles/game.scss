@@ -37,6 +37,7 @@
     .dialog-input {
         &__choice {
             display: block;
+            text-align: left;
             @include theme.button;
         }
     }
@@ -51,7 +52,7 @@
         overflow-y: scroll;
         display: grid;
         grid-template-columns: auto 1fr auto;
-        grid-gap: 1rem 1rem;
+        grid-gap: 2rem 1rem;
 
         &__speaker > * {
             display: block;
@@ -65,7 +66,13 @@
                 timing-function: linear;
             }
 
-            &--npc-voice {
+            &--narrator-voice {
+                font-style: italic;
+                font-weight: 200;
+            }
+
+            &--npc-voice,
+            &--narrator-voice {
                 animation-name: dialog-in-npc;
             }
 
@@ -87,6 +94,10 @@
 
             &--player-voice {
                 text-align: right;
+            }
+
+            &--narrator-voice {
+                text-align: center;
             }
         }
     }

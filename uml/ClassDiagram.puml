@@ -23,7 +23,6 @@ package types {
 
     interface Chapter {
         +title: string
-        +player: string
         +tags: Array<Tag<string>>
         +headDialog: Dialog
     }
@@ -70,6 +69,7 @@ package types {
     interface DialogHistoryEntry {
         +speaker: string
         +isPlayer: boolean
+        +isNarrator: boolean
         +text: string
     }
 }

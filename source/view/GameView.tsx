@@ -5,6 +5,8 @@ import { Avatar } from "../components/Avatar"
 import type { DialogHistoryEntry } from "../types/DialogHistoryEntry"
 import type { DialogChoice } from "../types/DialogChoice"
 
+const playerName = "Du"
+
 /**
  * The game view.
  *
@@ -33,7 +35,7 @@ export const GameView = observer(() => {
                 {_gameViewModel.currentDialog ? (
                     <fieldset className="dialog-input">
                         <legend className="game__dialog-speaker">
-                            {_gameViewModel.currentDialog.speaker}
+                            {playerName}
                         </legend>
                         {_gameViewModel.currentDialog.choices.map(dialogChoiceView)}
                     </fieldset>
@@ -75,20 +77,28 @@ const dialogHistoryEntryView = (el: DialogHistoryEntry, index: number) => (
                     {el.text}
                 </span>
                 <span className="game__dialog-speaker dialog-history__speaker--player-voice">
-                    {el.speaker}
+                    {playerName}
                 </span>
             </>
         ) : (
-            <>
-                <span className="dialog-history__speaker">
-                    <Avatar className="dialog-history__speaker--image" seed={el.speaker} />
-                    <span className="game__dialog-speaker">{el.speaker}</span>
-                </span>
-                <span id={`dialog-text-${index}`} className="dialog-history__text dialog-history__text--npc-voice">
-                    {el.text}
-                </span>
-                <span />
-            </>
+            el.isNarrator
+                ? (<>
+                    <span />
+                    <span id={`dialog-text-${index}`} className="dialog-history__text dialog-history__text--narrator-voice">
+                        {el.text}
+                    </span>
+                    <span />
+                </>)
+                : (<>
+                    <span className="dialog-history__speaker">
+                        <Avatar className="dialog-history__speaker--image" seed={el.speaker} />
+                        <span className="game__dialog-speaker">{el.speaker}</span>
+                    </span>
+                    <span id={`dialog-text-${index}`} className="dialog-history__text dialog-history__text--npc-voice">
+                        {el.text}
+                    </span>
+                    <span />
+                </>)
         )}
     </Fragment>
 )

@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="de-DE">
     <head>
+        <!-- <script type="module">
+            if (
+                "serviceWorker" in navigator &&
+                location.protocol === "https:"
+            ) {
+                navigator.serviceWorker.register(
+                    new URL("sw.ts", import.meta.url),
+                    { type: "module" }
+                );
+            }
+        </script> -->
         <meta charset="UTF-8" />
         <meta http-equiv="language" content="de" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:site_name" content="Allybi" />
+        <meta property="og:type" content="website" />
+        <meta name="theme-color" content="#000000" />
+        <meta property="og:title" content="Allybi" />
+        <meta name="description" content="vom Alibi zum Ally" />
+        <meta property="og:description" content="vom Alibi zum Ally" />
+        <!-- <meta property="og:url" content="" /> -->
+        <!-- <meta property="canonical" content="" /> -->
+        <meta property="og:image" content="./favicon.png" />
+
         <title>Allybi</title>
         <link rel="stylesheet" href="./styles/index.scss" />
+        <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+        <link rel="manifest" href="./manifest.webmanifest" />
     </head>
     <body>
         <main id="app">

@@ -6,5 +6,6 @@
 export type DialogHistoryEntry = {
     speaker: string;
     isPlayer: boolean;
+    isNarrator: boolean;
     text: string;
 }

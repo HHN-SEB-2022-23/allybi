@@ -1,5 +1,6 @@
 import { DialogType } from "../types/DialogType"
 import type { DialogChoice } from "../types/DialogChoice"
+import type { DialogHistoryEntry } from "../types/DialogHistoryEntry"
 import { inject } from "../lib/globalDI"
 import { makeAutoObservable } from "mobx"
 
@@ -20,7 +21,7 @@ export class GameViewModel {
         this._appModel.openMainMenu()
     }
 
-    public get dialogHistory() {
+    public get dialogHistory(): ReadonlyArray<DialogHistoryEntry> {
         return this._gameModel.dialogHistory
     }
 
@@ -54,7 +55,7 @@ export class GameViewModel {
             switch (this._gameModel.currentDialog.dialogType) {
             case DialogType.PlayerOptionDialog:
                 return {
-                    speaker: this._gameModel.chapter.player,
+                    speaker: "N/A",
                     choices: this._gameModel.currentDialog.choices.map(
                         (choice) => ({
                             text: choice.text,
