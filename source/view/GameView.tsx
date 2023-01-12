@@ -81,16 +81,24 @@ const dialogHistoryEntryView = (el: DialogHistoryEntry, index: number) => (
                 </span>
             </>
         ) : (
-            <>
-                <span className="dialog-history__speaker">
-                    <Avatar className="dialog-history__speaker--image" seed={el.speaker} />
-                    <span className="game__dialog-speaker">{el.speaker}</span>
-                </span>
-                <span id={`dialog-text-${index}`} className="dialog-history__text dialog-history__text--npc-voice">
-                    {el.text}
-                </span>
-                <span />
-            </>
+            el.isNarrator
+                ? (<>
+                    <span />
+                    <span id={`dialog-text-${index}`} className="dialog-history__text dialog-history__text--narrator-voice">
+                        {el.text}
+                    </span>
+                    <span />
+                </>)
+                : (<>
+                    <span className="dialog-history__speaker">
+                        <Avatar className="dialog-history__speaker--image" seed={el.speaker} />
+                        <span className="game__dialog-speaker">{el.speaker}</span>
+                    </span>
+                    <span id={`dialog-text-${index}`} className="dialog-history__text dialog-history__text--npc-voice">
+                        {el.text}
+                    </span>
+                    <span />
+                </>)
         )}
     </Fragment>
 )

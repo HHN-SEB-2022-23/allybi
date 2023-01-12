@@ -13,7 +13,6 @@ export class GameModel {
     private readonly _endedChapters = new Set<number>()
     private _chapter: Chapter = {
         title: "not initialized",
-        player: "not initialized",
         headDialog: {
             dialogType: 0,
             text: "not initialized",
@@ -67,20 +66,23 @@ export class GameModel {
                     speaker: dialog.speaker,
                     text: dialog.text,
                     isPlayer: false,
+                    isNarrator: false,
                 })
                 break
             case DialogType.NarratorDialog:
                 this.pushDialogHistory({
-                    speaker: "Erzähler",
+                    speaker: "N/A",
                     text: dialog.text,
                     isPlayer: false,
+                    isNarrator: true,
                 })
                 break
             case DialogType.PlayerDialog:
                 this.pushDialogHistory({
-                    speaker: this._chapter.player,
+                    speaker: "N/A",
                     text: dialog.text,
                     isPlayer: true,
+                    isNarrator: false,
                 })
                 break
             }
