@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="de-DE">
     <head>
+        <script type="module">
+            if ("serviceWorker" in navigator && location.protocol === "https:") {
+                navigator.serviceWorker.register(
+                    new URL("sw.ts", import.meta.url),
+                    { type: "module" }
+                )
+            }
+        </script>
         <meta charset="UTF-8" />
         <meta http-equiv="language" content="de" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
