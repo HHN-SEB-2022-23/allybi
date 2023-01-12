@@ -2,9 +2,8 @@ import type { Chapter } from "../../types/Chapter"
 import { DialogType } from "../../types/DialogType"
 import { Tag } from "../../types/Tags"
 
-export const sexualitaet: Chapter = {
+export const sexualität: Chapter = {
     title: "Homosexualität",
-    player: "Ich",
     tags: [Tag.sexualitaet],
     headDialog: {
         dialogType: DialogType.NarratorDialog,

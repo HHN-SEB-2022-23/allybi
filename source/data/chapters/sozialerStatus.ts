@@ -3,7 +3,6 @@ import type { Chapter } from "../../types/Chapter"
 import { DialogType } from "../../types/DialogType"
 
 export const sozialerStatus: Chapter = {
-    "player": "",
     "title": "Die 8 Uhr Vorlesung",
     "tags": [],
     "headDialog": {

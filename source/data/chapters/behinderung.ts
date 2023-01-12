@@ -51,7 +51,6 @@ const mainChoice_003: Dialog = {
 }
 
 export const behinderung: Chapter = {
-    player: "",
     title: "Der Waldausflug",
     tags: [],
     headDialog: {

@@ -4,7 +4,6 @@ import { Tag } from "../../types/Tags"
 
 export const herkunft: Chapter = {
     title: "Beim Fußballtraining",
-    player: "",
     tags: [Tag.diskriminierungstyp1],
     headDialog: {
         dialogType: DialogType.NarratorDialog,
@@ -459,4 +458,3 @@ export const herkunft: Chapter = {
         },
     },
 }
-
