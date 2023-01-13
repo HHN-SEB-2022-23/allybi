@@ -30,3 +30,7 @@ globalThis.globalDI = globalDI
  * Resolved services from the global dependency injection container
  */
 export const inject = globalDI.getInjector()
+
+// hack
+// trigger OptionsViewModel to update the document data
+globalDI.resolve("OptionsViewModel").useSettingsAsync()

@@ -16,12 +16,12 @@
 
     &__chapter-title {
         grid-area: chapter-title;
-        font-size: theme.font-size(2);
+        font-size: 2rem;
         border: {
             bottom: {
                 width: 1px;
                 style: solid;
-                color: rgba(theme.$foreground, 0.25);
+                color: var(--foreground-4);
             }
         }
         margin: {
@@ -68,7 +68,7 @@
 
             &--narrator-voice {
                 font-style: italic;
-                font-weight: 200;
+                font-weight: 300;
             }
 
             &--npc-voice,

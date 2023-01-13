@@ -2,6 +2,14 @@
 skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 
+package lib {
+    class UserPreferences << (S,#FF7700) Static >> {
+        +getUserPreferedReducedMotion(): boolean
+        +getUserPreferedDarkMode(): boolean
+        +getUserPreferedContrast(): string
+    }
+}
+
 package types {
     enum AppState {
         MAIN_MENU
@@ -72,6 +80,37 @@ package types {
         +isNarrator: boolean
         +text: string
     }
+
+    enum ContrastOption {
+        more
+        less
+        normal
+    }
+
+    interface OptionsDBType {
+        +reduced-motion: boolean
+        +dark-mode: boolean
+        +contrast: ContrastOption
+    }
+    OptionsDBType <-- ContrastOption
+
+    interface DBType {
+        +options: OptionsDBType
+    }
+    DBType *- OptionsDBType
+
+    interface OptionsBoolean {
+        +name: string
+        +value: boolean
+        +setValueAsync(value: boolean): Promise<void>
+    }
+
+    interface OptionsString {
+        +name: string
+        +value: string
+        +setValueAsync(value: string): Promise<void>
+        +valueOptions: Array<string>
+    }
 }
 
 package components {
@@ -111,7 +150,19 @@ package model {
     GameModel *-- "1" Chapter
 
     class MainMenuModel
-    class OptionsModel
+    class OptionsModel {
+        -_db: IDBPDatabase<DBType>
+        +getReducedMotionAsync(): Promise<boolean?>
+        +setReducedMotionAsync(value: boolean): Promise<boolean>
+        +getDarkModeAsync(): Promise<boolean?>
+        +setDarkModeAsync(value: boolean): Promise<boolean>
+        +getContrastAsync(): Promise<string>
+        +setContrastAsync(value: string): Promise<string>
+        -getSettingAsync<K extends keyof OptionsDBType>(option: K): Promise<OptionsDBType[K]>
+        -setSettingAsync<K extends keyof OptionsDBType,T extends OptionsDBType[K]>(option: K, value: T): Promise<T>
+    }
+    OptionsModel <.. DBType
+    OptionsModel <.. OptionsDBType
 }
 
 package viewmodel {
@@ -151,8 +202,11 @@ package viewmodel {
         -_optionsModel: OptionsModel
         -_appModel: AppModel
         +onClickBack: MouseEventHandler<Element>
+        +updateDocumentData(data: Record<string, any>): void
+        +useSettingsAsync(): Promise<Array<OptionsBoolean | OptionsString>>
     }
     OptionsViewModel *-- "1" OptionsModel
+    UserPreferences -up-> OptionsViewModel
 }
 
 package view {
@@ -177,6 +231,7 @@ package view {
 
     class OptionsView {
         -_optionsViewModel: OptionsViewModel
+        -_settings: Array<OptionsBoolean | OptionsString>
         +render(): HTMLElement
     }
     OptionsView *-- "1" OptionsViewModel
