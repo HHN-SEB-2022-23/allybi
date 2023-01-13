@@ -60,7 +60,7 @@ npm run build
 - [dilight](https://github.com/Frank-Mayer/dilight) Dependency Injection
 - [ESLint](https://eslint.org) Linter
 - [DiceBear](https://dicebear.com) Avatar generation
-- [idb](https://github.com/jakearchibald/idb)
+- [idb](https://github.com/jakearchibald/idb) IndexedDB Promise Wrapper
 
 ## Klassendiagramm
 
