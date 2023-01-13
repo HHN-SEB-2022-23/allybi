@@ -13,7 +13,7 @@ export const aussehen: Chapter = {
             choices: [
                 {
                     dialogType: DialogType.PlayerDialog,
-                    text: "A: Du stimmst zu",
+                    text: "Du stimmst zu",
 
                     next: {
                         dialogType: DialogType.NarratorDialog,
@@ -24,7 +24,7 @@ export const aussehen: Chapter = {
                             choices: [
                                 {
                                     dialogType: DialogType.PlayerDialog,
-                                    text: "A: \"Die haben hier auch Hamburger.\"",
+                                    text: "\"Die haben hier auch Hamburger.\"",
 
                                     next: {
                                         dialogType: DialogType.NarratorDialog,
@@ -35,7 +35,7 @@ export const aussehen: Chapter = {
                                             choices: [
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "A: Du ignorierst es. Immerhin ist es ja nur ein Spaß",
+                                                    text: "Du ignorierst es. Immerhin ist es ja nur ein Spaß",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -44,7 +44,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "B: Du stehst zu deiner Freundin. Ihr seid schon ein wenig zu weit gegangen",
+                                                    text: "Du stehst zu deiner Freundin. Ihr seid schon ein wenig zu weit gegangen",
 
                                                     next:{
                                                         dialogType: DialogType.NarratorDialog,
@@ -53,7 +53,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "C: Du machst deine Freundinnen auf die Situation aufmerksam.",
+                                                    text: "Du machst deine Freundinnen auf die Situation aufmerksam.",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -67,7 +67,7 @@ export const aussehen: Chapter = {
                                 },
                                 {
                                     dialogType: DialogType.PlayerDialog,
-                                    text: "B: Du greifst ein",
+                                    text: "Du greifst ein",
 
                                     next: {
                                         dialogType: DialogType.NarratorDialog,
@@ -78,7 +78,7 @@ export const aussehen: Chapter = {
                                             choices: [
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "A: Kläre deine Freunde auf",
+                                                    text: "Kläre deine Freunde auf",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -87,7 +87,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "B: Lass deine Freundin es erklären",
+                                                    text: "Lass deine Freundin es erklären",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -96,7 +96,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "C: Wechsel das Thema",
+                                                    text: "Wechsel das Thema",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -112,7 +112,7 @@ export const aussehen: Chapter = {
                                 },
                                 {
                                     dialogType: DialogType.PlayerDialog,
-                                    text: "C: Dir fällt das Unwohlsein deiner Freundin auf. Du frägst nach.",
+                                    text: "Dir fällt das Unwohlsein deiner Freundin auf. Du frägst nach.",
 
                                     next: {
                                         dialogType: DialogType.NarratorDialog,
@@ -123,7 +123,7 @@ export const aussehen: Chapter = {
                                             choices: [
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "A: \"Ihre Ernährung ist nicht unsere Angelegenheit\"",
+                                                    text: "\"Ihre Ernährung ist nicht unsere Angelegenheit\"",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -132,7 +132,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "B: Du beobachtest die Situation",
+                                                    text: "Du beobachtest die Situation",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -142,7 +142,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "C: Du stimmst deinen Freundinnen zu.",
+                                                    text: "Du stimmst deinen Freundinnen zu.",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -161,7 +161,7 @@ export const aussehen: Chapter = {
                 },
                 {
                     dialogType: DialogType.PlayerDialog,
-                    text: "B: Du verteidigst sie",
+                    text: "Du verteidigst sie",
 
                     next: {
                         dialogType: DialogType.NarratorDialog,
@@ -172,7 +172,7 @@ export const aussehen: Chapter = {
                             choices: [
                                 {
                                     dialogType: DialogType.PlayerDialog,
-                                    text: "A: Diskutier nicht weiter mit Ihnen",
+                                    text: "Diskutier nicht weiter mit Ihnen",
 
                                     next: {
                                         dialogType: DialogType.NarratorDialog,
@@ -183,7 +183,7 @@ export const aussehen: Chapter = {
                                             choices: [
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "A: Du Konfrontierst deine Freundinnen mit ihrem verhalten.",
+                                                    text: "Du Konfrontierst deine Freundinnen mit ihrem verhalten.",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -192,7 +192,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "B: Du versuchst vom Thema abzulenken",
+                                                    text: "Du versuchst vom Thema abzulenken",
 
                                                     next:{
                                                         dialogType: DialogType.NarratorDialog,
@@ -201,7 +201,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "C: Du mischt dich weiterhin nicht ein",
+                                                    text: "Du mischt dich weiterhin nicht ein",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -215,7 +215,7 @@ export const aussehen: Chapter = {
                                 },
                                 {
                                     dialogType: DialogType.PlayerDialog,
-                                    text: "B: Sage Ihnen dass der Körperbau nicht nur am essen liegt sondern auch viel abhängig von den Genen ist",
+                                    text: "Sage Ihnen dass der Körperbau nicht nur am essen liegt sondern auch viel abhängig von den Genen ist",
 
                                     next: {
                                         dialogType: DialogType.NarratorDialog,
@@ -226,7 +226,7 @@ export const aussehen: Chapter = {
                                             choices: [
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "A: Weiterhin versuchen ihnen klar zu machen das essen allein nicht den Körperbau bestimmt",
+                                                    text: "Weiterhin versuchen ihnen klar zu machen das essen allein nicht den Körperbau bestimmt",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -235,7 +235,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "B: Es dabei belassen",
+                                                    text: "Es dabei belassen",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -244,7 +244,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "C: Sie darauf aufmerksam machen das Ihre aussagen die Freundin verletzen",
+                                                    text: "Sie darauf aufmerksam machen das Ihre aussagen die Freundin verletzen",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -260,7 +260,7 @@ export const aussehen: Chapter = {
                                 },
                                 {
                                     dialogType: DialogType.PlayerDialog,
-                                    text: "C: Beharre darauf, dass sie aufhören sollen, der Freundin vorschreiben zu wollen, was sie essen soll",
+                                    text: "Beharre darauf, dass sie aufhören sollen, der Freundin vorschreiben zu wollen, was sie essen soll",
 
                                     next: {
                                         dialogType: DialogType.NarratorDialog,
@@ -271,7 +271,7 @@ export const aussehen: Chapter = {
                                             choices: [
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "A: Die situation dabei belassen",
+                                                    text: "Die situation dabei belassen",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -280,7 +280,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "B: Ihnen mitteilen das ihr \"Spaß\" nicht für alle lustig ist sondern verletzend",
+                                                    text: "Ihnen mitteilen das ihr \"Spaß\" nicht für alle lustig ist sondern verletzend",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -290,7 +290,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "C: Zu der Freundin die mit den Augen gerollt hat sagen das sie doch lieber nach sich schauen soll, vor allem bei den Klamotten die sie trägt",
+                                                    text: "Zu der Freundin die mit den Augen gerollt hat sagen das sie doch lieber nach sich schauen soll, vor allem bei den Klamotten die sie trägt",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -308,7 +308,7 @@ export const aussehen: Chapter = {
                 },
                 {
                     dialogType: DialogType.PlayerDialog,
-                    text: "C: Du versuchst deine Freunde aufzuklären",
+                    text: "Du versuchst deine Freunde aufzuklären",
 
                     next: {
                         dialogType: DialogType.NarratorDialog,
@@ -319,7 +319,7 @@ export const aussehen: Chapter = {
                             choices: [
                                 {
                                     dialogType: DialogType.PlayerDialog,
-                                    text: "A: \"Bodyshaming geht in beide Richtungen. Dick und Dünn\"",
+                                    text: "\"Bodyshaming geht in beide Richtungen. Dick und Dünn\"",
 
                                     next: {
                                         dialogType: DialogType.NarratorDialog,
@@ -330,7 +330,7 @@ export const aussehen: Chapter = {
                                             choices: [
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "A: \"Zeig dich doch nicht so uneinsichtig. Deine Genetik spielt da auch noch eine Rolle. \"",
+                                                    text: "\"Zeig dich doch nicht so uneinsichtig. Deine Genetik spielt da auch noch eine Rolle. \"",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -339,7 +339,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "B: Du rollst mit den Augen. Deine Freundin sollte nicht über Sachen sprechen, wenn sie das nötige Wissen nicht besitzt.",
+                                                    text: "Du rollst mit den Augen. Deine Freundin sollte nicht über Sachen sprechen, wenn sie das nötige Wissen nicht besitzt.",
 
                                                     next:{
                                                         dialogType: DialogType.NarratorDialog,
@@ -348,7 +348,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "C: Du überlässt deiner Freundin das Reden.",
+                                                    text: "Du überlässt deiner Freundin das Reden.",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -362,7 +362,7 @@ export const aussehen: Chapter = {
                                 },
                                 {
                                     dialogType: DialogType.PlayerDialog,
-                                    text: "B: Bitte deine Freundin es aus ihrer Perspektive zu erzählen",
+                                    text: "Bitte deine Freundin es aus ihrer Perspektive zu erzählen",
 
                                     next: {
                                         dialogType: DialogType.NarratorDialog,
@@ -373,7 +373,7 @@ export const aussehen: Chapter = {
                                             choices: [
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "A: \"Sag mal gehts noch? Du bist echt unsensibel\"",
+                                                    text: "\"Sag mal gehts noch? Du bist echt unsensibel\"",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -382,7 +382,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "B: \"Dein Kommentar war jetzt wirklich unpassend siehst du nicht das es sie bedrückt ?\"",
+                                                    text: "\"Dein Kommentar war jetzt wirklich unpassend siehst du nicht das es sie bedrückt ?\"",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -391,7 +391,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "C: \"Ich glaube nicht das du das selbe haben willst. Dann würdest du jetzt hier sitzen und mit anderen disskutieren ob du einen Salat essen darfst\"",
+                                                    text: "\"Ich glaube nicht das du das selbe haben willst. Dann würdest du jetzt hier sitzen und mit anderen disskutieren ob du einen Salat essen darfst\"",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -407,7 +407,7 @@ export const aussehen: Chapter = {
                                 },
                                 {
                                     dialogType: DialogType.PlayerDialog,
-                                    text: "C: Lass deine Freunde unter sich diskutieren ",
+                                    text: "Lass deine Freunde unter sich diskutieren ",
 
                                     next: {
                                         dialogType: DialogType.NarratorDialog,
@@ -418,7 +418,7 @@ export const aussehen: Chapter = {
                                             choices: [
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "A: Du versuchst das Thema zu wechseln",
+                                                    text: "Du versuchst das Thema zu wechseln",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -427,7 +427,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "B: Du enthältst dich weiterhin",
+                                                    text: "Du enthältst dich weiterhin",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
@@ -437,7 +437,7 @@ export const aussehen: Chapter = {
                                                 },
                                                 {
                                                     dialogType: DialogType.PlayerDialog,
-                                                    text: "C: Du versucht deiner Freundin klarzumachen, wie unsensibel ihre Aussage war",
+                                                    text: "Du versucht deiner Freundin klarzumachen, wie unsensibel ihre Aussage war",
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
