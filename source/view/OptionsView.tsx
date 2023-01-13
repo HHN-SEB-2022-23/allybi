@@ -13,7 +13,7 @@ export const OptionsView = observer(() => {
     const _optionsViewModel = inject("OptionsViewModel")
     const _settings = useAwaited<OptionsHook>(_optionsViewModel.useSettingsAsync(), [])
     const [updateCound, setUpdateCount] = useState(0)
-    const notifyPropertyChanged = (prop: string) => window.setTimeout(() => {
+    const notifyPropertyChanged = () => window.setTimeout(() => {
         setUpdateCount(updateCound + 1)
     }, 0)
 
@@ -37,23 +37,23 @@ export const OptionsView = observer(() => {
     </nav>
 })
 
-const OptionsBooleanView = (setting: OptionsBoolean, notifyPropertyChanged: (prop: string)=>void) =>
+const OptionsBooleanView = (setting: OptionsBoolean, notifyPropertyChanged: ()=>void) =>
     <input
         type="checkbox"
         checked={setting.value}
         onChange={ev => {
             setting.setValueAsync(ev.target.checked).then(() => {
-                notifyPropertyChanged(setting.name)
+                notifyPropertyChanged()
             })
         }}
     />
 
-const OptionStringView = (setting: OptionsString, notifyPropertyChanged: (prop: string)=>void) =>
+const OptionStringView = (setting: OptionsString, notifyPropertyChanged: ()=>void) =>
     <select
         defaultValue={setting.value}
         onChange={(ev) => {
             setting.setValueAsync(ev.target.value).then(() => {
-                notifyPropertyChanged(setting.name)
+                notifyPropertyChanged()
             })
         }}
     >
