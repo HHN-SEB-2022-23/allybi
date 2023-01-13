@@ -5,6 +5,12 @@
 @use "game";
 @use "scrollbar";
 
+@media (max-width: 512px) {
+    :root {
+        font-size: 0.75rem;
+    }
+}
+
 :root[data-dark-mode="true"] {
     --background: #{theme.$background};
     --foreground: #{theme.$foreground};
