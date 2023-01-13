@@ -2,8 +2,8 @@ import type { Chapter } from "../../types/Chapter"
 import { DialogType } from "../../types/DialogType"
 import type { Dialog } from "../../types/Dialog"
 
-const kevin = "Kevin (Mitschüler)"
-const hrMorina = "Herr Morina (Lehrer)"
+const kevin = "Kevin\n(Mitschüler)"
+const hrMorina = "Herr Morina\n(Lehrer)"
 
 const rejoin_001: Dialog = {
     dialogType: DialogType.PlayerOptionDialog,
@@ -58,7 +58,7 @@ export const behinderung: Chapter = {
         text: "Deine Klasse plant einen Wandertag in den Wald. Deine Klassenkameradin Anna ist blind und der Lehrer möchte sie deshalb nicht mitnehmen.\nIm Unterricht redet ihr darüber.",
         next: {
             dialogType: DialogType.NPCDialog,
-            speaker: "Lehrer",
+            speaker: hrMorina,
             text: "Ich kann das nicht verantworten dich mitzunehmen Anna.\nDu kannst dich im Wald leider nicht alleine zurechtfinden.",
             next: {
                 dialogType: DialogType.PlayerOptionDialog,

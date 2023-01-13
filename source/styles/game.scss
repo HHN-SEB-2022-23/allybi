@@ -53,14 +53,27 @@
         display: grid;
         grid-template-columns: auto 1fr auto;
         grid-gap: 2rem 1rem;
+        padding: {
+            left: 1rem;
+            right: 1rem;
+        }
 
         &__speaker > * {
             display: block;
         }
 
+        &__text {
+            &--player-voice,
+            &--npc-voice {
+                background-color: var(--foreground-8);
+                padding: 0.5rem 1rem;
+            }
+        }
+
         &__text,
         &__speaker {
             height: fit-content;
+            white-space: break-spaces;
             animation: {
                 duration: 500ms;
                 timing-function: linear;
