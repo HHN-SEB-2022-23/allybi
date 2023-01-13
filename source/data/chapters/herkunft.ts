@@ -13,7 +13,7 @@ export const herkunft: Chapter = {
         next: {
             dialogType: DialogType.NPCDialog,
             speaker: Mitspieler,
-            text: "Kein wunder das er so schnell rennen kann, er kommt ja aus dem Dschungel",
+            text: "Kein Wunder das er so schnell rennen kann, er kommt ja aus dem Dschungel",
 
             next: {
                 dialogType: DialogType.PlayerOptionDialog,
