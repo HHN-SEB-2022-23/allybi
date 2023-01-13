@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="de-DE">
     <head>
-        <!-- <script type="module">
+        <script type="module">
             if (
                 "serviceWorker" in navigator &&
                 location.protocol === "https:"
             ) {
                 navigator.serviceWorker.register(
                     new URL("sw.ts", import.meta.url),
-                    { type: "module" }
+                    { type: "module", scope: "/allybi/" }
                 );
             }
-        </script> -->
+        </script>
         <meta charset="UTF-8" />
         <meta http-equiv="language" content="de" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -22,8 +22,6 @@
         <meta property="og:title" content="Allybi" />
         <meta name="description" content="vom Alibi zum Ally" />
         <meta property="og:description" content="vom Alibi zum Ally" />
-        <!-- <meta property="og:url" content="" /> -->
-        <!-- <meta property="canonical" content="" /> -->
         <meta property="og:image" content="./favicon.png" />
 
         <title>Allybi</title>
