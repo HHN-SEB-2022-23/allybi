@@ -1,9 +1,5 @@
-$background: #050506;
+$background: #232329;
 $foreground: whitesmoke;
-
-@function font-size($size) {
-    @return $size * 1.1rem;
-}
 
 @mixin button {
     cursor: pointer;

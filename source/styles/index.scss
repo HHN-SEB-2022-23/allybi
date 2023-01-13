@@ -5,17 +5,33 @@
 @use "game";
 @use "scrollbar";
 
+:root[data-dark-mode="true"] {
+    --background: #{theme.$background};
+    --foreground: #{theme.$foreground};
+    --foreground-2: rgba(#{theme.$foreground}, 0.5);
+    --foreground-4: rgba(#{theme.$foreground}, 0.25);
+    --foreground-8: rgba(#{theme.$foreground}, 0.125);
+}
+
+:root[data-dark-mode="false"] {
+    --background: #{theme.$foreground};
+    --foreground: #{theme.$background};
+    --foreground-2: rgba(#{theme.$background}, 0.5);
+    --foreground-4: rgba(#{theme.$background}, 0.25);
+    --foreground-8: rgba(#{theme.$background}, 0.125);
+}
+
 :root {
-    background-color: theme.$background !important;
+    background-color: var(--background) !important;
 }
 
 *,
 *:before,
 *:after {
-    color: theme.$foreground;
+    color: var(--foreground);
     font-family: "JetBrains Mono", "Fira Code", "Source Code Pro",
         "DejaVu Sans Mono", "Courier New", monospace;
-    font-size: theme.font-size(1);
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
 }
@@ -39,4 +55,21 @@ body,
         left: auto;
         right: auto;
     }
+}
+
+:root[data-reduced-motion="true"] #app {
+    *,
+    *::after,
+    *::before {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+:root[data-contrast="more"] {
+    filter: contrast(20) !important;
+}
+
+:root[data-contrast="less"] {
+    filter: contrast(0.5) !important;
 }

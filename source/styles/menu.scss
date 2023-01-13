@@ -9,16 +9,16 @@
     justify-items: start;
 
     &__title {
-        font-size: theme.font-size(2.2);
+        font-size: 2.2rem;
     }
 
     &__subtitle {
-        color: rgba(theme.$foreground, 0.5);
+        color: var(--foreground-2);
     }
 
     &__item {
         display: block;
-        font-size: theme.font-size(1);
+        font-size: 1rem;
         @include theme.button;
     }
 }

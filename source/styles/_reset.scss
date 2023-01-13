@@ -21,7 +21,7 @@ fieldset {
     border: {
         width: 1px;
         style: solid;
-        color: rgba(theme.$foreground, 0.25);
+        color: var(--foreground-4);
         radius: 0.25rem;
     }
     padding: 0.5rem;
