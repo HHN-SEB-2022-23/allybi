@@ -65,7 +65,7 @@ export const behinderung: Chapter = {
                 choices: [
                     {
                         dialogType: DialogType.PlayerDialog,
-                        text: "Was soll das denn? Ist Ana nicht Teil unserer Klasse? Hat sie kein Recht darauf die selben Dinge zu lernen wie wir?\nUnd sowas nennt sich Lehrer!",
+                        text: "Was soll das denn? Ist Anna nicht Teil unserer Klasse? Hat sie kein Recht darauf die selben Dinge zu lernen wie wir?\nUnd sowas nennt sich Lehrer!",
                         next: mainChoice_001
                     },
                     {
