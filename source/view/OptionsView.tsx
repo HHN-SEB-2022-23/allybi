@@ -17,7 +17,7 @@ export const OptionsView = observer(() => {
         setUpdateCount(updateCound + 1)
     }, 0)
 
-    return <nav className="menu">
+    return <div className="menu">
         <h1 className="menu__title">Optionen</h1>
         <ol>
             {
@@ -34,7 +34,7 @@ export const OptionsView = observer(() => {
             }
         </ol>
         <button onClick={_optionsViewModel.onClickBack} className="menu__item">Zurück</button>
-    </nav>
+    </div>
 })
 
 const OptionsBooleanView = (setting: OptionsBoolean, notifyPropertyChanged: ()=>void) =>

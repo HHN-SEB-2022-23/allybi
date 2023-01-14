@@ -33,6 +33,10 @@ export class AppModel {
         this.state = AppState.OPTIONS
     }
 
+    openQA() {
+        this.state = AppState.QA
+    }
+
     openMainMenu() {
         this.state = AppState.MAIN_MENU
     }

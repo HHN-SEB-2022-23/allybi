@@ -5,6 +5,7 @@ import { MainMenuView } from "./MainMenuView"
 import { GameView } from "./GameView"
 import { OptionsView } from "./OptionsView"
 import { inject } from "../lib/globalDI"
+import { QAView } from "./QAView"
 
 /**
  * The main view of the application.
@@ -24,6 +25,9 @@ export const AppView = observer(() => {
 
     case AppState.OPTIONS:
         return <OptionsView />
+
+    case AppState.QA:
+        return <QAView />
 
     default:
         return <div>Unknown state {_appViewModel.state}</div>
