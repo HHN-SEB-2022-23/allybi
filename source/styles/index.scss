@@ -33,8 +33,50 @@
 
 :root,
 body,
-#app {
+#app,
+footer {
     overflow: hidden;
+}
+
+body {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 0;
+    grid-template-areas:
+        "app"
+        "footer";
+
+    #app {
+        grid-area: app;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+}
+
+#app,
+footer {
+    width: 100vw;
+    display: block;
+}
+
+#app {
+    max-width: 1560px;
+    padding: 1rem;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+footer {
+    padding: 0.5rem 1rem;
+
+    a {
+        cursor: pointer !important;
+    }
 }
 
 *,
@@ -53,20 +95,10 @@ svg {
 }
 
 :root,
-body,
-#app {
+body {
     height: 100vh;
     width: 100vw;
     display: block;
-}
-
-#app {
-    max-width: 1560px;
-    padding: 1rem;
-    margin: {
-        left: auto;
-        right: auto;
-    }
 }
 
 :root[data-reduced-motion="true"] #app {
