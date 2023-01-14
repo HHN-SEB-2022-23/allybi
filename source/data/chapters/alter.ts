@@ -1,3 +1,4 @@
+import { Emotion } from "../../components/Avatar"
 import type { Chapter } from "../../types/Chapter"
 import { DialogType } from "../../types/DialogType"
 import { Tag } from "../../types/Tags"
@@ -11,6 +12,7 @@ export const alter: Chapter = {
         next: {
             dialogType: DialogType.NPCDialog,
             speaker: "Der Meister",
+            emotion: Emotion.sad,
             text: "Ach, hör mir doch auf. Ich mach das jetzt seit 40 Jahren und lass mir von dir nicht sagen, wie ich meinen Job zu machen hab!",
             next: {
                 dialogType: DialogType.NarratorDialog,
@@ -38,6 +40,7 @@ export const alter: Chapter = {
                                                 next: {
                                                     dialogType: DialogType.NPCDialog,
                                                     speaker: "Der Meister",
+                                                    emotion: Emotion.sad,
                                                     text: "Der Junge hat doch keine Ahnung, wovon er redet in seinem Alter.",
 
                                                     next: {
@@ -49,6 +52,7 @@ export const alter: Chapter = {
                                                             dialogType:
                                                         DialogType.NPCDialog,
                                                             speaker: "Der Meister",
+                                                            emotion: Emotion.neutral,
                                                             text: "Gut, vielleicht hast du ja Recht. Ich denk mal darüber nach und rede dann nochmal mit Paul.",
 
                                                             next: {
@@ -104,6 +108,7 @@ export const alter: Chapter = {
                                 text: "Ich habe gerade euer Gespräch mitbekommen und ich finde das war nicht in Ordnung von dir. Du solltest ihm konstruktives Feedback auf seine Vorschläge geben und dir die Ideen erstmal anhören bevor du abblockst.",
                                 next: {
                                     dialogType: DialogType.NPCDialog,
+                                    emotion: Emotion.neutral,
                                     speaker: "Der Meister",
                                     text: "Der Junge hat doch keine Ahnung, wovon er redet in seinem Alter.",
                                     next: {
@@ -115,6 +120,7 @@ export const alter: Chapter = {
                                             next: {
                                                 dialogType: DialogType.NPCDialog,
                                                 speaker: "Der Meister",
+                                                emotion: Emotion.neutral,
                                                 text: "Was soll ich tun?",
 
                                                 next: {
@@ -195,6 +201,7 @@ export const alter: Chapter = {
                                             next: {
                                                 dialogType: DialogType.NPCDialog,
                                                 speaker: "Der Meister",
+                                                emotion: Emotion.sad,
                                                 text: "Der Junge hat doch keine Ahnung, wovon er redet in seinem Alter.",
                                                 next: {
                                                     dialogType: DialogType.PlayerDialog,
@@ -229,6 +236,7 @@ export const alter: Chapter = {
                                                 next: {
                                                     dialogType: DialogType.NPCDialog,
                                                     speaker: "Paul",
+                                                    emotion: Emotion.neutral,
                                                     text: "Ja klar, was gibts?",
                                                     next: {
                                                         dialogType:

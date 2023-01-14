@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+import { Emotion } from "../../components/Avatar"
 import type { Chapter } from "../../types/Chapter"
 import { DialogType } from "../../types/DialogType"
 import { Tag } from "../../types/Tags"
@@ -13,6 +14,7 @@ export const herkunft: Chapter = {
         next: {
             dialogType: DialogType.NPCDialog,
             speaker: Mitspieler,
+            emotion: Emotion.neutral,
             text: "Kein Wunder das er so schnell rennen kann, er kommt ja aus dem Dschungel",
 
             next: {
@@ -29,6 +31,7 @@ export const herkunft: Chapter = {
                             next: {
                                 dialogType: DialogType.NPCDialog,
                                 speaker: Mitspieler,
+                                emotion: Emotion.neutral,
                                 text: "Wenn er für jedes Tor eine Banane bekommen würde, dann würde er bestimmt mehr Tore schießen",
 
                                 next: {
@@ -49,6 +52,7 @@ export const herkunft: Chapter = {
                                                     next: {
                                                         dialogType: DialogType.NPCDialog,
                                                         speaker: Mitspieler,
+                                                        emotion: Emotion.neutral,
                                                         text: "Der kann sich ja nichtmal ordentliche Schuhe leisten",
 
                                                         next: {
@@ -199,6 +203,7 @@ export const herkunft: Chapter = {
                             next: {
                                 dialogType: DialogType.NPCDialog,
                                 speaker: Mitspieler,
+                                emotion: Emotion.sad,
                                 text: "Warum bin ich der Schuldige, wenn sich der Affe doch mehr Mühe beim Bälle passen machen könnte!",
 
                                 next: {
@@ -273,6 +278,7 @@ export const herkunft: Chapter = {
                                                                     next: {
                                                                         dialogType: DialogType.NPCDialog,
                                                                         speaker: Mitspieler,
+                                                                        emotion: Emotion.sad,
                                                                         text: "Die beiden sind befreundet, natürlich lügt der doch!",
 
                                                                         next: {
@@ -318,6 +324,7 @@ export const herkunft: Chapter = {
                                                     next: {
                                                         dialogType: DialogType.NPCDialog,
                                                         speaker: Mitspieler,
+                                                        emotion: Emotion.sad,
                                                         text: "Ich meinte das doch so nicht! Es war nur ein Scherz.",
 
                                                         next: {
@@ -394,6 +401,7 @@ export const herkunft: Chapter = {
                             next: {
                                 dialogType: DialogType.NPCDialog,
                                 speaker: Mitspieler,
+                                emotion: Emotion.sad,
                                 text: "Wer sagt denn, dass ich eifersüchtig bin? Ich sage doch nur die Wahrheit!",
 
                                 next: {

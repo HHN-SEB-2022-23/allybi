@@ -1,3 +1,4 @@
+import { Emotion } from "../components/Avatar"
 import type { DialogType } from "./DialogType"
 
 export type NarratorDialog = {
@@ -22,6 +23,7 @@ export type NPCDialog = {
     speaker: string;
     text: string;
     next?: Dialog;
+    emotion: Emotion;
 };
 
 export type ChapterEnd = {
