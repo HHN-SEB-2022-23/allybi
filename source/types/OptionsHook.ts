@@ -8,7 +8,7 @@ export type OptionsString = {
     name: string,
     value: string,
     setValueAsync: (value: string) => Promise<void>,
-    valueOptions: Array<string>
+    valueOptions: Array<[string, string]>
 }
 
 export type OptionsHook = Array<OptionsBoolean | OptionsString>
