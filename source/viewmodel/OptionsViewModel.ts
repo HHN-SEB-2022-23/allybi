@@ -19,7 +19,7 @@ export class OptionsViewModel {
     }
 
     public readonly onClickBack: MouseEventHandler<Element> = () => {
-        this._appModel.openMainMenu()
+        this._appModel.navigateBack()
     }
 
     private updateDocumentData(data: Record<string, boolean | string | number>) {
@@ -61,7 +61,7 @@ export class OptionsViewModel {
                 setValueAsync: async (value) => {
                     await this._optionsModel.setContrastAsync(value as OptionsDBType["contrast"])
                 },
-                valueOptions: ["normal", "more", "less"]
+                valueOptions: [["normal", "normal"], ["erhöht", "more"], ["verringert", "less"]]
             }
         ]
     }

@@ -5,24 +5,36 @@
 @use "game";
 @use "scrollbar";
 
+@media (max-width: 512px) {
+    :root {
+        font-size: 0.75rem;
+    }
+}
+
 :root[data-dark-mode="true"] {
     --background: #{theme.$background};
     --foreground: #{theme.$foreground};
-    --foreground-2: rgba(#{theme.$foreground}, 0.5);
-    --foreground-4: rgba(#{theme.$foreground}, 0.25);
-    --foreground-8: rgba(#{theme.$foreground}, 0.125);
+    --foreground-2: #{theme.$foreground}80;
+    --foreground-4: #{theme.$foreground}40;
+    --foreground-8: #{theme.$foreground}20;
 }
 
 :root[data-dark-mode="false"] {
     --background: #{theme.$foreground};
     --foreground: #{theme.$background};
-    --foreground-2: rgba(#{theme.$background}, 0.5);
-    --foreground-4: rgba(#{theme.$background}, 0.25);
-    --foreground-8: rgba(#{theme.$background}, 0.125);
+    --foreground-2: #{theme.$background}80;
+    --foreground-4: #{theme.$background}40;
+    --foreground-8: #{theme.$background}20;
 }
 
 :root {
     background-color: var(--background) !important;
+}
+
+:root,
+body,
+#app {
+    overflow: hidden;
 }
 
 *,
@@ -36,8 +48,8 @@
     line-height: 1.5;
 }
 
-* {
-    overflow: hidden;
+svg {
+    fill: currentColor;
 }
 
 :root,
@@ -49,7 +61,7 @@ body,
 }
 
 #app {
-    max-width: 1080px;
+    max-width: 1560px;
     padding: 1rem;
     margin: {
         left: auto;
@@ -67,9 +79,9 @@ body,
 }
 
 :root[data-contrast="more"] {
-    filter: contrast(20) !important;
+    filter: contrast(1.5) !important;
 }
 
 :root[data-contrast="less"] {
-    filter: contrast(0.5) !important;
+    filter: contrast(0.5) brightness(1.25) !important;
 }

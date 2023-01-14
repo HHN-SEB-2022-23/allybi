@@ -23,7 +23,7 @@ export const OptionsView = observer(() => {
             {
                 _settings.map((setting, i) => <li key={i}>
                     <label className="menu__item" key={i}>
-                        {setting.name}
+                        {setting.name}:&nbsp;
                         {
                             typeof setting.value == "boolean"
                                 ? OptionsBooleanView(setting, notifyPropertyChanged)
@@ -62,9 +62,9 @@ const OptionStringView = (setting: OptionsString, notifyPropertyChanged: ()=>voi
                 (valueOption, i) =>
                     <option
                         key={i}
-                        value={valueOption}
+                        value={valueOption[1]}
                     >
-                        {valueOption}
+                        {valueOption[0]}
                     </option>
             )
         }
