@@ -60,11 +60,8 @@ body {
 footer {
     width: 100vw;
     display: block;
-}
-
-#app {
     max-width: 1560px;
-    padding: 1rem;
+    padding: 0.25rem 1rem;
     margin: {
         left: auto;
         right: auto;
@@ -72,8 +69,6 @@ footer {
 }
 
 footer {
-    padding: 0.5rem 1rem;
-
     a {
         cursor: pointer !important;
     }
