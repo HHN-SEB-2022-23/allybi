@@ -23,7 +23,7 @@ export type NPCDialog = {
     speaker: string;
     text: string;
     next?: Dialog;
-    emotion?: Emotion;
+    emotion: Emotion;
 };
 
 export type ChapterEnd = {

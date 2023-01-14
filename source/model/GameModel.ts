@@ -65,6 +65,7 @@ export class GameModel {
                 this.pushDialogHistory({
                     speaker: dialog.speaker,
                     text: dialog.text,
+                    emotion: dialog.emotion,
                     isPlayer: false,
                     isNarrator: false,
                 })

@@ -91,7 +91,7 @@ const dialogHistoryEntryView = (el: DialogHistoryEntry, index: number) => (
                 </>)
                 : (<>
                     <span className="dialog-history__speaker">
-                        <Avatar className="dialog-history__speaker--image" seed={el.speaker} />
+                        <Avatar className="dialog-history__speaker--image" seed={el.speaker} emotion={el.emotion} />
                         <span className="game__dialog-speaker">{el.speaker}</span>
                     </span>
                     <span id={`dialog-text-${index}`} className="dialog-history__text dialog-history__text--npc-voice">

@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+import { Emotion } from "../../components/Avatar"
 import type { Chapter } from "../../types/Chapter"
 import { DialogType } from "../../types/DialogType"
 import { Tag } from "../../types/Tags"
@@ -14,6 +15,7 @@ export const religion: Chapter = {
         next: {
             dialogType: DialogType.NPCDialog,
             speaker: AeltererHerr,
+            emotion: Emotion.sad,
             text: "Geh zurück, wo du hergekommen bist!",
 
             next: {
@@ -34,6 +36,7 @@ export const religion: Chapter = {
                                 next: {
                                     dialogType: DialogType.NPCDialog,
                                     speaker: AeltererHerr,
+                                    emotion: Emotion.sad,
                                     text: "Ihr Islamisten nehmt uns Deutschen schamlos die Arbeit weg, schämen solltet ihr euch!",
 
                                     next: {
@@ -53,6 +56,7 @@ export const religion: Chapter = {
                                                         next: {
                                                             dialogType: DialogType.NPCDialog,
                                                             speaker: AeltererHerr,
+                                                            emotion: Emotion.sad,
                                                             text: "Früher war alles besser, da gab es noch Ordnung in Deutschland.",
                                                             next: {
                                                                 dialogType: DialogType.NarratorDialog,
@@ -60,6 +64,7 @@ export const religion: Chapter = {
                                                                 next: {
                                                                     dialogType: DialogType.NPCDialog,
                                                                     speaker: AeltererHerr,
+                                                                    emotion: Emotion.sad,
                                                                     text: "Jetzt darf man hier nicht mal seine Meinung sagen, oder was?",
                                                                     next: {
                                                                         dialogType: DialogType.NarratorDialog,
@@ -104,6 +109,7 @@ export const religion: Chapter = {
                                                                                                 next: {
                                                                                                     dialogType: DialogType.NPCDialog,
                                                                                                     speaker: AeltererHerr,
+                                                                                                    emotion: Emotion.sad,
                                                                                                     text: "Man würd doch noch seine Meinung sagen dürfen!",
 
                                                                                                     next: {
@@ -152,6 +158,7 @@ export const religion: Chapter = {
                                                                                 next: {
                                                                                     dialogType: DialogType.NPCDialog,
                                                                                     speaker: AeltererHerr,
+                                                                                    emotion: Emotion.sad,
                                                                                     text: "So war das doch garnicht gemeint! Für euch jungen Menschen ist heutzutage doch alles eine Beleidigung!",
 
                                                                                     next: {
@@ -172,6 +179,7 @@ export const religion: Chapter = {
                                                                                 next: {
                                                                                     dialogType: DialogType.NPCDialog,
                                                                                     speaker: AeltererHerr,
+                                                                                    emotion: Emotion.sad,
                                                                                     text: "Ist mir doch egal, welcher Religion du folgst. Zwing mir deinen Allah aber bloß nicht auf.",
 
                                                                                     next: {
@@ -221,6 +229,7 @@ export const religion: Chapter = {
                                                                 next: {
                                                                     dialogType: DialogType.NPCDialog,
                                                                     speaker: AeltererHerr,
+                                                                    emotion: Emotion.sad,
                                                                     text: "Wieso das denn? Das ist doch vollkommen übertrieben!",
                                                                     next: {
                                                                         dialogType: DialogType.PlayerOptionDialog,
@@ -244,6 +253,7 @@ export const religion: Chapter = {
                                                                                             next: {
                                                                                                 dialogType: DialogType.NPCDialog,
                                                                                                 speaker: AeltererHerr,
+                                                                                                emotion: Emotion.sad,
                                                                                                 text: "Jaja, ich bin ja jetzt ruhig.",
 
                                                                                                 next: {
@@ -276,6 +286,7 @@ export const religion: Chapter = {
                                                                                     next: {
                                                                                         dialogType: DialogType.NPCDialog,
                                                                                         speaker: AeltererHerr,
+                                                                                        emotion: Emotion.sad,
                                                                                         text: "Ich bin ja schon leise. Heutzutage darf man ja nicht mal seine Meinung sagen.",
 
                                                                                         next: {
@@ -351,6 +362,7 @@ export const religion: Chapter = {
                                                                     next: {
                                                                         dialogType: DialogType.NPCDialog,
                                                                         speaker: AeltererHerr,
+                                                                        emotion: Emotion.sad,
                                                                         text: "Typisch die heutige Jugend! Die müssen auch alles mit ihrem neumodischen Krimskrams aufnehmen, wenn ihnen etwas nicht passt! Sei du mal Glücklich, dass ich nicht die Polizei rufe! Eine Frechheit!",
 
                                                                         next: {
@@ -397,6 +409,7 @@ export const religion: Chapter = {
                                                                 next: {
                                                                     dialogType: DialogType.NPCDialog,
                                                                     speaker: AeltererHerr,
+                                                                    emotion: Emotion.sad,
                                                                     text: "Ist ja gut, aber pack endlich dieses Handy weg!",
 
                                                                     next: {
@@ -457,6 +470,7 @@ export const religion: Chapter = {
                                                                     next: {
                                                                         dialogType: DialogType.NPCDialog,
                                                                         speaker: AeltererHerr,
+                                                                        emotion: Emotion.sad,
                                                                         text: "Frechheit mir sowas vorzuwerfen. Nimm dein Handy runter, ich bin ja schon still!",
 
                                                                         next: {
@@ -511,6 +525,7 @@ export const religion: Chapter = {
                                 next: {
                                     dialogType: DialogType.NPCDialog,
                                     speaker: AeltererHerr,
+                                    emotion: Emotion.sad,
                                     text: "Kopftuchträger haben hier in Deutschland nichts zu suchen! Ihr seid doch alles Terroristen.",
                                     next: {
                                         dialogType: DialogType.PlayerOptionDialog,
@@ -582,6 +597,7 @@ export const religion: Chapter = {
                                                     next: {
                                                         dialogType: DialogType.NPCDialog,
                                                         speaker: AeltererHerr,
+                                                        emotion: Emotion.sad,
                                                         text: "Typisch Kopftuchträger, die können ja alle eh kein Deutsch!",
 
                                                         next: {
@@ -642,6 +658,7 @@ export const religion: Chapter = {
                                                         next: {
                                                             dialogType: DialogType.NPCDialog,
                                                             speaker: AeltererHerr,
+                                                            emotion: Emotion.sad,
                                                             text: "Das mag ja sein, aber trotzdem gehören die ja zur Religion an",
                                                             next: {
                                                                 dialogType: DialogType.PlayerOptionDialog,
