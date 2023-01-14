@@ -6,13 +6,19 @@ import { AppState } from "../types/AppState"
  */
 export class AppModel {
     private _state: AppState = AppState.MAIN_MENU
+    private _prevState: AppState | null = AppState.MAIN_MENU
 
     public get state() {
         return this._state
     }
 
     private set state(state: AppState) {
+        this._prevState = this._state
         this._state = state
+    }
+
+    public get prevState() {
+        return this._prevState
     }
 
     constructor() {
@@ -27,7 +33,21 @@ export class AppModel {
         this.state = AppState.OPTIONS
     }
 
+    openQA() {
+        this.state = AppState.QA
+    }
+
     openMainMenu() {
         this.state = AppState.MAIN_MENU
+    }
+
+    navigateBack() {
+        if (this._prevState !== null) {
+            this._state = this._prevState
+            this._prevState = null
+            return true
+        }
+
+        return false
     }
 }

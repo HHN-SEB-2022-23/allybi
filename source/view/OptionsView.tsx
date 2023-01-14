@@ -17,13 +17,13 @@ export const OptionsView = observer(() => {
         setUpdateCount(updateCound + 1)
     }, 0)
 
-    return <nav className="menu">
+    return <div className="menu">
         <h1 className="menu__title">Optionen</h1>
         <ol>
             {
                 _settings.map((setting, i) => <li key={i}>
                     <label className="menu__item" key={i}>
-                        {setting.name}
+                        {setting.name}:&nbsp;
                         {
                             typeof setting.value == "boolean"
                                 ? OptionsBooleanView(setting, notifyPropertyChanged)
@@ -34,7 +34,7 @@ export const OptionsView = observer(() => {
             }
         </ol>
         <button onClick={_optionsViewModel.onClickBack} className="menu__item">Zurück</button>
-    </nav>
+    </div>
 })
 
 const OptionsBooleanView = (setting: OptionsBoolean, notifyPropertyChanged: ()=>void) =>
@@ -62,9 +62,9 @@ const OptionStringView = (setting: OptionsString, notifyPropertyChanged: ()=>voi
                 (valueOption, i) =>
                     <option
                         key={i}
-                        value={valueOption}
+                        value={valueOption[1]}
                     >
-                        {valueOption}
+                        {valueOption[0]}
                     </option>
             )
         }

@@ -17,6 +17,14 @@
     &__chapter-title {
         grid-area: chapter-title;
         font-size: 2rem;
+    }
+
+    &__top-bar {
+        display: block;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow-y: visible !important;
         border: {
             bottom: {
                 width: 1px;
@@ -26,6 +34,59 @@
         }
         margin: {
             bottom: 0.5rem;
+        }
+    }
+
+    &__home,
+    &__settings,
+    &__skip {
+        cursor: pointer !important;
+        * {
+            cursor: pointer !important;
+        }
+        position: relative;
+        overflow: visible !important;
+        width: 2rem;
+        height: 2rem;
+
+        > svg {
+            height: 100%;
+            width: 100%;
+        }
+
+        &:hover::after {
+            pointer-events: none;
+            background-color: var(--foreground-8);
+            border-radius: 2px;
+            backdrop-filter: blur(16px);
+            font-size: 0.75rem;
+            padding: 0.1em 0.25em;
+            position: absolute;
+            display: block;
+            top: 100%;
+            left: 50%;
+            width: fit-content;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__home:hover::after {
+        content: "Hauptmenü";
+    }
+
+    &__settings:hover::after {
+        content: "Optionen";
+    }
+
+    &__skip:hover::after {
+        content: "Überspringen";
+    }
+
+    &__nav {
+        display: block;
+        overflow: visible !important;
+        > * {
+            display: inline-block;
         }
     }
 
@@ -49,18 +110,31 @@
     .dialog-history {
         grid-area: dialog-history;
         max-height: 100%;
-        overflow-y: scroll;
+        overflow-y: auto;
         display: grid;
         grid-template-columns: auto 1fr auto;
         grid-gap: 2rem 1rem;
+        padding: {
+            left: 1rem;
+            right: 1rem;
+        }
 
         &__speaker > * {
             display: block;
         }
 
+        &__text {
+            &--player-voice,
+            &--npc-voice {
+                background-color: var(--foreground-8);
+                padding: 0.5rem 1rem;
+            }
+        }
+
         &__text,
         &__speaker {
             height: fit-content;
+            white-space: break-spaces;
             animation: {
                 duration: 500ms;
                 timing-function: linear;

@@ -2,7 +2,6 @@ import { makeAutoObservable } from "mobx"
 import { inject } from "../lib/globalDI"
 import { MouseEventHandler } from "react"
 import { OptionsHook } from "../types/OptionsHook"
-import { UserPreferences } from "../lib/UserPreferences"
 import { OptionsDBType } from "../lib/DB"
 
 /**
@@ -13,13 +12,14 @@ import { OptionsDBType } from "../lib/DB"
 export class OptionsViewModel {
     private readonly _optionsModel = inject("OptionsModel")
     private readonly _appModel = inject("AppModel")
+    private readonly _userPreferences = inject("UserPreferences")
 
     public constructor() {
         makeAutoObservable(this)
     }
 
     public readonly onClickBack: MouseEventHandler<Element> = () => {
-        this._appModel.openMainMenu()
+        this._appModel.navigateBack()
     }
 
     private updateDocumentData(data: Record<string, boolean | string | number>) {
@@ -30,13 +30,13 @@ export class OptionsViewModel {
 
     public async useSettingsAsync(): Promise<OptionsHook> {
         const reducedMotion =
-            await this._optionsModel.getReducedMotionAsync() ?? UserPreferences.getUserPreferedReducedMotion()
+            await this._optionsModel.getReducedMotionAsync() ?? this._userPreferences.getUserPreferedReducedMotion()
 
         const darkMode =
-            await this._optionsModel.getDarkModeAsync() ?? UserPreferences.getUserPreferedDarkMode()
+            await this._optionsModel.getDarkModeAsync() ?? this._userPreferences.getUserPreferedDarkMode()
 
         const contrast =
-            await this._optionsModel.getContrastAsync() ?? UserPreferences.getUserPreferedContrast()
+            await this._optionsModel.getContrastAsync() ?? this._userPreferences.getUserPreferedContrast()
 
         this.updateDocumentData({ reducedMotion, darkMode, contrast })
 
@@ -61,7 +61,7 @@ export class OptionsViewModel {
                 setValueAsync: async (value) => {
                     await this._optionsModel.setContrastAsync(value as OptionsDBType["contrast"])
                 },
-                valueOptions: ["normal", "more", "less"]
+                valueOptions: [["normal", "normal"], ["erhöht", "more"], ["verringert", "less"]]
             }
         ]
     }

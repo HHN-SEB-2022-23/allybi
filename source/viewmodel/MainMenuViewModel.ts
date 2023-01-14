@@ -22,6 +22,10 @@ export class MainMenuViewModel {
         this._appModel.openOptions()
     }
 
+    public readonly openQA: MouseEventHandler<Element> = () => {
+        this._appModel.openQA()
+    }
+
     constructor() {
         makeAutoObservable(this)
     }

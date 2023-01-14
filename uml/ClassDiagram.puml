@@ -3,7 +3,7 @@ skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 
 package lib {
-    class UserPreferences << (S,#FF7700) Static >> {
+    class UserPreferences {
         +getUserPreferedReducedMotion(): boolean
         +getUserPreferedDarkMode(): boolean
         +getUserPreferedContrast(): string
@@ -122,11 +122,14 @@ package components {
 package model {
     class AppModel {
         -_state: AppState
+        -_prevState: AppState?
         +get state: AppState
         -set state: AppState
+        +get prevState: AppState?
         +startGame(): void
         +openOptions(): void
         +openMainMenu(): void
+        +navigateBack(): boolean
     }
     AppModel --> "1" AppState
 
@@ -178,6 +181,7 @@ package viewmodel {
         -_appModel: AppModel
         +nextChapter: Function<void>
         +mainMenu: Function<void>
+        +openOptions: Function<void>
         +get dialogHistory: Array<DialogHistoryEntry>
         +get sceneTitle: Array<string>
         -chapterEndInput(): { speaker: string; choices: Array<DialogChoice>; }
@@ -206,7 +210,7 @@ package viewmodel {
         +useSettingsAsync(): Promise<Array<OptionsBoolean | OptionsString>>
     }
     OptionsViewModel *-- "1" OptionsModel
-    UserPreferences -up-> OptionsViewModel
+    UserPreferences -up-* OptionsViewModel
 }
 
 package view {

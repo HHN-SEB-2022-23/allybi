@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { DIContainer } from "@frank-mayer/dilight"
 
+import { UserPreferences } from "./UserPreferences"
+
 import { AppModel } from "../model/AppModel"
 import { GameModel } from "../model/GameModel"
 import { MainMenuModel } from "../model/MainMenuModel"
@@ -13,6 +15,8 @@ import { OptionsViewModel } from "../viewmodel/OptionsViewModel"
 
 // Global dependency injection container
 const globalDI = new DIContainer()
+    // lib
+    .addTransient(UserPreferences, "UserPreferences")
     // model
     .addSingleton(AppModel, "AppModel")
     .addSingleton(GameModel, "GameModel")

@@ -21,6 +21,10 @@ export class GameViewModel {
         this._appModel.openMainMenu()
     }
 
+    public readonly openOptions = () => {
+        this._appModel.openOptions()
+    }
+
     public get dialogHistory(): ReadonlyArray<DialogHistoryEntry> {
         return this._gameModel.dialogHistory
     }

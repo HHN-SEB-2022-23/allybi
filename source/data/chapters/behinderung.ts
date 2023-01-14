@@ -3,8 +3,8 @@ import { DialogType } from "../../types/DialogType"
 import type { Dialog } from "../../types/Dialog"
 import { Emotion } from "../../components/Avatar"
 
-const kevin = "Kevin (Mitschüler)"
-const hrMorina = "Herr Morina (Lehrer)"
+const kevin = "Kevin\n(Mitschüler)"
+const hrMorina = "Herr Morina\n(Lehrer)"
 
 const rejoin_001: Dialog = {
     dialogType: DialogType.PlayerOptionDialog,
@@ -62,15 +62,15 @@ export const behinderung: Chapter = {
         text: "Deine Klasse plant einen Wandertag in den Wald. Deine Klassenkameradin Anna ist blind und der Lehrer möchte sie deshalb nicht mitnehmen.\nIm Unterricht redet ihr darüber.",
         next: {
             dialogType: DialogType.NPCDialog,
-            speaker: "Lehrer",
             emotion: Emotion.sad,
+            speaker: hrMorina,
             text: "Ich kann das nicht verantworten dich mitzunehmen Anna.\nDu kannst dich im Wald leider nicht alleine zurechtfinden.",
             next: {
                 dialogType: DialogType.PlayerOptionDialog,
                 choices: [
                     {
                         dialogType: DialogType.PlayerDialog,
-                        text: "Was soll das denn? Ist Ana nicht Teil unserer Klasse? Hat sie kein Recht darauf die selben Dinge zu lernen wie wir?\nUnd sowas nennt sich Lehrer!",
+                        text: "Was soll das denn? Ist Anna nicht Teil unserer Klasse? Hat sie kein Recht darauf die selben Dinge zu lernen wie wir?\nUnd sowas nennt sich Lehrer!",
                         next: mainChoice_001
                     },
                     {

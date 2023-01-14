@@ -4,6 +4,10 @@ import { inject } from "../lib/globalDI"
 import { Avatar } from "../components/Avatar"
 import type { DialogHistoryEntry } from "../types/DialogHistoryEntry"
 import type { DialogChoice } from "../types/DialogChoice"
+import { SkipNext } from "../components/SkipNext"
+import { Settings } from "../components/Settings"
+import { Home } from "../components/Home"
+import { nextEventLoop } from "@frank-mayer/magic"
 
 const playerName = "Du"
 
@@ -16,18 +20,28 @@ export const GameView = observer(() => {
     const _gameViewModel = inject("GameViewModel")
 
     useEffect(() => {
-        const latestDialog = document.getElementById(
-            `dialog-text-${_gameViewModel.dialogHistory.length - 1}`
-        )
+        nextEventLoop().then(() => {
+            const latestDialog = document.getElementById(
+                `dialog-text-${_gameViewModel.dialogHistory.length - 1}`
+            )
 
-        if (latestDialog) {
-            latestDialog.scrollIntoView(smoothScrollOptions)
-        }
+            latestDialog?.scrollIntoView(smoothScrollOptions)
+        })
     })
 
     return (
         <div className="game">
-            <h1 className="game__chapter-title">{_gameViewModel.sceneTitle}</h1>
+            <div className="game__top-bar">
+                <h1 className="game__chapter-title">{_gameViewModel.sceneTitle}</h1>
+                <nav className="game__nav">
+                    <button onClick={_gameViewModel.mainMenu} className="game__home"><Home/></button>
+                    <button onClick={_gameViewModel.openOptions} className="game__settings"><Settings/></button>
+                    {_gameViewModel.isFinished
+                        ? null
+                        : <button onClick={_gameViewModel.nextChapter} className="game__skip"><SkipNext/></button>
+                    }
+                </nav>
+            </div>
             <div className="game__dialog-history dialog-history">
                 {_gameViewModel.dialogHistory.map(dialogHistoryEntryView)}
             </div>
