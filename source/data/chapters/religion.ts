@@ -210,7 +210,7 @@ export const religion: Chapter = {
 
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
-                                                        text: "gibst du den älteren Herrn bekannt.",
+                                                        text: "gibst du dem älteren Herrn bekannt.",
 
                                                         next: {
                                                             dialogType: DialogType.PlayerDialog,
