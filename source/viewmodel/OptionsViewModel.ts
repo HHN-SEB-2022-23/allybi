@@ -19,7 +19,7 @@ export class OptionsViewModel {
     }
 
     public readonly onClickBack: MouseEventHandler<Element> = () => {
-        this._appModel.openMainMenu()
+        this._appModel.navigateBack()
     }
 
     private updateDocumentData(data: Record<string, boolean | string | number>) {
