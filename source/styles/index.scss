@@ -31,6 +31,12 @@
     background-color: var(--background) !important;
 }
 
+:root,
+body,
+#app {
+    overflow: hidden;
+}
+
 *,
 *:before,
 *:after {
@@ -42,8 +48,8 @@
     line-height: 1.5;
 }
 
-* {
-    overflow: hidden;
+svg {
+    fill: currentColor;
 }
 
 :root,

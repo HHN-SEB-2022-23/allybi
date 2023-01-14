@@ -122,11 +122,14 @@ package components {
 package model {
     class AppModel {
         -_state: AppState
+        -_prevState: AppState?
         +get state: AppState
         -set state: AppState
+        +get prevState: AppState?
         +startGame(): void
         +openOptions(): void
         +openMainMenu(): void
+        +navigateBack(): boolean
     }
     AppModel --> "1" AppState
 
@@ -178,6 +181,7 @@ package viewmodel {
         -_appModel: AppModel
         +nextChapter: Function<void>
         +mainMenu: Function<void>
+        +openOptions: Function<void>
         +get dialogHistory: Array<DialogHistoryEntry>
         +get sceneTitle: Array<string>
         -chapterEndInput(): { speaker: string; choices: Array<DialogChoice>; }
