@@ -44,8 +44,8 @@ const emotion = (emotion: Emotion | undefined): Partial<Options> => {
         }
     case Emotion.neutral:
         return {
-            mouth: ["bite", "diagram", "grill01", "grill02", "grill03", "square01", "square02"],
-            eyes: ["bulging", "eva", "frame1", "frame2", "glow", "happy", "hearts", "robocop", "round", "roundFrame01", "roundFrame02", "sensor", "shade01"]
+            mouth: ["diagram", "grill01", "grill02", "square01", "square02"],
+            eyes: ["eva", "frame1", "frame2", "glow", "robocop", "round", "roundFrame01", "roundFrame02", "shade01"]
         }
     case Emotion.sad:
         return {

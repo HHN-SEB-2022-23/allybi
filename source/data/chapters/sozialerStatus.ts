@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+import { Emotion } from "../../components/Avatar"
 import type { Chapter } from "../../types/Chapter"
 import { DialogType } from "../../types/DialogType"
 
@@ -11,6 +12,7 @@ export const sozialerStatus: Chapter = {
         "next": {
             dialogType: DialogType.NPCDialog,
             "speaker": "Alex",
+            emotion: Emotion.neutral,
             "text": "Wie sollst du denn ordentlich studieren, wenn du nebenbei Arbeiten musst?",
             "next": {
                 dialogType: DialogType.PlayerOptionDialog,
@@ -24,6 +26,7 @@ export const sozialerStatus: Chapter = {
                             "next":{
                                 dialogType: DialogType.NPCDialog,
                                 "speaker": "Steve",
+                                emotion: Emotion.neutral,
                                 "text": "Wir machen doch nur Spaß, stimmts Luca?",
                                 "next": {
                                     dialogType: DialogType.NarratorDialog,
@@ -37,10 +40,12 @@ export const sozialerStatus: Chapter = {
                                                 "next": {
                                                     dialogType: DialogType.NPCDialog,
                                                     "speaker": "Alex",
+                                                    emotion: Emotion.neutral,
                                                     "text": "Man braucht ein dickeres Fell um im Leben weiterzukommen!",
                                                     "next": {
                                                         dialogType: DialogType.NPCDialog,
                                                         "speaker": "Steve",
+                                                        emotion: Emotion.neutral,
                                                         "text": "Man muss auch über sich selbst lachen können",
                                                         "next": {
                                                             dialogType: DialogType.PlayerOptionDialog,
@@ -51,6 +56,7 @@ export const sozialerStatus: Chapter = {
                                                                     "next": {
                                                                         dialogType: DialogType.NPCDialog,
                                                                         "speaker": "Alex",
+                                                                        emotion: Emotion.sad,
                                                                         "text": "Booooah!",
                                                                         "next":{
                                                                             dialogType: DialogType.NarratorDialog,
@@ -68,6 +74,7 @@ export const sozialerStatus: Chapter = {
                                                                     "next":{
                                                                         dialogType: DialogType.NPCDialog,
                                                                         "speaker": "Steve",
+                                                                        emotion: Emotion.sad,
                                                                         "text": "Er hat recht. Als du dich damals über meine Schwester lustig gemacht hast fand ich das garnicht komisch",
                                                                         "next":{
                                                                             dialogType: DialogType.NarratorDialog,
@@ -75,6 +82,7 @@ export const sozialerStatus: Chapter = {
                                                                             "next": {
                                                                                 dialogType: DialogType.NPCDialog,
                                                                                 "speaker": "Alex",
+                                                                                emotion: Emotion.neutral,
                                                                                 "text": "Warte!",
                                                                                 "next": {
                                                                                     dialogType: DialogType.NarratorDialog,
@@ -118,6 +126,7 @@ export const sozialerStatus: Chapter = {
                                                     "next": {
                                                         dialogType: DialogType.NPCDialog,
                                                         "speaker": "Luca",
+                                                        emotion: Emotion.happy,
                                                         "text": "Ja gerne!",
                                                         "next": {
                                                             dialogType: DialogType.NarratorDialog,
@@ -139,6 +148,7 @@ export const sozialerStatus: Chapter = {
                                                     "next": {
                                                         dialogType: DialogType.NPCDialog,
                                                         "speaker": "Luca",
+                                                        emotion: Emotion.sad,
                                                         "text": "Ich finde es wirklich nicht lustig",
                                                         "next": {
                                                             dialogType: DialogType.NarratorDialog,
@@ -170,6 +180,7 @@ export const sozialerStatus: Chapter = {
                             "next": {
                                 dialogType: DialogType.NPCDialog,
                                 "speaker": "Alex",
+                                emotion: Emotion.happy,
                                 "text": "Lassen die denn hier jeden rein?",
                                 "next": {
                                     dialogType: DialogType.PlayerOptionDialog,
@@ -202,6 +213,7 @@ export const sozialerStatus: Chapter = {
                                                     "next": {
                                                         dialogType: DialogType.NPCDialog,
                                                         "speaker": "Alex",
+                                                        emotion: Emotion.sad,
                                                         "text": "So etwas muss ich mir von jemandem wie dir nicht anhören!",
                                                         "next": {
                                                             dialogType: DialogType.NarratorDialog,
@@ -232,7 +244,7 @@ export const sozialerStatus: Chapter = {
                             "text": "Du entscheidest dich weiter dein Brötchen zu essen. Nach ein paar weiteren Kommentaren der 2 steht Luca auf und geht, Tränen in den Augen",
                             "next": {
                                 dialogType: DialogType.NarratorDialog,
-                                "text": "In folgenden Tagen sieht du ihn selten bis garnicht auf dem Campus. Hättest du etwas daran ändern können"
+                                "text": "In folgenden Tagen sieht du ihn selten bis garnicht auf dem Campus. Hättest du etwas daran ändern können?"
                             }
                         }
                     },

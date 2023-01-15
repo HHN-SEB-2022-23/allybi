@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+import { Emotion } from "../../components/Avatar"
 import type { Chapter } from "../../types/Chapter"
 import { DialogType } from "../../types/DialogType"
 import { Tag } from "../../types/Tags"
@@ -14,6 +15,7 @@ export const aussehen: Chapter = {
         next: {
             dialogType: DialogType.NPCDialog,
             speaker: Freundin,
+            emotion: Emotion.neutral,
             text: "So dünn wie du bist, solltest du wirklich mehr als einen Salat essen!",
 
             next: {
@@ -30,6 +32,7 @@ export const aussehen: Chapter = {
                             next: {
                                 dialogType: DialogType.NPCDialog,
                                 speaker: Freundin,
+                                emotion: Emotion.neutral,
                                 text: "Bestell dir am besten was füllendes!",
 
                                 next: {
@@ -80,6 +83,7 @@ export const aussehen: Chapter = {
                                                                 next : {
                                                                     dialogType: DialogType.NPCDialog,
                                                                     speaker: DuenneFreundin,
+                                                                    emotion: Emotion.sad,
                                                                     text: "Ich kann an meinem Gewicht schwer was machen. Mein Körper verbrennt Kalorien echt schnell, also bringt es nichts mehr zu essen.",
 
                                                                     next: {
@@ -108,6 +112,7 @@ export const aussehen: Chapter = {
                                                     next: {
                                                         dialogType: DialogType.NPCDialog,
                                                         speaker: Freundin,
+                                                        emotion: Emotion.sad,
                                                         text: "Aber es ist doch nur ein Witz gewesen! Andere würden töten um ihre Figur zu haben.",
 
                                                         next: {
@@ -128,6 +133,7 @@ export const aussehen: Chapter = {
                                                                             next: {
                                                                                 dialogType: DialogType.NPCDialog,
                                                                                 speaker: Freundin,
+                                                                                emotion: Emotion.sad,
                                                                                 text: "Aber wir meinten es doch nur gut",
 
                                                                                 next: {
@@ -181,11 +187,13 @@ export const aussehen: Chapter = {
                                                 next: {
                                                     dialogType: DialogType.NPCDialog,
                                                     speaker: DuenneFreundin,
+                                                    emotion: Emotion.sad,
                                                     text: "Ich habe seit Tagen Lust auf einen herzhaften Salat und jetzt zwingt ihr mir irgendwas auf worauf ich gar keinen Bock habe.",
 
                                                     next: {
                                                         dialogType: DialogType.NPCDialog,
                                                         speaker: Freundin,
+                                                        emotion: Emotion.neutral,
                                                         text: "Du musst halt ein wenig auf deine Ernährung achten. Wir meinen das doch nur zu deinem Guten",
 
                                                         next: {
@@ -248,6 +256,7 @@ export const aussehen: Chapter = {
                             next: {
                                 dialogType: DialogType.NPCDialog,
                                 speaker: Freundin,
+                                emotion: Emotion.neutral,
                                 text: "Natürlich darf sie essen was sie will, aber so dünn wie sie ist sollte sie mal ein bisschen zunehmen oder? Ist ja nicht böse gemeint.",
 
                                 next: {
@@ -283,6 +292,7 @@ export const aussehen: Chapter = {
                                                                         next: {
                                                                             dialogType: DialogType.NPCDialog,
                                                                             speaker: Freundin,
+                                                                            emotion: Emotion.neutral,
                                                                             text: "Oh entschuldige wir wollten dich wirklich nicht verletzen, wir haben nur ein bisschen spaß gemacht.",
 
                                                                             next: {
@@ -319,6 +329,7 @@ export const aussehen: Chapter = {
                                                                 next: {
                                                                     dialogType: DialogType.NPCDialog,
                                                                     speaker: Freundin,
+                                                                    emotion: Emotion.neutral,
                                                                     text: "\"Wenn der Wind draußen nacher immernoch so stark ist müssen wir sie festhalten das sie nicht davonfliegt\"",
 
                                                                     next: {
@@ -343,6 +354,7 @@ export const aussehen: Chapter = {
                                                 next: {
                                                     dialogType: DialogType.NPCDialog,
                                                     speaker: Freundin,
+                                                    emotion: Emotion.neutral,
                                                     text: "Ja schon aber so dünn wie sie ist isst sie doch bestimmt einfach zu wenig.",
 
                                                     next: {
@@ -369,6 +381,7 @@ export const aussehen: Chapter = {
                                                                 next: {
                                                                     dialogType: DialogType.NPCDialog,
                                                                     speaker: Freundin,
+                                                                    emotion: Emotion.happy,
                                                                     text: "\"Weißt du die Pizza hier ist wirklich lecker bestell dir doch lieber sowas\"",
 
                                                                     next: {
@@ -392,6 +405,7 @@ export const aussehen: Chapter = {
                                                                         next: {
                                                                             dialogType: DialogType.NPCDialog,
                                                                             speaker: Freundin,
+                                                                            emotion: Emotion.sad,
                                                                             text: "Oh entschuldigung wir wollten dich nicht verletzen, das tut uns leid.",
 
                                                                             next: {
@@ -421,6 +435,7 @@ export const aussehen: Chapter = {
                                                 next: {
                                                     dialogType: DialogType.NPCDialog,
                                                     speaker: Freundin,
+                                                    emotion: Emotion.neutral,
                                                     text: "Ist ja schon gut kein grund so ernst zu werden. Wir machen doch nur ein bisschen spaß, da ist ja nichts dabei.",
 
                                                     next: {
@@ -450,6 +465,7 @@ export const aussehen: Chapter = {
                                                                         next: {
                                                                             dialogType: DialogType.NPCDialog,
                                                                             speaker: Freundin,
+                                                                            emotion: Emotion.neutral,
                                                                             text: "Oh entschuldigung wenn wir dich verletzt haben das wollten wir wiklich nicht. Du kannst natürlich einen Salat bestellen wenn du das willst. Verzeih uns bitte wir haben nicht darüber nachgedacht das unsere Kommentare für dich sehr verletzend sein könnten.",
 
                                                                             next: {
@@ -471,6 +487,7 @@ export const aussehen: Chapter = {
                                                                     next: {
                                                                         dialogType: DialogType.NPCDialog,
                                                                         speaker: Freundin,
+                                                                        emotion: Emotion.sad,
                                                                         text: "Sag mal spinnst du? Vor allem du solltest nicht über die Klamotten anderer lästern mit deiner Oma Kleidung, am besten du gehst jetzt oder ich sag dir mal wirklich meine Meinung.",
 
                                                                         next: {
@@ -561,6 +578,7 @@ export const aussehen: Chapter = {
                                             next: {
                                                 dialogType: DialogType.NPCDialog,
                                                 speaker: Freundin,
+                                                emotion: Emotion.neutral,
                                                 text: "Ich würde auch gern essen können was ich will und nicht zunehmen, du hast es ja richtig gut.",
 
                                                 next: {
@@ -591,6 +609,7 @@ export const aussehen: Chapter = {
                                                             next: {
                                                                 dialogType: DialogType.NPCDialog,
                                                                 speaker: Freundin,
+                                                                emotion: Emotion.neutral,
                                                                 text: "\"Hm stimmt. Daran habe ich nicht gedacht\"",
 
                                                                 next: {
@@ -614,6 +633,7 @@ export const aussehen: Chapter = {
                                         next: {
                                             dialogType: DialogType.NPCDialog,
                                             speaker: Freundin,
+                                            emotion: Emotion.neutral,
                                             text: "\"Ja, ich verstehe wie du das meinst, aber es ist doch schlimmer dick zu sein anstatt dünn. Viele Frauen wünschen sich deine Figur.\"",
 
                                             next: {
@@ -644,6 +664,7 @@ export const aussehen: Chapter = {
                                                             next: {
                                                                 dialogType: DialogType.NPCDialog,
                                                                 speaker: DuenneFreundin,
+                                                                emotion: Emotion.sad,
                                                                 text: "\"Na gut bestellt ich mir halt eine Pizza\"",
 
                                                                 next: {
