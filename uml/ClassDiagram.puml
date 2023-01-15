@@ -211,6 +211,11 @@ package viewmodel {
     }
     OptionsViewModel *-- "1" OptionsModel
     UserPreferences -up-* OptionsViewModel
+
+    class QAViewModel {
+        -_appModel: AppModel
+        +onClickBack: MouseEventHandler<Element>
+    }
 }
 
 package view {
@@ -239,6 +244,12 @@ package view {
         +render(): HTMLElement
     }
     OptionsView *-- "1" OptionsViewModel
+
+    class QAView {
+        -_qaViewModel: QAViewModel
+        +render(): HTMLElement
+    }
+    QAView *-- "1" QAViewModel
 }
 
 @enduml
