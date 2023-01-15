@@ -5,6 +5,7 @@
 @use "game";
 @use "scrollbar";
 @use "document";
+@use "sass:color";
 
 @media (max-width: 512px) {
     :root {
@@ -15,17 +16,17 @@
 :root[data-dark-mode="true"] {
     --background: #{theme.$background};
     --foreground: #{theme.$foreground};
-    --foreground-2: #{theme.$foreground}80;
-    --foreground-4: #{theme.$foreground}40;
-    --foreground-8: #{theme.$foreground}20;
+    --foreground-2: #{mix(theme.$foreground, theme.$background, $weight: 80%)};
+    --foreground-4: #{mix(theme.$foreground, theme.$background, $weight: 40%)};
+    --foreground-8: #{mix(theme.$foreground, theme.$background, $weight: 20%)};
 }
 
 :root[data-dark-mode="false"] {
     --background: #{theme.$foreground};
     --foreground: #{theme.$background};
-    --foreground-2: #{theme.$background}80;
-    --foreground-4: #{theme.$background}40;
-    --foreground-8: #{theme.$background}20;
+    --foreground-2: #{mix(theme.$background, theme.$foreground, $weight: 80%)};
+    --foreground-4: #{mix(theme.$background, theme.$foreground, $weight: 40%)};
+    --foreground-8: #{mix(theme.$background, theme.$foreground, $weight: 20%)};
 }
 
 :root {
@@ -88,6 +89,13 @@ footer {
 
 svg {
     fill: currentColor;
+}
+
+select {
+    option {
+        background: var(--foreground-8) !important;
+        color: var(--foreground);
+    }
 }
 
 :root,
