@@ -9,6 +9,7 @@ import { MainMenuModel } from "../model/MainMenuModel"
 import { OptionsModel } from "../model/OptionsModel"
 
 import { AppViewModel } from "../viewmodel/AppViewModel"
+import { FilterViewModel } from "../viewmodel/FilterViewModel"
 import { GameViewModel } from "../viewmodel/GameViewModel"
 import { MainMenuViewModel } from "../viewmodel/MainMenuViewModel"
 import { OptionsViewModel } from "../viewmodel/OptionsViewModel"
@@ -25,6 +26,7 @@ const globalDI = new DIContainer()
     .addSingleton(OptionsModel, "OptionsModel")
     // viewmodel
     .addSingleton(AppViewModel, "AppViewModel")
+    .addSingleton(FilterViewModel, "FilterViewModel")
     .addSingleton(MainMenuViewModel, "MainMenuViewModel")
     .addSingleton(GameViewModel, "GameViewModel")
     .addSingleton(OptionsViewModel, "OptionsViewModel")
