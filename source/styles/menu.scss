@@ -1,15 +1,30 @@
 @use "theme";
 
 .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    justify-items: flex-start;
+    overflow-y: auto !important;
+    height: 100%;
+}
+
+.menu--centered {
     height: 100%;
     display: grid;
     place-content: space-evenly;
     justify-content: start;
     align-items: center;
     justify-items: start;
+}
 
+.menu,
+.menu-centered {
     &__title {
         font-size: 2.2rem;
+        margin-bottom: 3rem;
+        font-weight: 800;
     }
 
     &__subtitle {

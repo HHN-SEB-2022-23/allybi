@@ -19,6 +19,7 @@ export const OptionsView = observer(() => {
 
     return <div className="menu">
         <h1 className="menu__title">Optionen</h1>
+        <button onClick={_optionsViewModel.onClickBack} className="menu__item">Zurück</button>
         <ol>
             {
                 _settings.map((setting, i) => <li key={i}>
@@ -33,7 +34,6 @@ export const OptionsView = observer(() => {
                 </li>)
             }
         </ol>
-        <button onClick={_optionsViewModel.onClickBack} className="menu__item">Zurück</button>
     </div>
 })
 

@@ -11,8 +11,8 @@ export const MainMenuView = observer(() => {
     const _mainMenuViewModel = inject("MainMenuViewModel")
 
     return (
-        <nav className="menu">
-            <h1 className="menu-menu__title">
+        <nav className="menu--centered">
+            <h1 className="menu__title">
                 Allybi <span className="menu__subtitle">vom Alibi zum Ally</span>
             </h1>
 

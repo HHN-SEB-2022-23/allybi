@@ -1,5 +1,6 @@
 import React from "react"
 import { observer } from "mobx-react"
+import { inject } from "../lib/globalDI"
 
 /**
  * The main menu view.
@@ -7,10 +8,12 @@ import { observer } from "mobx-react"
  * This view is responsible for rendering the main menu.
  */
 export const QAView = observer(() => {
+    const _qaViewModel = inject("QAViewModel")
+
     return (
         <div className="menu document">
             <h1 className="menu__title">Q&A</h1>
-
+            <button onClick={_qaViewModel.onClickBack} className="menu__item">Zurück</button>
             <h2 className="document__subtitle">Was ist die adi?</h2>
             <p>
                 Die adi.hn, die Antidiskriminierungsstelle Heilbronn, gibt es
@@ -22,7 +25,7 @@ export const QAView = observer(() => {
                 gemeinsam im Stadt- und Landkreis diskriminierungssensibel
                 miteinander zu leben.
                 <br />
-                
+
                 <a href="https://www.skjr-hn.de/antidiskriminierungsstelle-heilbronn/" target="_blank" rel="noopener noreferrer"> Seite der adi.hn</a>
             </p>
 
