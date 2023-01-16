@@ -19,13 +19,13 @@ export const FilterView = observer(() => {
 
     return <div className="menu">
         <h1 className="menu__title">Filter</h1>
-        <p>Du möchtest Themen ausschließen? Das kannst du hier tun:</p>
+        <p>Entscheide hier, welche Themen im Spiel vorkommen dürfen:</p>
         <button onClick={_filterViewModel.onClickBack} className="menu__item">Zurück</button>
         <ol>
             {
                 _filter.map((filter, i) => <li key={i}>
                     <label className="menu__item">
-                        {filter.tag.toString()}
+                        {filter.tag.toString()}:
                         <input
                             type="checkbox"
                             checked={filter.active}

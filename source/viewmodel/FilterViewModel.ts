@@ -14,6 +14,22 @@ export class FilterViewModel {
     }
 
     onClickPlay: MouseEventHandler<HTMLButtonElement> = () => {
+        // if no checked checkbox => no tags allowed
+        const checkboxed = document.body.querySelectorAll("input[type=checkbox]")
+        let oneChecked = false
+        for (const el of checkboxed) {
+            if ((el as HTMLInputElement).checked) {
+                oneChecked = true
+                break
+            }
+        }
+
+        if (!oneChecked) {
+            // eslint-disable-next-line no-alert
+            alert("Das Spiel ist leider nicht spielbar, wenn keine Themen erlaubt sind")
+            return
+        }
+
         this._appModel.startGame()
         this._gameModel.reset()
         this._gameModel.initChapterAsync()
