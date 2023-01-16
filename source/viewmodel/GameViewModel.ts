@@ -14,7 +14,7 @@ export class GameViewModel {
     private readonly _appModel = inject("AppModel")
 
     public readonly nextChapter = () => {
-        this._gameModel.initChapter()
+        this._gameModel.initChapterAsync()
     }
 
     public readonly mainMenu = () => {

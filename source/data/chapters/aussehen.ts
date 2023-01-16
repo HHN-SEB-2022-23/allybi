@@ -8,7 +8,7 @@ const Freundin = "Freundin"
 const DuenneFreundin = "Dünne Freundin"
 export const aussehen: Chapter = {
     title: "Im Restaurant",
-    tags: [Tag.diskriminierungstyp1],
+    tags: [Tag.aussehen],
     headDialog: {
         dialogType: DialogType.NarratorDialog,
         text: "Du bist mit deinen Freundinnen im Restaurant zum Essen verabredet. Beim Bestellen merkst du wie abwertend deine Freunde auf den bestellten Salat deiner Freundin regieren.",

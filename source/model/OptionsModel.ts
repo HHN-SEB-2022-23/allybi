@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx"
-import { makeDb } from "../lib/DB"
+import { getDBPromise } from "../lib/DB"
 import type { DBType, OptionsDBType } from "../lib/DB"
 import type { IDBPDatabase } from "idb"
 
@@ -34,7 +34,7 @@ export class OptionsModel {
     }
 
     constructor() {
-        this._db = makeDb()
+        this._db = getDBPromise()
         makeAutoObservable(this)
     }
 
