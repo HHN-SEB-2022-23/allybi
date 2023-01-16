@@ -4,6 +4,7 @@ import { DIContainer } from "@frank-mayer/dilight"
 import { UserPreferences } from "./UserPreferences"
 
 import { AppModel } from "../model/AppModel"
+import { FilterModel } from "../model/FilterModel"
 import { GameModel } from "../model/GameModel"
 import { MainMenuModel } from "../model/MainMenuModel"
 import { OptionsModel } from "../model/OptionsModel"
@@ -21,6 +22,7 @@ const globalDI = new DIContainer()
     .addTransient(UserPreferences, "UserPreferences")
     // model
     .addSingleton(AppModel, "AppModel")
+    .addSingleton(FilterModel, "FilterModel")
     .addSingleton(GameModel, "GameModel")
     .addSingleton(MainMenuModel, "MainMenuModel")
     .addSingleton(OptionsModel, "OptionsModel")

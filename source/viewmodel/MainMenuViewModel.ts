@@ -13,9 +13,7 @@ export class MainMenuViewModel {
     private _appModel = inject("AppModel")
 
     public readonly startGame: MouseEventHandler<Element> = () => {
-        this._appModel.startGame()
-        this._gameModel.reset()
-        this._gameModel.initChapter()
+        this._appModel.openFilter()
     }
 
     public readonly openOptions: MouseEventHandler<Element> = () => {

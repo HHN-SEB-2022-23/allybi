@@ -33,6 +33,10 @@ export class AppModel {
         this.state = AppState.OPTIONS
     }
 
+    openFilter() {
+        this.state = AppState.FILTER
+    }
+
     openQA() {
         this.state = AppState.QA
     }

@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import { openDB } from "idb"
 import type { IDBPDatabase } from "idb"
-import type { Tag } from "../types/Tags"
 
 export type OptionsDBType = {
     "reduced-motion": boolean
@@ -9,13 +8,8 @@ export type OptionsDBType = {
     contrast: "more" | "less" | "normal"
 }
 
-export type FilterOptionsDBType = {
-    [key in keyof Tag]: boolean
-}
-
 export type DBType = {
     options: OptionsDBType
-    filter: FilterOptionsDBType
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

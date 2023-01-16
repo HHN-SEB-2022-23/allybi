@@ -1,25 +1,49 @@
-import { IDBPDatabase } from "idb"
 import { makeAutoObservable } from "mobx"
-import { getDBPromise } from "../lib/DB"
-import type { DBType } from "../lib/DB"
 import type { MouseEventHandler } from "react"
-import type { FilterHook } from "../types/FilterHook"
+import type { FilterEntry, FilterHook } from "../types/FilterHook"
 import { inject } from "../lib/globalDI"
+import { Tag } from "../types/Tags"
 
 export class FilterViewModel {
+    private readonly _filterModel = inject("FilterModel")
     private readonly _appModel = inject("AppModel")
-    private readonly _db: Promise<IDBPDatabase<DBType>>
+    private readonly _gameModel = inject("GameModel")
 
     onClickBack: MouseEventHandler<HTMLButtonElement> = () => {
         this._appModel.navigateBack()
     }
 
+    onClickPlay: MouseEventHandler<HTMLButtonElement> = () => {
+        this._appModel.startGame()
+        this._gameModel.reset()
+        this._gameModel.initChapter()
+    }
+
     constructor() {
-        this._db = getDBPromise()
         makeAutoObservable(this)
     }
 
+    private getAllTags() {
+        return Tag
+            .values
+            .map(tag => ({
+                tag: tag,
+            } satisfies Partial<FilterEntry>))
+    }
+
     async useFilterAsync(): Promise<FilterHook> {
-        throw new Error("Method not implemented.")
+        return await Promise.all(
+            this.getAllTags()
+                .map(async (tag) => {
+                    return {
+                        ...tag,
+                        active: (await this._filterModel.getFilterAsync(tag.tag.id)) ?? true
+                    }
+                })
+        )
+    }
+
+    async setFilterAsync(tag: Tag, checked: boolean) {
+        await this._filterModel.setFilterAsync(tag.id, checked)
     }
 }

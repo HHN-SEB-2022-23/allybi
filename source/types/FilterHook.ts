@@ -1,7 +1,6 @@
 import type { Tag } from "./Tags"
 
-type FilterEntry = {
-    display: string,
+export type FilterEntry = {
     tag: Tag,
     active: boolean
 }

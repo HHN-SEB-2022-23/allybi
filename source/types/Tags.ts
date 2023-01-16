@@ -3,22 +3,25 @@
  * @enum
  */
 export class Tag<S extends string = string> {
-    public static readonly diskriminierungstyp1 = new Tag(
-        "Diskriminierungstyp 1"
-    )
-
     public static readonly geschlecht = new Tag(
-        "Geschlecht"
+        "Geschlecht", 1
     )
 
     public static readonly sexualitaet = new Tag(
-        "Sexualität"
+        "Sexualität", 2
     )
 
-    private readonly _display: S
+    public static readonly values = [
+        Tag.geschlecht,
+        Tag.sexualitaet
+    ]
 
-    private constructor(display: S) {
+    private readonly _display: S
+    public readonly id: number
+
+    private constructor(display: S, id: number) {
         this._display = display
+        this.id = id
     }
 
     public toString(): S {
