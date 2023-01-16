@@ -7,7 +7,7 @@ import { Tag } from "../../types/Tags"
 const Mitspieler = "Mitspieler"
 export const herkunft: Chapter = {
     title: "Beim Fußballtraining",
-    tags: [Tag.diskriminierungstyp1],
+    tags: [Tag.herkunft],
     headDialog: {
         dialogType: DialogType.NarratorDialog,
         text: "Beim Fußballtraining beobachtest du wie ein  Mitspieler zu einem afrikanischem Mitspieler sagt:",

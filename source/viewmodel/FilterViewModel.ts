@@ -16,7 +16,7 @@ export class FilterViewModel {
     onClickPlay: MouseEventHandler<HTMLButtonElement> = () => {
         this._appModel.startGame()
         this._gameModel.reset()
-        this._gameModel.initChapter()
+        this._gameModel.initChapterAsync()
     }
 
     constructor() {

@@ -5,6 +5,8 @@ import type { DialogHistoryEntry } from "../types/DialogHistoryEntry"
 import type { Dialog } from "../types/Dialog"
 import { DialogType } from "../types/DialogType"
 import { delay } from "@frank-mayer/magic/Timing"
+import "@frank-mayer/stream"
+import { getDBPromise } from "../lib/DB"
 
 /**
  * Model of the interactive game itself
@@ -21,6 +23,7 @@ export class GameModel {
     }
     private _dialogHistory: Array<DialogHistoryEntry> = []
     private _currentDialog: Dialog | null = this._chapter.headDialog
+    private readonly _db = getDBPromise()
 
     public get chapter() {
         return this._chapter
@@ -120,10 +123,29 @@ export class GameModel {
         this.currentDialog = null
     }
 
-    public initChapter(): boolean {
-        const avChapters = chapters
+    public async initChapterAsync(): Promise<boolean> {
+        const db = await this._db
+
+        const notPlayedChapters = chapters
+            .stream()
             .map((_, i) => i)
             .filter((i) => !this._endedChapters.has(i))
+            .toArray()
+
+        const avChapters = new Array<number>()
+
+        chapter:
+        for (const i of notPlayedChapters) {
+            const chapt = chapters[i]
+            for (const tag of chapt.tags) {
+                const allowed = (await db.get("filter", tag.id.toString(36))) ?? true
+                if (!allowed) {
+                    continue chapter
+                }
+            }
+
+            avChapters.push(i)
+        }
 
         if (avChapters.length === 0) {
             return false
