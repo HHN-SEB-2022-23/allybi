@@ -27,6 +27,10 @@ export const MainMenuView = observer(() => {
             <button className="menu__item" onClick={_mainMenuViewModel.openQA}>
                 Q & A
             </button>
+
+            <button className="menu__item" onClick={_mainMenuViewModel.credits}>
+                Credits
+            </button>
         </nav>
     )
 })
