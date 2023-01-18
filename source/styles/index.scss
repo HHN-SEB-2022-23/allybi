@@ -19,6 +19,7 @@
     --foreground-2: #{mix(theme.$foreground, theme.$background, $weight: 80%)};
     --foreground-4: #{mix(theme.$foreground, theme.$background, $weight: 40%)};
     --foreground-8: #{mix(theme.$foreground, theme.$background, $weight: 20%)};
+    --foreground-10: #{mix(theme.$foreground, theme.$background, $weight: 10%)};
 }
 
 :root[data-dark-mode="false"] {
@@ -27,6 +28,7 @@
     --foreground-2: #{mix(theme.$background, theme.$foreground, $weight: 80%)};
     --foreground-4: #{mix(theme.$background, theme.$foreground, $weight: 40%)};
     --foreground-8: #{mix(theme.$background, theme.$foreground, $weight: 20%)};
+    --foreground-10: #{mix(theme.$background, theme.$foreground, $weight: 10%)};
 }
 
 :root {

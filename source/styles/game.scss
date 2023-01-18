@@ -126,8 +126,19 @@
         &__text {
             &--player-voice,
             &--npc-voice {
-                background-color: var(--foreground-8);
+                max-width: fit-content;
+                min-height: 100%;
                 padding: 0.5rem 1rem;
+            }
+
+            &--player-voice {
+                background-color: var(--foreground-10);
+                margin-left: auto;
+            }
+
+            &--npc-voice {
+                background-color: var(--foreground-8);
+                margin-right: auto;
             }
         }
 
@@ -143,6 +154,7 @@
             &--narrator-voice {
                 font-style: italic;
                 font-weight: 300;
+                text-align: center;
             }
 
             &--npc-voice,
@@ -150,28 +162,18 @@
                 animation-name: dialog-in-npc;
             }
 
-            &--player-voice {
-                animation-name: dialog-in-player;
-            }
-
-            &--image {
-                width: 2rem;
-                height: 2rem;
-            }
-        }
-
-        &__text,
-        &__speaker {
             &--npc-voice {
                 text-align: left;
             }
 
             &--player-voice {
+                animation-name: dialog-in-player;
                 text-align: right;
             }
 
-            &--narrator-voice {
-                text-align: center;
+            &--image {
+                width: 2rem;
+                height: 2rem;
             }
         }
     }
