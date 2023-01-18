@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx"
 import { chapters } from "../data/chapters"
 import type { Chapter } from "../types/Chapter"
 import type { DialogHistoryEntry } from "../types/DialogHistoryEntry"
-import type { Dialog } from "../types/Dialog"
+import type { Dialog, NPCDialog } from "../types/Dialog"
 import { DialogType } from "../types/DialogType"
 import { delay } from "@frank-mayer/magic/Timing"
 import "@frank-mayer/stream"
@@ -97,9 +97,9 @@ export class GameModel {
                 break
             }
 
-            if ("next" in dialog) {
-                dialog = dialog.next
-                await delay(500)
+            if (dialog && (dialog as NPCDialog).next) {
+                dialog = (dialog as NPCDialog).next
+                await delay(1024)
             }
             else {
                 break
