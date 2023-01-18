@@ -8,5 +8,6 @@ export enum AppState {
     IN_GAME,
     OPTIONS,
     FILTER,
+    CREDITS,
     QA,
 }

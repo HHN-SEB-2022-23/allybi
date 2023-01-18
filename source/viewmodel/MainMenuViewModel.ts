@@ -24,6 +24,10 @@ export class MainMenuViewModel {
         this._appModel.stateMachine.send({ type:"QA" })
     }
 
+    public readonly openCredits: MouseEventHandler<Element> = () => {
+        this._appModel.stateMachine.send({ type:"CREDITS" })
+    }
+
     constructor() {
         makeAutoObservable(this)
     }

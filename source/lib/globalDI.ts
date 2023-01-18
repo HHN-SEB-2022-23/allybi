@@ -16,6 +16,7 @@ import { GameViewModel } from "../viewmodel/GameViewModel"
 import { MainMenuViewModel } from "../viewmodel/MainMenuViewModel"
 import { OptionsViewModel } from "../viewmodel/OptionsViewModel"
 import { QAViewModel } from "../viewmodel/QAViewModel"
+import { CreditsViewModel } from "../viewmodel/CreditsViewModel"
 
 // Global dependency injection container
 const globalDI = new DIContainer()
@@ -35,6 +36,7 @@ const globalDI = new DIContainer()
     .addSingleton(GameViewModel, "GameViewModel")
     .addSingleton(OptionsViewModel, "OptionsViewModel")
     .addSingleton(QAViewModel, "QAViewModel")
+    .addSingleton(CreditsViewModel, "CreditsViewModel")
 
 globalThis.globalDI = globalDI
 

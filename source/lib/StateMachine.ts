@@ -15,7 +15,8 @@ createMachine({
             on: {
                 OPTIONS: "MAIN_MENU_OPTIONS",
                 START: "FILTER",
-                QA: "QA"
+                QA: "QA",
+                CREDITS: "CREDITS"
             }
         },
 
@@ -35,6 +36,15 @@ createMachine({
             on: {
                 BACK: "MAIN_MENU",
                 START: "IN_GAME"
+            }
+        },
+
+        CREDITS: {
+            invoke: {
+                src: "CREDITS"
+            },
+            on: {
+                BACK: "MAIN_MENU"
             }
         },
 
@@ -88,6 +98,10 @@ createMachine({
         },
         FILTER: () => {
             inject("AppModel").state = AppState.FILTER
+            return Promise.resolve() as Promise<never>
+        },
+        CREDITS: () => {
+            inject("AppModel").state = AppState.CREDITS
             return Promise.resolve() as Promise<never>
         },
         OPTIONS: () => {
