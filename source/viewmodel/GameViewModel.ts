@@ -13,7 +13,15 @@ export class GameViewModel {
     private readonly _gameModel = inject("GameModel")
     private readonly _appModel = inject("AppModel")
 
+    public get isWorking() {
+        return this._gameModel.isWorking
+    }
+
     public readonly nextChapter = () => {
+        if (this.isWorking) {
+            return
+        }
+
         this._gameModel.initChapterAsync()
             .then(() => {
                 this._gameModel.getAvaliableChaptersAsync()

@@ -4,7 +4,7 @@ import type { Chapter } from "../types/Chapter"
 import type { DialogHistoryEntry } from "../types/DialogHistoryEntry"
 import type { Dialog, NPCDialog } from "../types/Dialog"
 import { DialogType } from "../types/DialogType"
-import { delay } from "@frank-mayer/magic/Timing"
+import { delay, retriggerableDelay } from "@frank-mayer/magic/Timing"
 import "@frank-mayer/stream"
 import { getDBPromise } from "../lib/DB"
 
@@ -25,6 +25,22 @@ export class GameModel {
     private _currentDialog: Dialog | null = this._chapter.headDialog
     private _isFinished = false
     private readonly _db = getDBPromise()
+    private _isWorking = true
+
+    private set isWorking(value) {
+        if (value) {
+            this._isWorking = value
+        }
+        else {
+            retriggerableDelay(() => {
+                this._isWorking = value
+            }, 1024)
+        }
+    }
+
+    public get isWorking() {
+        return this._isWorking
+    }
 
     public get chapter() {
         return this._chapter
@@ -65,6 +81,7 @@ export class GameModel {
 
     // eslint-disable-next-line max-lines-per-function
     public async continueDialogAsync(nextDialog: Dialog) {
+        this.isWorking = true
         this._currentDialog = null
         let dialog: Dialog | undefined = nextDialog
 
@@ -121,6 +138,8 @@ export class GameModel {
                 dialogType: DialogType.ChapterEnd,
             }
         }
+
+        this.isWorking = false
     }
 
     public reset() {
@@ -130,6 +149,7 @@ export class GameModel {
     }
 
     public async getAvaliableChaptersAsync() {
+        this.isWorking = true
         const db = await this._db
 
         const notPlayedChapters = chapters
@@ -155,6 +175,7 @@ export class GameModel {
 
         this.isFinished = avChapters.length == 0
 
+        this.isWorking = false
         return avChapters
     }
 
