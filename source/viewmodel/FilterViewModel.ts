@@ -10,7 +10,7 @@ export class FilterViewModel {
     private readonly _gameModel = inject("GameModel")
 
     onClickBack: MouseEventHandler<HTMLButtonElement> = () => {
-        this._appModel.navigateBack()
+        this._appModel.stateMachine.send({ type:"BACK" })
     }
 
     onClickPlay: MouseEventHandler<HTMLButtonElement> = () => {
@@ -30,12 +30,7 @@ export class FilterViewModel {
             return
         }
 
-        this._appModel.startGame()
-        this._gameModel.reset()
-        this._gameModel.initChapterAsync()
-            .then(() => {
-                this._gameModel.getAvaliableChaptersAsync()
-            })
+        this._appModel.stateMachine.send({ type:"START" })
     }
 
     constructor() {

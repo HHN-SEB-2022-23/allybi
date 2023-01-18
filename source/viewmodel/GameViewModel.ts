@@ -21,11 +21,11 @@ export class GameViewModel {
     }
 
     public readonly mainMenu = () => {
-        this._appModel.openMainMenu()
+        this._appModel.stateMachine.send({ type:"BACK" })
     }
 
     public readonly openOptions = () => {
-        this._appModel.openOptions()
+        this._appModel.stateMachine.send({ type:"OPTIONS" })
     }
 
     public get dialogHistory(): ReadonlyArray<DialogHistoryEntry> {
