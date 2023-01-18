@@ -15,6 +15,9 @@ export class GameViewModel {
 
     public readonly nextChapter = () => {
         this._gameModel.initChapterAsync()
+            .then(() => {
+                this._gameModel.getAvaliableChaptersAsync()
+            })
     }
 
     public readonly mainMenu = () => {

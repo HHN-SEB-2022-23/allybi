@@ -33,6 +33,9 @@ export class FilterViewModel {
         this._appModel.startGame()
         this._gameModel.reset()
         this._gameModel.initChapterAsync()
+            .then(() => {
+                this._gameModel.getAvaliableChaptersAsync()
+            })
     }
 
     constructor() {
