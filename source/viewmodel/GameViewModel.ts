@@ -34,6 +34,8 @@ export class GameViewModel {
     }
 
     private chapterEndInput(): {speaker: string, choices: Array<DialogChoice>} {
+        this._gameModel.getAvaliableChaptersAsync()
+
         const d = {
             speaker: "Kapitel abgeschlossen",
             choices: [
