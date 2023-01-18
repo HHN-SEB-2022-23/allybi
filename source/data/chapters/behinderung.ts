@@ -2,6 +2,7 @@ import type { Chapter } from "../../types/Chapter"
 import { DialogType } from "../../types/DialogType"
 import type { Dialog } from "../../types/Dialog"
 import { Emotion } from "../../components/Avatar"
+import { Tag } from "../../types/Tags"
 
 const kevin = "Kevin\n(Mitschüler)"
 const hrMorina = "Herr Morina\n(Lehrer)"
@@ -56,7 +57,7 @@ const mainChoice_003: Dialog = {
 
 export const behinderung: Chapter = {
     title: "Der Waldausflug",
-    tags: [],
+    tags: [Tag.behinderung],
     headDialog: {
         dialogType: DialogType.NarratorDialog,
         text: "Deine Klasse plant einen Wandertag in den Wald. Deine Klassenkameradin Anna ist blind und der Lehrer möchte sie deshalb nicht mitnehmen.\nIm Unterricht redet ihr darüber.",

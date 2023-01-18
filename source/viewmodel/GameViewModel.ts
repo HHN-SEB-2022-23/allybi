@@ -14,15 +14,18 @@ export class GameViewModel {
     private readonly _appModel = inject("AppModel")
 
     public readonly nextChapter = () => {
-        this._gameModel.initChapter()
+        this._gameModel.initChapterAsync()
+            .then(() => {
+                this._gameModel.getAvaliableChaptersAsync()
+            })
     }
 
     public readonly mainMenu = () => {
-        this._appModel.openMainMenu()
+        this._appModel.stateMachine.send({ type:"BACK" })
     }
 
     public readonly openOptions = () => {
-        this._appModel.openOptions()
+        this._appModel.stateMachine.send({ type:"OPTIONS" })
     }
 
     public get dialogHistory(): ReadonlyArray<DialogHistoryEntry> {
@@ -34,6 +37,8 @@ export class GameViewModel {
     }
 
     private chapterEndInput(): {speaker: string, choices: Array<DialogChoice>} {
+        this._gameModel.getAvaliableChaptersAsync()
+
         const d = {
             speaker: "Kapitel abgeschlossen",
             choices: [

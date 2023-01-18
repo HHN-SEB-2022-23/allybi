@@ -15,6 +15,6 @@ export class QAViewModel {
     }
 
     public readonly onClickBack: MouseEventHandler<Element> = () => {
-        this._appModel.navigateBack()
+        this._appModel.stateMachine.send({ type:"BACK" })
     }
 }

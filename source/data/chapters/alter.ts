@@ -5,7 +5,7 @@ import { Tag } from "../../types/Tags"
 
 export const alter: Chapter = {
     title: "Diskriminierung am Arbeitsplatz",
-    tags: [Tag.diskriminierungstyp1],
+    tags: [Tag.alter],
     headDialog: {
         dialogType: DialogType.NarratorDialog,
         text: "Paul (20) ist gelernter Mechaniker und arbeitet seit kurzem in einem neuen Betrieb. Nachdem er sich in seinem neuen Umfeld eingearbeitet hat, sieht er Optimierungsmöglichkeiten beim täglichen Betriebsablauf. Er schreibt eine Liste mit Verbesserungsvorschlägen und übergibt sie seinem Vorgesetzten.",

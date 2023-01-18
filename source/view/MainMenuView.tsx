@@ -16,6 +16,16 @@ export const MainMenuView = observer(() => {
                 Allybi <span className="menu__subtitle">vom Alibi zum Ally</span>
             </h1>
 
+            <div>
+                <p>Hi,</p>
+                <p>schön, dass du da bist !</p>
+                <p>Dieses Spiel ist ein textbasiertes Adventuregame, in dem du verschiedene Szenarien aus dem Alltag
+                 von diskriminierten Personen miterleben kannst.</p>
+                <p>Wähle einfach "Spiel starten" aus und entscheide, welche zufällig gewählten Stories
+                 du durchspielen möchtest</p>
+                <p>Dieses Spiel ist in Zusammenarbeit mit der adi.hn entstanden</p>
+            </div>
+
             <button className="menu__item" onClick={_mainMenuViewModel.startGame}>
                 Spiel Starten
             </button>

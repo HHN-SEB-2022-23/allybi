@@ -61,6 +61,7 @@ npm run build
 - [ESLint](https://eslint.org) Linter
 - [DiceBear](https://dicebear.com) Avatar generation
 - [idb](https://github.com/jakearchibald/idb) IndexedDB Promise Wrapper
+- [XState](https://xstate.js.org) State Machine
 
 ## Klassendiagramm
 
