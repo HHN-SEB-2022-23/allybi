@@ -19,7 +19,7 @@ export class OptionsViewModel {
     }
 
     public readonly onClickBack: MouseEventHandler<Element> = () => {
-        this._appModel.navigateBack()
+        this._appModel.stateMachine.send({ type:"BACK" })
     }
 
     private updateDocumentData(data: Record<string, boolean | string | number>) {

@@ -13,15 +13,15 @@ export class MainMenuViewModel {
     private _appModel = inject("AppModel")
 
     public readonly startGame: MouseEventHandler<Element> = () => {
-        this._appModel.openFilter()
+        this._appModel.stateMachine.send({ type:"START" })
     }
 
     public readonly openOptions: MouseEventHandler<Element> = () => {
-        this._appModel.openOptions()
+        this._appModel.stateMachine.send({ type:"OPTIONS" })
     }
 
     public readonly openQA: MouseEventHandler<Element> = () => {
-        this._appModel.openQA()
+        this._appModel.stateMachine.send({ type:"QA" })
     }
 
     constructor() {

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { DIContainer } from "@frank-mayer/dilight"
 
+import { stateMachine } from "./StateMachine"
 import { UserPreferences } from "./UserPreferences"
 
 import { AppModel } from "../model/AppModel"
@@ -19,6 +20,7 @@ import { QAViewModel } from "../viewmodel/QAViewModel"
 // Global dependency injection container
 const globalDI = new DIContainer()
     // lib
+    .addSingleton(stateMachine, "StateMachine")
     .addTransient(UserPreferences, "UserPreferences")
     // model
     .addSingleton(AppModel, "AppModel")
