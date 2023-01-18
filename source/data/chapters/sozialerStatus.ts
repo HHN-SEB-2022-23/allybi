@@ -2,10 +2,11 @@
 import { Emotion } from "../../components/Avatar"
 import type { Chapter } from "../../types/Chapter"
 import { DialogType } from "../../types/DialogType"
+import { Tag } from "../../types/Tags"
 
 export const sozialerStatus: Chapter = {
     "title": "Die 8 Uhr Vorlesung",
-    "tags": [],
+    "tags": [Tag.sozialerStatus],
     "headDialog": {
         dialogType: DialogType.NarratorDialog,
         "text": "Nach einer entspannten 8:00 Uhr Vorlesung begibst du dich auf den Hof um etwas zu essen. Du hörst wie 2 deiner Kommilitonen einem dritten sagen, dass er wenig Hoffnung haben sollte sein Studium zu bestehen, da seine Eltern beide keine Akademiker sind und er zu wenig Geld hätte.",

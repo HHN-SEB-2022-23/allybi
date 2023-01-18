@@ -2,9 +2,11 @@ import { makeAutoObservable } from "mobx"
 import { chapters } from "../data/chapters"
 import type { Chapter } from "../types/Chapter"
 import type { DialogHistoryEntry } from "../types/DialogHistoryEntry"
-import type { Dialog } from "../types/Dialog"
+import type { Dialog, NPCDialog } from "../types/Dialog"
 import { DialogType } from "../types/DialogType"
 import { delay } from "@frank-mayer/magic/Timing"
+import "@frank-mayer/stream"
+import { getDBPromise } from "../lib/DB"
 
 /**
  * Model of the interactive game itself
@@ -21,6 +23,8 @@ export class GameModel {
     }
     private _dialogHistory: Array<DialogHistoryEntry> = []
     private _currentDialog: Dialog | null = this._chapter.headDialog
+    private _isFinished = false
+    private readonly _db = getDBPromise()
 
     public get chapter() {
         return this._chapter
@@ -47,7 +51,12 @@ export class GameModel {
     }
 
     public get isFinished() {
-        return this._endedChapters.size >= chapters.length
+        this.getAvaliableChaptersAsync()
+        return this._isFinished
+    }
+
+    private set isFinished(value: boolean) {
+        this._isFinished = value
     }
 
     constructor() {
@@ -88,9 +97,9 @@ export class GameModel {
                 break
             }
 
-            if ("next" in dialog) {
-                dialog = dialog.next
-                await delay(2000)
+            if (dialog && (dialog as NPCDialog).next) {
+                dialog = (dialog as NPCDialog).next
+                await delay(1024)
             }
             else {
                 break
@@ -120,11 +129,37 @@ export class GameModel {
         this.currentDialog = null
     }
 
-    public initChapter(): boolean {
-        const avChapters = chapters
+    public async getAvaliableChaptersAsync() {
+        const db = await this._db
+
+        const notPlayedChapters = chapters
+            .stream()
             .map((_, i) => i)
             .filter((i) => !this._endedChapters.has(i))
+            .toArray()
 
+        const avChapters = new Array<number>()
+
+        chapter:
+        for (const i of notPlayedChapters) {
+            const chapt = chapters[i]
+            for (const tag of chapt.tags) {
+                const allowed = (await db.get("filter", tag.id.toString(36))) ?? true
+                if (!allowed) {
+                    continue chapter
+                }
+            }
+
+            avChapters.push(i)
+        }
+
+        this.isFinished = avChapters.length == 0
+
+        return avChapters
+    }
+
+    public async initChapterAsync(): Promise<boolean> {
+        const avChapters = await this.getAvaliableChaptersAsync()
         if (avChapters.length === 0) {
             return false
         }
@@ -132,12 +167,12 @@ export class GameModel {
         const i = avChapters[Math.floor(Math.random() * avChapters.length)]
         this.chapter = chapters[i]
         this._endedChapters.add(i)
-        this.dialogHistory.length = 0
+        this.dialogHistory = []
         this.continueDialogAsync(this._chapter.headDialog)
         return true
     }
 
     private pushDialogHistory(entry: DialogHistoryEntry) {
-        this._dialogHistory.push(entry)
+        this.dialogHistory = [...this._dialogHistory, entry]
     }
 }

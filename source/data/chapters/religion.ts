@@ -7,7 +7,7 @@ import { Tag } from "../../types/Tags"
 const AeltererHerr = "Älterer Herr"
 export const religion: Chapter = {
     title: "Diskriminierung in der Bahn",
-    tags: [Tag.diskriminierungstyp1],
+    tags: [Tag.religion],
     headDialog: {
         dialogType: DialogType.NarratorDialog,
         text: "Du beobachtest in der Bahn, dass ein älterer Herr zu einem jungen Mädchen mit Kopftuch sagt.",

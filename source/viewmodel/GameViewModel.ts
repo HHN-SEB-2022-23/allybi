@@ -14,7 +14,10 @@ export class GameViewModel {
     private readonly _appModel = inject("AppModel")
 
     public readonly nextChapter = () => {
-        this._gameModel.initChapter()
+        this._gameModel.initChapterAsync()
+            .then(() => {
+                this._gameModel.getAvaliableChaptersAsync()
+            })
     }
 
     public readonly mainMenu = () => {
@@ -34,6 +37,8 @@ export class GameViewModel {
     }
 
     private chapterEndInput(): {speaker: string, choices: Array<DialogChoice>} {
+        this._gameModel.getAvaliableChaptersAsync()
+
         const d = {
             speaker: "Kapitel abgeschlossen",
             choices: [
