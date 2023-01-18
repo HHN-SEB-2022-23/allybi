@@ -44,6 +44,8 @@ export const QAView = observer(() => {
             <h2 className="document__subtitle">Wo findet das Ehrenamt statt?</h2>
             <p>Folgt noch</p>
 
+            <br />
+
             <p>Wir freuen uns auf deine Anfrage unter adi@skjr-hn.de</p>
 
         </div>
