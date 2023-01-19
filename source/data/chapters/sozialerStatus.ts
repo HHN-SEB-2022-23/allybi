@@ -9,7 +9,7 @@ export const sozialerStatus: Chapter = {
     "tags": [Tag.sozialerStatus],
     "headDialog": {
         dialogType: DialogType.NarratorDialog,
-        "text": "Nach einer entspannten 8:00 Uhr Vorlesung begibst du dich auf den Hof, um etwas zu essen. Du hörst wie zwei deiner Kommilitonen (Alex und Steve) einem dritten (Luca) sagen, dass er wenig Hoffnung haben sollte sein Studium zu bestehen, da seine Eltern beide keine Akademikerinnen sind und er zu wenig Geld hätte. Sie sagen Dinge wie:\n\"Wie willst du denn ordentlich studieren, wenn du nebenbei Arbeiten musst?\"\nLuca ist das sichtlich unangenehm.",
+        "text": "Nach einer entspannten 8:00 Uhr Vorlesung begibst du dich auf den Hof, um etwas zu essen. Du hörst wie zwei deiner Kommilitonen (Alex und Steve) einem dritten (Luca) sagen, dass er wenig Hoffnung haben sollte sein Studium zu bestehen, da seine Eltern beide keine Akademikerinnen sind und er zu wenig Geld hätte. Sie sagen Dinge wie:\n\"Wie willst du denn ordentlich studieren, wenn du nebenbei arbeiten musst?\"\nLuca ist das sichtlich unangenehm.",
         next:{
             dialogType: DialogType.PlayerOptionDialog,
             choices: [
