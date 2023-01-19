@@ -37,12 +37,12 @@ export class Tag<S extends string = string> {
 
     public static readonly values = [
         Tag.geschlecht,
-        Tag.sexualitaet,
+        //Tag.sexualitaet,
         Tag.alter,
-        Tag.aussehen,
-        Tag.behinderung,
-        Tag.religion,
-        Tag.herkunft,
+        //Tag.aussehen,
+        //Tag.behinderung,
+        //Tag.religion,
+        //Tag.herkunft,
         Tag.sozialerStatus,
     ]
 
