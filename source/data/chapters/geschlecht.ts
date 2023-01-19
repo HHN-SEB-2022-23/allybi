@@ -7,7 +7,7 @@ export const geschlecht: Chapter = {
     tags: [Tag.geschlecht],
     headDialog: {
         dialogType: DialogType.NarratorDialog,
-        text: "Derya besucht ein Gymnasium, die MINT-Fächer waren schon immer ihre Lieblingsfächer, besonders Mathe hat es ihr angetan. Trotz sehr guter schriftlicher Leistungen, nimmt ihr Mathelehrer sie und auch andere Mädchen im regulären Unterricht nicht ernst.\nDie Halbjahresnotenbesprechungen haben stattgefunden und obwohl Derya sich genauso viel gemeldet und inhaltlich zum Unterricht beigetragen hat als andere Mitschüler, erhielt sie eine schlechtere mündliche Note. Du bekommst dies während einer Gruppenarbeit mit.\nWie reagierst du?",
+        text: "Derya besucht ein Gymnasium. Die MINT-Fächer waren schon immer ihre Lieblingsfächer, besonders Mathe hat es ihr angetan. Trotz sehr guter schriftlicher Leistungen, nimmt ihr Mathelehrer sie und auch andere Mädchen im regulären Unterricht nicht ernst.\nDie Halbjahresnotenbesprechungen haben stattgefunden und obwohl Derya sich genauso viel gemeldet und inhaltlich zum Unterricht beigetragen hat wie andere Mitschüler, erhielt sie eine schlechtere mündliche Note. Du bekommst dies während einer Gruppenarbeit mit.\nWie reagierst du?",
         next: {
             dialogType: DialogType.PlayerOptionDialog,
             choices: [
@@ -16,7 +16,7 @@ export const geschlecht: Chapter = {
                     text: "Du äußerst dich negativ über die Ungerechtigkeit.",
                     next: {
                         dialogType: DialogType.PlayerDialog,
-                        text: "Ich finde das ist eine absolute Frechheit von dem Lehrer. Ich bin auf jeden Fall auf deiner Seite.",
+                        text: "Ich finde, das ist eine absolute Frechheit von dem Lehrer. Ich bin auf jeden Fall auf deiner Seite.",
                         next: {
                             dialogType: DialogType.NarratorDialog,
                             text: "Derya ist froh, dass sie emotionale Unterstützung von dir bekommt.\nKannst du hier nicht noch mehr tun?",
@@ -70,7 +70,7 @@ export const geschlecht: Chapter = {
                                     text: "Du äußerst dich negativ über die Ungerechtigkeit.",
                                     next: {
                                         dialogType: DialogType.PlayerDialog,
-                                        text: "Ich finde das ist eine absolute Frechheit von dem Lehrer. Ich bin auf jeden Fall auf deiner Seite.",
+                                        text: "Ich finde, das ist eine absolute Frechheit von dem Lehrer. Ich bin auf jeden Fall auf deiner Seite.",
                                         next: {
                                             dialogType: DialogType.NarratorDialog,
                                             text: "Derya ist froh, dass sie emotionale Unterstützung von dir bekommt.\nKannst du hier nicht noch mehr tun?",

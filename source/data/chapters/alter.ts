@@ -16,7 +16,7 @@ export const alter: Chapter = {
             text: "Ach, hör mir doch auf. Ich mach das jetzt seit 40 Jahren und lass mir von dir nicht sagen, wie ich meinen Job zu machen hab.",
             next: {
                 dialogType: DialogType.NarratorDialog,
-                text: "Du bekommst dieses Gespräch mit, wie reagierst du?",
+                text: "Du bekommst dieses Gespräch mit. Wie reagierst du?",
                 next: {
                     dialogType: DialogType.PlayerOptionDialog,
                     choices: [
@@ -34,7 +34,7 @@ export const alter: Chapter = {
                                             text: "Du wartest bis das Gespräch vorbei ist und gehst danach auf die Meisterin zu, um ihr zu erklären, dass du ihr Verhalten unangemessen findest.",
                                             next: {
                                                 dialogType: DialogType.PlayerDialog,
-                                                text: "Ich habe gerade euer Gespräch mitbekommen und ich finde das war nicht in Ordnung von dir. Du solltest ihm konstruktives Feedback auf Paul's Vorschläge geben und dir die Ideen erstmal anhören bevor du abblockst.",
+                                                text: "Ich habe gerade euer Gespräch mitbekommen und ich finde, das war nicht in Ordnung von dir. Du solltest Paul konstruktives Feedback auf seine Vorschläge geben und dir die Ideen erstmal anhören bevor du abblockst.",
                                                 next: {
                                                     dialogType: DialogType.NPCDialog,
                                                     speaker: "Meisterin",
@@ -48,7 +48,7 @@ export const alter: Chapter = {
                                                                 text: "Ich sage der Meisterin, dass sie sich die Ideen anschauen sollte, da gute Ideen nicht zwingend an ein bestimmtes Alter oder Erfahrung gebunden sind.",
                                                                 next: {
                                                                     dialogType: DialogType.NarratorDialog,
-                                                                    text: "Sie gibt nach und schaut sich Paul's Liste an. Die beiden unterhalten sich noch eine Weile über seine Ideen, bevor beide wieder zurück an die Arbeit gehen.\nEs ist gut, dass du auf die Diskriminierung reagiert hast. Vielleicht hättest du auch direkt in der Situation eingreifen können?",
+                                                                    text: "Sie gibt nach und schaut sich Pauls Liste an. Die beiden unterhalten sich noch eine Weile über seine Ideen, bevor beide wieder zurück an die Arbeit gehen.\nEs ist gut, dass du auf die Diskriminierung reagiert hast. Vielleicht hättest du auch direkt in der Situation eingreifen können?",
                                                                 }
                                                             },
                                                             {
@@ -83,7 +83,7 @@ export const alter: Chapter = {
                                                     text: "Du sagst der Meisterin, dass sie sich die Ideen anschauen sollte, da gute Ideen nicht zwingend an ein bestimmtes Alter oder Erfahrung gebunden sind.",
                                                     next: {
                                                         dialogType: DialogType.NarratorDialog,
-                                                        text: "Sie gibt nach und schaut sich Paul's Liste an. Die beiden unterhalten sich noch eine Weile über seine Ideen, bevor sie wieder zurück an ihre Arbeit gehen.\nGut gemacht! Du hast in einem Fall von Altersdiskriminierung eingegriffen und Paul unterstützt.",
+                                                        text: "Sie gibt nach und schaut sich Pauls Liste an. Die beiden unterhalten sich noch eine Weile über seine Ideen, bevor sie wieder zurück an ihre Arbeit gehen.\nGut gemacht! Du hast in einem Fall von Altersdiskriminierung eingegriffen und Paul unterstützt.",
                                                     }
                                                 }
                                             }
@@ -97,7 +97,7 @@ export const alter: Chapter = {
                             text: "Du wartest bis das Gespräch vorbei ist und gehst danach auf die Meisterin zu, um ihr zu erklären, dass du ihr Verhalten unangemessen findest.",
                             next: {
                                 dialogType: DialogType.PlayerDialog,
-                                text: "Ich habe gerade euer Gespräch mitbekommen und ich finde das war nicht in Ordnung von dir. Du solltest ihm konstruktives Feedback auf Paul's Vorschläge geben und dir die Ideen erstmal anhören bevor du abblockst.",
+                                text: "Ich habe gerade euer Gespräch mitbekommen und ich finde, das war nicht in Ordnung von dir. Du solltest Paul konstruktives Feedback auf seine Vorschläge geben und dir die Ideen erstmal anhören bevor du abblockst.",
                                 next: {
                                     dialogType: DialogType.NPCDialog,
                                     speaker: "Meisterin",
@@ -138,7 +138,7 @@ export const alter: Chapter = {
                                     text: "Du sagst der Meisterin, dass sie sich die Ideen anschauen sollte, da gute Ideen nicht zwingend an ein bestimmtes Alter oder Erfahrung gebunden sind.",
                                     next: {
                                         dialogType: DialogType.NarratorDialog,
-                                        text: "Sie gibt nach und schaut sich Paul's Liste an. Die beiden unterhalten sich noch eine Weile über seine Ideen, bevor sie wieder zurück an ihre Arbeit gehen.\nGut gemacht! Du hast in einem Fall von Altersdiskriminierung eingegriffen und Paul unterstützt.",
+                                        text: "Sie gibt nach und schaut sich Pauls Liste an. Die beiden unterhalten sich noch eine Weile über seine Ideen, bevor sie wieder zurück an ihre Arbeit gehen.\nGut gemacht! Du hast in einem Fall von Altersdiskriminierung eingegriffen und Paul unterstützt.",
                                     }
                                 }
                             }

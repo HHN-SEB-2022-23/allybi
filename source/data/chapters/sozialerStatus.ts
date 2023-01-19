@@ -40,7 +40,7 @@ export const sozialerStatus: Chapter = {
                                             text: "Es tut uns leid.",
                                             next: {
                                                 dialogType: DialogType.NarratorDialog,
-                                                text: "Du hast das Gefühl die Situation so gut wie möglich gemeistert zu haben."
+                                                text: "Du hast das Gefühl, die Situation so gut wie möglich gemeistert zu haben."
                                             }
                                         }
                                     }
@@ -55,7 +55,7 @@ export const sozialerStatus: Chapter = {
                     text: "\"Oh, du hast einen Job in der Nähe? Ich brauch auch noch einen.\"",
                     next: {
                         dialogType: DialogType.NarratorDialog,
-                        text: "Luca erzählt von der Bar in der er arbeitet und fragt, ob er dich vermitteln soll.\nDie anderen zwei steigen wieder ein fragen ob denn hier jeder einfach in die Uni reingelassen wird.",
+                        text: "Luca erzählt von der Bar, in der er arbeitet und fragt, ob er dich vermitteln soll.\nDie anderen zwei steigen wieder ein und fragen, ob denn hier jeder einfach in die Uni reingelassen wird.",
                         next: {
                             dialogType: DialogType.PlayerOptionDialog,
                             choices: [
@@ -105,7 +105,7 @@ export const sozialerStatus: Chapter = {
                                     text: "\"Oh, hast du einen Job in der Nähe? Ich brauch auch noch was.\"",
                                     next: {
                                         dialogType: DialogType.NarratorDialog,
-                                        text: "Luca erzählt von der Bar in der er arbeitet und fragt, ob er dich vermitteln soll.\nDie anderen zwei steigen wieder ein fragen ob denn hier jeder einfach in die Uni reingelassen wird.",
+                                        text: "Luca erzählt von der Bar, in der er arbeitet und fragt, ob er dich vermitteln soll.\nDie anderen zwei steigen wieder ein und fragen, ob denn hier jeder einfach in die Uni reingelassen wird.",
                                         next: {
                                             dialogType: DialogType.PlayerOptionDialog,
                                             choices: [
@@ -160,7 +160,7 @@ export const sozialerStatus: Chapter = {
                                                             text: "Es tut uns leid.",
                                                             next: {
                                                                 dialogType: DialogType.NarratorDialog,
-                                                                text: "Du hast das Gefühl die Situation so gut wie möglich gemeistert zu haben."
+                                                                text: "Du hast das Gefühl, die Situation so gut wie möglich gemeistert zu haben."
                                                             }
                                                         }
                                                     }
