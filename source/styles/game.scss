@@ -178,3 +178,17 @@
         }
     }
 }
+
+@media (max-width: 512px) {
+    .game {
+        &__chapter-title {
+            font-size: 1.25rem !important;
+        }
+
+        .dialog-input {
+            &__choice {
+                padding: 0.5rem 0.75rem !important;
+            }
+        }
+    }
+}
