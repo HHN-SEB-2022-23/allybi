@@ -38,7 +38,7 @@ export const CreditsView = observer(() => {
             <h2 className="document__subtitle">First Party Dependencies</h2>
             <ul>
                 <li><ExternalLink href="https://reactjs.org/">React</ExternalLink> Frontend</li>
-                <li><ExternalLink href="https://parceljs.org/">Parcel</ExternalLink> Bundler</li>
+                <li><ExternalLink href="https://vitejs.dev/">Vite</ExternalLink> Bundler</li>
                 <li><ExternalLink href="https://www.typescriptlang.org/">TypeScript</ExternalLink> Typing</li>
                 <li><ExternalLink href="https://sass-lang.com/">Sass</ExternalLink> CSS Preprocessor</li>
                 <li><ExternalLink href="https://mobx.js.org/">MobX</ExternalLink> State Management</li>

@@ -51,7 +51,7 @@ npm run build
 ## First Party Dependencies
 
 - [React](https://reactjs.org) Frontend
-- [Parcel](https://parceljs.org) Bundler
+- [Vite](https://vitejs.dev) Bundler
 - [TypeScript](https://www.typescriptlang.org) Typing
 - [Sass](https://sass-lang.com) CSS Preprocessor
 - [MobX](https://mobx.js.org) State Management
