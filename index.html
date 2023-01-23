@@ -7,7 +7,7 @@
                 location.protocol === "https:"
             ) {
                 navigator.serviceWorker.register(
-                    new URL("sw.ts", import.meta.url),
+                    new URL("/source/sw.ts", import.meta.url),
                     { type: "module", scope: "/" }
                 );
             }
@@ -22,12 +22,12 @@
         <meta property="og:title" content="Allybi" />
         <meta name="description" content="vom Alibi zum Ally" />
         <meta property="og:description" content="vom Alibi zum Ally" />
-        <meta property="og:image" content="./favicon.png" />
+        <meta property="og:image" content="/favicon.png" />
 
         <title>Allybi</title>
-        <link rel="stylesheet" href="./styles/index.scss" />
-        <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
-        <link rel="manifest" href="./manifest.webmanifest" />
+        <link rel="stylesheet" href="/source/styles/index.scss" />
+        <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="manifest" href="/manifest.webmanifest" />
     </head>
     <body>
         <main id="app">
@@ -43,6 +43,6 @@
                 Antidiskriminierungsstelle Heilbronn
             </a>
         </footer>
-        <script defer async type="module" src="./index.tsx"></script>
+        <script defer async type="module" src="/source/index.tsx"></script>
     </body>
 </html>
