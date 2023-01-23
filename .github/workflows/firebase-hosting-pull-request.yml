@@ -8,10 +8,24 @@ jobs:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: npm ci
-      - run: npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Wait for other pipelines to finish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: otto-de/github-actions-wait@v1.0
+        with:
+          step-name: Test
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Use Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ALLYBI }}"
