@@ -4,161 +4,130 @@ import { DialogType } from "../../types/DialogType"
 import { Tag } from "../../types/Tags"
 
 export const sexualitaet: Chapter = {
-    title: "Homosexualität",
+    title: "Sexuelle Orientierung #Homphobie",
     tags: [Tag.sexualitaet],
     headDialog: {
         dialogType: DialogType.NarratorDialog,
-        text: "Du studierst an einer Hochschule und hörst, wie ein Kommilitone über einen schwulen Mitstudenten (Lee) redet, welcher in deiner Lerngruppe ist.",
+        text: "Du studierst an einer Hochschule und hörst, wie eine Kommilitonin (Franziska) über einen anderen Kommilitonen (Lee) redet, welcher homosexuell ist. Sie sagt, dass das unnatürlich sei. Du überlegst, was du tun sollst.",
         next: {
-            dialogType: DialogType.NPCDialog,
-            speaker: "John",
-            emotion: Emotion.sad,
-            text: "Das ist unnatürlich!",
-            next: {
-                dialogType: DialogType.NarratorDialog,
-                text: "Was tust du?",
-                next: {
-                    dialogType: DialogType.PlayerOptionDialog,
-                    choices: [
-                        {
-                            dialogType: DialogType.PlayerDialog,
-                            text: "Du sprichst den Kommilitonen an und sagst, dass du gerne mit ihm reden würdest, um auf dieses Gespräch einzugehen.",
-                            next: {
-                                dialogType: DialogType.NarratorDialog,
-                                text: "Ihr geht an einen ruhigen Ort, um euch zu unterhalten.",
-                                next: {
-                                    dialogType: DialogType.PlayerOptionDialog,
-                                    choices: [
-                                        {
-                                            dialogType: DialogType.PlayerDialog,
-                                            text: "Ich sage ihm, dass diese Aussage nicht in Ordnung war und bitte ihn zukünftig nachzudenken, bevor er solche Äußerungen tätigt.",
-                                            next: {
-                                                dialogType: DialogType.PlayerDialog,
-                                                text: "Solche Aussagen sind nicht okay. Hast du dir schonmal darüber Gedanken gemacht, wie sich Lee bei solchen Kommentaren fühlt? Denk doch nächstes mal bitte darüber nach, wie sich deine Äußerungen sich auf andere auswirken könnten, bevor du diese tätigst.",
-                                                next: {
-                                                    dialogType: DialogType.NarratorDialog,
-                                                    text: "Er stimmt mir etwas widerwillig zu, aber man merkt ihm an, dass er weiterhin gegenüber Lee voreingenommen ist.",
-                                                },
-
-                                            },
-                                        },
-                                        {
-                                            dialogType: DialogType.PlayerDialog,
-                                            text: "Ich kläre ihn allgemein über Sexualitäten auf und lade den Kommilitonen zu einem Treffen meiner Lerngruppe ein, damit er sich selbst ein Bild von Lee machen kann.",
-                                            next: {
-                                                dialogType: DialogType.PlayerDialog,
-                                                text: "Homosexualität ist nicht unnatürlich. Es gibt auch viele Tierarten bei denen gleichgeschlechtliche Pärchen vorkommen. Außerdem hat die sexuelle Orientierung keinen Einfluss auf den Charakter, daher solltest du Lee nicht nach dieser beurteilen, sondern ihn erstmal persönlich kennenlernen, bevor du dir ein Bild über ihn machst.",
-                                                next: {
-                                                    dialogType: DialogType.NarratorDialog,
-                                                    text: "Er zögert, denkt aber über meinen Vorschlag nach. Am nächsten Tag kommt er auf mich zu und nimmt meine Einladung an. Bei dem Treffen ist er anfangs zurückhaltend, jedoch stellt sich nach ein paar Stunden heraus, dass er und Lee viele Gemeinsamkeiten haben und sie werden nach einigen Wochen sogar Freunde.",
-                                                },
-                                            },
-                                        },
-                                        {
-                                            dialogType: DialogType.PlayerDialog,
-                                            text: "Ich kläre ihn allgemein über Sexualitäten auf, erläutere warum Homosexualität auch natürlich ist und bitte ihn zukünftig nachzudenken, bevor er solche Äußerungen tätigt.",
-                                            next: {
-                                                dialogType: DialogType.PlayerDialog,
-                                                text: "Homosexualität ist nicht unnatürlich. Es gibt auch viele Tierarten bei denen gleichgeschlechtliche Pärchen vorkommen. Außerdem hat die sexuelle Orientierung keinen Einfluss auf den Charakter, daher solltest du Lee nicht nach dieser beurteilen, sondern ihn erstmal persönlich kennenlernen, bevor du dir ein Bild über ihn machst.",
-                                                next: {
-                                                    dialogType: DialogType.NarratorDialog,
-                                                    text: "Er wirkt skeptisch, aber scheint über meine Worte nachzudenken. In den nächsten Wochen merkt man, dass sein Verhalten sich bessert und er das Gesagte etwas verinnerlicht und sein voriges Verhalten hinterfragt hat.",
-                                                },
-                                            },
-                                        },
-                                    ],
+            dialogType: DialogType.PlayerOptionDialog,
+            choices: [
+                {
+                    dialogType: DialogType.PlayerDialog,
+                    text: "Du denkst nicht, dass du die Meinung von Franziska ändern kannst und tust daher nichts.",
+                    next: {
+                        dialogType: DialogType.PlayerDialog,
+                        text: "Bist du dir sicher, dass du nichts tun möchtest?",
+                        next: {
+                            dialogType: DialogType.PlayerOptionDialog,
+                            choices: [
+                                {
+                                    dialogType: DialogType.PlayerDialog,
+                                    text: "Nichts tun.",
+                                    next: {
+                                        dialogType: DialogType.NarratorDialog,
+                                        text: "Game Over\nDu hast nicht geholfen, wenn es nötig gewesen wäre. Versuche einzuschreiten, wenn du mitbekommst, dass jemand diskriminiert wird. Wenn du dich nicht selbst traust, kannst du auch auf umstehende Personen zugehen und um Hilfe bitten.\nDurch Zivilcourage kannst du die Welt für mindestens eine Person ein bisschen besser machen."
+                                    }
                                 },
-                            },
-                        },
-                        {
-                            dialogType: DialogType.PlayerDialog,
-                            text: "Du denkst, dass du keinen Einfluss auf seine Meinung haben wirst und verlässt den Saal.",
-                            next: {
-                                dialogType: DialogType.NarratorDialog,
-                                text: "In den nächsten Tagen fallen noch öfter solche Bemerkungen und du merkst bei den Treffen der Lerngruppe, dass sich Lees Gemütszustand verschlechtert hat.",
-                                next: {
-                                    dialogType: DialogType.PlayerOptionDialog,
-                                    choices: [
-                                        {
-                                            dialogType: DialogType.PlayerDialog,
-                                            text: "Ich mache weiterhin nichts, da ich weiterhin der Meinung bin, dass ich seine Meinung nicht ändern kann.",
+                                {
+                                    dialogType: DialogType.PlayerDialog,
+                                    text: "Du schlägst Franziska ein Treffen mit Lee vor, damit sie sich ein besseres Bild von ihm machen kann, bevor sie über ihn urteilt.",
+                                    next: {
+                                        dialogType: DialogType.NPCDialog,
+                                        speaker: "Franziska",
+                                        emotion: Emotion.neutral,
+                                        text: "Ja, von mir aus. Das wird aber nichts an meiner Meinung ändern.",
+                                        next:{
+                                            dialogType: DialogType.PlayerOptionDialog,
+                                            choices: [
+                                                {
+                                                    dialogType: DialogType.PlayerDialog,
+                                                    text: "Mit ihrer Einverständnis, holst du Lee dazu und versuchst ihr zu erklären, dass Homosexualität normal ist.",
+                                                    next: {
+                                                        dialogType: DialogType.NarratorDialog,
+                                                        text: "Game Over\nDu hast Lee wissentlich einer diskriminierenden Person ausgesetzt, ohne es davor mit ihm abgesprochen zu haben. Du weißt nicht wie diese Situation verläuft und kannst so keinen sicheren Raum für Lee schaffen.\nSoetwas solltest du nur mit Personen machen, welche sich vorher ausdrücklich dazu bereit erklärt haben und sich bewusst sind, in was für eine Situation sie sich begeben."
+                                                    }
+                                                },
+                                                {
+                                                    dialogType: DialogType.PlayerDialog,
+                                                    text: "Du erzählst Lee von dieser Situation und fragst ihn nach seinem Einverständnis und dem Zeitpunkt für das Treffen.",
+                                                    next: {
+                                                        dialogType: DialogType.NarratorDialog,
+                                                        text: "Game Over\nSelbst mit Lees Einverständnis wäre dieses Treffen keine gute Idee. Du setzt ihn damit im schlimmsten Fall noch mehr Diskriminierung aus, was du natürlich absolut vermeiden solltest. Du weißt nicht, wie Franziska sich verhalten wird und kannst somit auch keine sichere Umgebung für Lee garantieren."
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    dialogType: DialogType.PlayerDialog,
+                                    text: "Du startest ein Gespräch mit Franziska und erklärst ihr, dass Homosexualität normal ist.",
+                                    next: {
+                                        dialogType: DialogType.PlayerDialog,
+                                        text: "Homosexualität ist ganz normal. Es gibt viele gleichgeschlechtliche Paare und diese Menschen sind auch nicht anders als du oder ich. Außerdem hat die sexuelle Orientierung keinen Einfluss auf den Charakter, daher solltest du Lee nicht nach dieser beurteilen, ohne ihn zu kennen.",
+                                        next: {
+                                            dialogType: DialogType.NarratorDialog,
+                                            text: "Franziska geht nicht auf deine Argumente ein und läuft davon.",
                                             next: {
                                                 dialogType: DialogType.NarratorDialog,
-                                                text: "In den folgenden Wochen fallen weitere ähnliche Kommentare von dem Kommilitonen. Lee fühlt sich nicht wohl dabei und versucht, ihm aus dem Weg zu gehen.",
-                                            },
-                                        },
-                                        {
-                                            dialogType: DialogType.PlayerDialog,
-                                            text: "Ich gehe auf den anderen Kommilitonen zu, um mit ihm über sein Verhalten zu reden.",
-                                            next: {
-                                                dialogType: DialogType.NarratorDialog,
-                                                text: "Nach der Vorlesung treffen wir uns in einer ruhigen Ecke, um uns zu unterhalten.",
-                                                next: {
-                                                    dialogType: DialogType.PlayerOptionDialog,
-                                                    choices: [
-                                                        {
-                                                            dialogType: DialogType.PlayerDialog,
-                                                            text: "Ich kläre ihn allgemein über Sexualitäten auf und lade den Kommilitonen zu einem Treffen meiner Lerngruppe ein, damit er sich selbst ein Bild von dem Mitstudenten machen kann.",
-                                                            next: {
-                                                                dialogType: DialogType.PlayerDialog,
-                                                                text: "Homosexualität ist nicht unnatürlich. Es gibt auch viele Tierarten bei denen gleichgeschlechtliche Pärchen vorkommen. Außerdem hat die sexuelle Orientierung keinen Einfluss auf den Charakter, daher solltest du Lee nicht nach dieser beurteilen, sondern ihn erstmal persönlich kennenlernen, bevor du dir ein Bild über ihn machst.",
-                                                                next: {
-                                                                    dialogType: DialogType.NarratorDialog,
-                                                                    text: "Er zögert, denkt aber über meinen Vorschlag nach. Am nächsten Tag kommt er auf mich zu und nimmt meine Einladung an. Bei dem Treffen ist er anfangs zurückhaltend, jedoch stellt sich nach ein paar Stunden heraus, dass er und Lee viele Gemeinsamkeiten haben und sie werden nach einigen Wochen sogar Freunde.",
-                                                                },
-                                                            },
-                                                        },
-                                                        {
-                                                            dialogType: DialogType.PlayerDialog,
-                                                            text: "Ich sage ihm, dass diese Aussage nicht in Ordnung war und bitte ihn zukünftig nachzudenken, bevor er solche Äußerungen tätigt.",
-                                                            next: {
-                                                                dialogType: DialogType.PlayerDialog,
-                                                                text: "Solche Aussagen sind nicht okay. Hast du dir schonmal darüber Gedanken gemacht, wie sich Lee bei solchen Kommentaren fühlt? Denk doch nächstes mal bitte darüber nach, wie sich deine Äußerungen sich auf andere auswirken könnten bevor du diese tätigst.",
-                                                                next: {
-                                                                    dialogType: DialogType.NarratorDialog,
-                                                                    text: "Er stimmt mir etwas widerwillig zu, aber man merkt ihm an, dass er weiterhin gegenüber Lee voreingenommen ist.",
-                                                                    next: {
-                                                                        dialogType: DialogType.NarratorDialog,
-                                                                        text: "Ich merke, dass es Lee etwas besser geht, seit die Kommentare weniger wurden. Jedoch belastet ihn der Vorfall immer noch.",
-                                                                    },
-                                                                },
-                                                            },
-                                                        },
-                                                        {
-                                                            dialogType: DialogType.PlayerDialog,
-                                                            text: "Ich kläre ihn allgemein über Sexualitäten auf, erläutere warum Homosexualität auch natürlich ist und bitte ihn zukünftig nachzudenken, bevor er solche Äußerungen tätigt.",
-                                                            next: {
-                                                                dialogType: DialogType.PlayerDialog,
-                                                                text: "Homosexualität ist nicht unnatürlich. Es gibt auch viele Tierarten bei denen gleichgeschlechtliche Pärchen vorkommen. Außerdem hat die sexuelle Orientierung keinen Einfluss auf den Charakter, daher solltest du Lee nicht nach dieser beurteilen, sondern ihn erstmal persönlich kennenlernen, bevor du dir ein Bild über ihn machst.",
-                                                                next: {
-                                                                    dialogType: DialogType.NarratorDialog,
-                                                                    text: "Er wirkt skeptisch, aber scheint über meine Worte nachzudenken. In den nächsten Wochen merkt man, dass sein Verhalten sich bessert und er das Gesagte etwas verinnerlicht und sein voriges Verhalten hinterfragt hat.",
-                                                                },
-                                                            },
-                                                        },
-                                                    ],
-                                                },
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                        },
-                        {
-                            dialogType: DialogType.PlayerDialog,
-                            text: "Ich kläre ihn allgemein über Sexualitäten auf und lade den Kommilitonen zu einem Treffen meiner Lerngruppe ein, damit er sich selbst ein Bild von dem Mitstudenten machen kann.",
-                            next: {
-                                dialogType: DialogType.PlayerDialog,
-                                text: "Homosexualität ist nicht unnatürlich. Es gibt auch viele Tierarten bei denen gleichgeschlechtliche Pärchen vorkommen. Außerdem hat die sexuelle Orientierung keinen Einfluss auf den Charakter, daher solltest du Lee nicht nach dieser beurteilen, sondern ihn erstmal persönlich kennenlernen, bevor du dir ein Bild über ihn machst.",
-                                next: {
-                                    dialogType: DialogType.NarratorDialog,
-                                    text: "Er zögert, denkt aber über meinen Vorschlag nach. Am nächsten Tag kommt er auf mich zu und nimmt meine Einladung an. Bei dem Treffen ist er anfangs zurückhaltend, jedoch stellt sich nach ein paar Stunden heraus, dass er und Lee viele Gemeinsamkeiten haben und sie werden nach einigen Wochen sogar Freunde.",
-                                },
-                            },
-                        },
-                    ],
+                                                text: "Gut gemacht!\nDu bist für Lee eingestanden. Vielleicht denkt Franziska das nächste Mal besser über ihre verletzenden Aussagen nach. Das wäre wohl das Beste, das du in dieser Situation erreichen kannst."
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 },
-            },
+                {
+                    dialogType: DialogType.PlayerDialog,
+                    text: "Du startest ein Gespräch mit Franziska und erklärst ihr, dass Homosexualität normal ist.",
+                    next: {
+                        dialogType: DialogType.PlayerDialog,
+                        text: "Homosexualität ist ganz normal. Es gibt viele gleichgeschlechtliche Paare und diese Menschen sind auch nicht anders als du oder ich. Außerdem hat die sexuelle Orientierung keinen Einfluss auf den Charakter, daher solltest du Lee nicht nach dieser beurteilen, ohne ihn zu kennen.",
+                        next: {
+                            dialogType: DialogType.NarratorDialog,
+                            text: "Franziska geht nicht auf deine Argumente ein und läuft davon.",
+                            next: {
+                                dialogType: DialogType.NarratorDialog,
+                                text: "Gut gemacht!\nDu bist für Lee eingestanden. Vielleicht denkt Franziska das nächste Mal besser über ihre verletzenden Aussagen nach. Das wäre wohl das Beste, das du in dieser Situation erreichen kannst."
+                            }
+                        }
+                    }
+                },
+                {
+                    dialogType: DialogType.PlayerDialog,
+                    text: "Du schlägst Franziska ein Treffen mit Lee vor, damit sie sich ein besseres Bild von ihm machen kann, bevor sie über ihn urteilt.",
+                    next: {
+                        dialogType: DialogType.NPCDialog,
+                        speaker: "Franziska",
+                        emotion: Emotion.neutral,
+                        text: "Ja, von mir aus. Das wird aber nichts an meiner Meinung ändern.",
+                        next:{
+                            dialogType: DialogType.PlayerOptionDialog,
+                            choices: [
+                                {
+                                    dialogType: DialogType.PlayerDialog,
+                                    text: "Mit ihrer Einverständnis, holst du Lee dazu und versuchst ihr zu erklären, dass Homosexualität normal ist.",
+                                    next: {
+                                        dialogType: DialogType.NarratorDialog,
+                                        text: "Game Over\nDu hast Lee wissentlich einer diskriminierenden Person ausgesetzt, ohne es davor mit ihm abgesprochen zu haben. Du weißt nicht wie diese Situation verläuft und kannst so keinen sicheren Raum für Lee schaffen.\nSoetwas solltest du nur mit Personen machen, welche sich vorher ausdrücklich dazu bereit erklärt haben und sich bewusst sind, in was für eine Situation sie sich begeben."
+                                    }
+                                },
+                                {
+                                    dialogType: DialogType.PlayerDialog,
+                                    text: "Du erzählst Lee von dieser Situation und fragst ihn nach seinem Einverständnis und dem Zeitpunkt für das Treffen.",
+                                    next: {
+                                        dialogType: DialogType.NarratorDialog,
+                                        text: "Game Over\nSelbst mit Lees Einverständnis wäre dieses Treffen keine gute Idee. Du setzt ihn damit im schlimmsten Fall noch mehr Diskriminierung aus, was du natürlich absolut vermeiden solltest. Du weißt nicht, wie Franziska sich verhalten wird und kannst somit auch keine sichere Umgebung für Lee garantieren."
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
         }
     }
 }

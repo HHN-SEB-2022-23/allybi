@@ -3,7 +3,7 @@ import { DialogType } from "../../types/DialogType"
 import { Tag } from "../../types/Tags"
 
 export const geschlecht: Chapter = {
-    title: "Diskriminierung im Matheunterricht #sexismus",
+    title: "Geschlecht #sexismus",
     tags: [Tag.geschlecht],
     headDialog: {
         dialogType: DialogType.NarratorDialog,

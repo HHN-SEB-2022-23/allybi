@@ -5,7 +5,7 @@ import { Tag } from "../../types/Tags"
 import { Emotion } from "../../components/Avatar"
 
 export const sozialerStatus: Chapter = {
-    "title": "Die 8 Uhr Vorlesung #Klassismus",
+    "title": "Sozialer Status #Klassismus",
     "tags": [Tag.sozialerStatus],
     "headDialog": {
         dialogType: DialogType.NarratorDialog,
