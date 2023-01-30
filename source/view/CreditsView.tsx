@@ -24,11 +24,6 @@ export const CreditsView = observer(() => {
                 bei der Erstellung der Inhalte mit Rat und Tat zur Seite stand.
             </p>
 
-            <h2 className="document__subtitle">Warum?</h2>
-            <p>
-                Weil wir's können?
-            </p>
-
             <h2 className="document__subtitle">Source Code</h2>
             <p>
                 <ExternalLink href="https://github.com/HHN-SEB-2022-23/allybi">https://github.com/HHN-SEB-2022-23/allybi</ExternalLink>
