@@ -111,7 +111,7 @@ export const alter: Chapter = {
                                                 text: "Ich sage der Meisterin, dass sie sich die Ideen anschauen sollte, da gute Ideen nicht zwingend an ein bestimmtes Alter oder Erfahrung gebunden sind.",
                                                 next: {
                                                     dialogType: DialogType.NarratorDialog,
-                                                    text: "Sie gibt nach und schaut sich Paul's Liste an. Die beiden unterhalten sich noch eine Weile über seine Ideen, bevor beide wieder zurück an die Arbeit gehen.\nEs ist gut, dass du auf die Diskriminierung reagiert hast. Vielleicht hättest du auch direkt in der Situation eingreifen können?",
+                                                    text: "Sie gibt nach und schaut sich Pauls Liste an. Die beiden unterhalten sich noch eine Weile über seine Ideen, bevor beide wieder zurück an die Arbeit gehen.\nEs ist gut, dass du auf die Diskriminierung reagiert hast. Vielleicht hättest du auch direkt in der Situation eingreifen können?",
                                                 }
                                             },
                                             {
