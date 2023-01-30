@@ -107,6 +107,12 @@ body {
     display: block;
 }
 
+@supports (max-height: 100dvh) {
+    body {
+        max-height: 100dvh !important;
+    }
+}
+
 :root[data-reduced-motion="true"] #app {
     *,
     *::after,
