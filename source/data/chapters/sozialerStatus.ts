@@ -40,7 +40,7 @@ export const sozialerStatus: Chapter = {
                                             text: "Es tut uns leid.",
                                             next: {
                                                 dialogType: DialogType.NarratorDialog,
-                                                text: "Du hast das Gefühl, die Situation so gut wie möglich gemeistert zu haben."
+                                                text: "Du hast die Situation so gut wie möglich gemeistert."
                                             }
                                         }
                                     }
@@ -160,7 +160,7 @@ export const sozialerStatus: Chapter = {
                                                             text: "Es tut uns leid.",
                                                             next: {
                                                                 dialogType: DialogType.NarratorDialog,
-                                                                text: "Du hast das Gefühl, die Situation so gut wie möglich gemeistert zu haben."
+                                                                text: "Du hast die Situation so gut wie möglich gemeistert."
                                                             }
                                                         }
                                                     }
