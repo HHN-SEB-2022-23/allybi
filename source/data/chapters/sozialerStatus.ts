@@ -40,7 +40,7 @@ export const sozialerStatus: Chapter = {
                                             text: "Es tut uns leid.",
                                             next: {
                                                 dialogType: DialogType.NarratorDialog,
-                                                text: "Du hast das Gefühl, die Situation so gut wie möglich gemeistert zu haben."
+                                                text: "Du hast die Situation so gut wie möglich gemeistert."
                                             }
                                         }
                                     }
@@ -138,7 +138,7 @@ export const sozialerStatus: Chapter = {
                                     text: "Jungs, das ist ihm offensichtlich unangenehm, schaltet mal einen Gang runter.",
                                     next: {
                                         dialogType: DialogType.PlayerDialog,
-                                        text: "Jeder seichte Witz kann eine andere Person hart treffen. Manche mehr, manche weniger.",
+                                        text: "Jeder Witz kann eine andere Person hart treffen. Manche mehr, manche weniger.",
                                         next: {
                                             dialogType: DialogType.NarratorDialog,
                                             text: "Die zwei gucken verdutzt.",
@@ -160,7 +160,7 @@ export const sozialerStatus: Chapter = {
                                                             text: "Es tut uns leid.",
                                                             next: {
                                                                 dialogType: DialogType.NarratorDialog,
-                                                                text: "Du hast das Gefühl, die Situation so gut wie möglich gemeistert zu haben."
+                                                                text: "Du hast die Situation so gut wie möglich gemeistert."
                                                             }
                                                         }
                                                     }

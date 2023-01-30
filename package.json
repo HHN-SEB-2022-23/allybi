@@ -6,17 +6,17 @@
     "lint": "eslint source --ext .ts,.tsx"
   },
   "devDependencies": {
-    "@frank-mayer/eslint-config": "^1.1.1",
-    "@parcel/packager-raw-url": "^2.8.2",
-    "@parcel/transformer-sass": "^2.8.2",
-    "@parcel/transformer-webmanifest": "^2.8.2",
-    "@types/react": "^18.0.26",
+    "@frank-mayer/eslint-config": "^1.2.0",
+    "@parcel/packager-raw-url": "^2.8.3",
+    "@parcel/transformer-sass": "^2.8.3",
+    "@parcel/transformer-webmanifest": "^2.8.3",
+    "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.48.1",
     "eslint": "^8.32.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "parcel": "^2.8.2",
+    "parcel": "^2.8.3",
     "process": "^0.11.10",
     "sass": "^1.57.1",
     "typescript": "^4.9.4"

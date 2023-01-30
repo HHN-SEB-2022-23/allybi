@@ -13,4 +13,17 @@
             top: 3rem;
         }
     }
+
+    &__banner {
+        height: 10vmin;
+        display: block;
+        width: calc(100% - 0.5rem);
+        background-color: white;
+        padding: 0 1rem;
+
+        > * {
+            display: inline-block;
+            height: 10vmin;
+        }
+    }
 }

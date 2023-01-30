@@ -14,6 +14,7 @@ export const QAView = observer(() => {
         <div className="menu document">
             <h1 className="menu__title">Q&A</h1>
             <button onClick={_qaViewModel.onClickBack} className="menu__item">Zurück</button>
+            <div className="document__banner"><img src="/adi.webp" alt="adi.hn" /></div>
             <h2 className="document__subtitle">Was ist die adi?</h2>
             <p>
                 Die adi.hn, die Antidiskriminierungsstelle Heilbronn, gibt es
