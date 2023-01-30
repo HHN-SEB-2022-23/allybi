@@ -1,90 +1,150 @@
 import type { Chapter } from "../../types/Chapter"
 import { DialogType } from "../../types/DialogType"
-import type { Dialog } from "../../types/Dialog"
 import { Emotion } from "../../components/Avatar"
 import { Tag } from "../../types/Tags"
 
-const kevin = "Kevin\n(Mitschüler)"
-const hrMorina = "Herr Morina\n(Lehrer)"
-
-const rejoin_001: Dialog = {
-    dialogType: DialogType.PlayerOptionDialog,
-    choices: [
-        {
-            dialogType: DialogType.PlayerDialog,
-            text: "Ich könnte während des Ausfluges auf sie achten, dann müssen Sie das nicht Herr Morina."
-        },
-        {
-            dialogType: DialogType.PlayerDialog,
-            text: "(Nichts sagen)"
-        }
-    ]
-}
-
-const mainChoice_001: Dialog = {
-    dialogType: DialogType.NPCDialog,
-    speaker: kevin,
-    emotion: Emotion.sad,
-    text: "Jetzt halt aber mal die Luft an! Die macht uns doch nur den Ausflug kaputt. Von mir aus sollte die gar nicht hier sein, sondern in eine Behindertenschule! Die sind ja schließlich für behinderte gemacht worden, kann doch nicht sein, dass die meint sie gehört hier her!",
-    next: {
-        dialogType: DialogType.PlayerDialog,
-        text: "Schonmal daran gedacht wie verletzend deine Worte sind? Dir zuzuhören macht mich echt wütend! Vielleicht sollten wir lieber dich hier lassen!",
-        next: {
-            dialogType: DialogType.NPCDialog,
-            speaker: hrMorina,
-            emotion: Emotion.neutral,
-            text: "Das reich jetzt ihr beiden!\nEs ist ja schön, wenn du dich für Anna einsetzen willst aber so hilfst du der Situation nicht.",
-            next: {
-                dialogType: DialogType.NarratorDialog,
-                text: "Anna ist die Situation sichtlich unangenehm.\nDer Rest der Klasse folgt schweigend der Diskussion.",
-                next: rejoin_001
-            }
-        }
-    }
-}
-
-const mainChoice_002: Dialog = {
-    dialogType: DialogType.NarratorDialog,
-    text: "Anna lächelt dir dankbar zu."
-}
-
-const mainChoice_003: Dialog = {
-    dialogType: DialogType.NPCDialog,
-    speaker: kevin,
-    emotion: Emotion.sad,
-    text: "Ist besser, wenn die daheim bleibt, die nervt doch eh nur. Und außerdem vermisst die eh niemand."
-}
-
 export const behinderung: Chapter = {
-    title: "Der Waldausflug",
+    title: "Behinderung #Ableismus",
     tags: [Tag.behinderung],
     headDialog: {
         dialogType: DialogType.NarratorDialog,
-        text: "Deine Klasse plant einen Wandertag in den Wald. Deine Klassenkameradin Anna ist blind und der Lehrer möchte sie deshalb nicht mitnehmen.\nIm Unterricht redet ihr darüber.",
+        text: "Du bist auf dem Weg zum Einkaufen. Auf dem Parkplatz bekommst du eine Diskussion zwischen einer Frau und einem Mann mit.",
         next: {
             dialogType: DialogType.NPCDialog,
+            speaker: "Mann",
             emotion: Emotion.sad,
-            speaker: hrMorina,
-            text: "Ich kann das nicht verantworten dich mitzunehmen Anna.\nDu kannst dich im Wald leider nicht alleine zurechtfinden.",
+            text: "Sie dürfen hier nicht parken! Das ist ein Behindertenparkplatz.",
             next: {
-                dialogType: DialogType.PlayerOptionDialog,
-                choices: [
-                    {
-                        dialogType: DialogType.PlayerDialog,
-                        text: "Was soll das denn? Ist Anna nicht Teil unserer Klasse? Hat sie kein Recht darauf die selben Dinge zu lernen wie wir?\nUnd sowas nennt sich Lehrer!",
-                        next: mainChoice_001
-                    },
-                    {
-                        dialogType: DialogType.PlayerDialog,
-                        text: "Ich könnte während des Ausfluges auf sie achten.",
-                        next: mainChoice_002
-                    },
-                    {
-                        dialogType: DialogType.PlayerDialog,
-                        text: "(nichts sagen)",
-                        next: mainChoice_003
+                dialogType: DialogType.NPCDialog,
+                speaker: "Frau",
+                emotion: Emotion.neutral,
+                text: "Ich darf hier parken. Ich habe einen Behindertenausweis.",
+                next: {
+                    dialogType: DialogType.NPCDialog,
+                    speaker: "Mann",
+                    emotion: Emotion.sad,
+                    text: "Das glaube ich Ihnen nicht. Sie sehen gar nicht aus, als hätten sie eine Behinderung. Wenn Sie nicht wegfahren, rufe ich das Ordnungsamt.",
+                    next: {
+                        dialogType: DialogType.NarratorDialog,
+                        text: "Möchtest du einschreiten?",
+                        next: {
+                            dialogType: DialogType.PlayerOptionDialog,
+                            choices: [
+                                {
+                                    dialogType: DialogType.PlayerDialog,
+                                    text: "Du verteidigst die Frau.",
+                                    next: {
+                                        dialogType: DialogType.PlayerDialog,
+                                        text: "Nur weil man es ihr nicht ansieht, heißt das nicht, dass diese Frau keine Behinderung hat. Versetzen Sie sich doch mal in ihre Lage. Fänden Sie es angenehm ständig von Passanten nach Ihrem Ausweis gefragt zu werden? Außerdem haben Sie gar nicht das Recht andere Menschen nach ihrem Behindertenausweis zu fragen.",
+                                        next: {
+                                            dialogType: DialogType.NarratorDialog,
+                                            text: "Gut gemacht! Du hast dich für die Frau eingesetzt und versucht den Mann über sein unsensibles Verhalten aufzuklären. Vielleicht hat er ja etwas aus dieser Situation gelernt.",
+                                        }
+                                    }
+                                },
+                                {
+                                    dialogType: DialogType.PlayerDialog,
+                                    text: "Sie kann nachweisen, dass sie eine Behinderung hat. Du musst also nichts tun.",
+                                    next: {
+                                        dialogType: DialogType.NarratorDialog,
+                                        text: "Willst du wirklich nicht einschreiten?",
+                                        next: {
+                                            dialogType: DialogType.PlayerOptionDialog,
+                                            choices: [
+                                                {
+                                                    dialogType: DialogType.PlayerDialog,
+                                                    text: "Du gehst hin und schlägst vor, dass die Frau ihren Behindertenausweis vorzeigt um die Situation zu entschärfen.",
+                                                    next: {
+                                                        dialogType: DialogType.NarratorDialog,
+                                                        text: "Die Frau ist von der ganzen Situation sichtlich genervt und weigert sich weiter auf die Diskussion oder die Forderung einzugehen.",
+                                                        next: {
+                                                            dialogType: DialogType.PlayerOptionDialog,
+                                                            choices: [
+                                                                {
+                                                                    dialogType: DialogType.PlayerDialog,
+                                                                    text: "Du bestehst darauf, dass die Frau ihren Behindertenausweis vorzeigt, denn nur so kann der Sachverhalt geklärt werden.",
+                                                                    next: {
+                                                                        dialogType: DialogType.NarratorDialog,
+                                                                        text: "Game Over\nAls Privatperson hast du kein Recht darauf, den (Behinderten-)Ausweis anderer Menschen zu sehen. Du hast sehr unsensibel reagiert und die Frau sogar noch weiter in die Ecke gedrängt durch deine Forderung.\nWenn du eine Diskriminierung mitbekommst, solltest du eingreifen und die diskriminierte Person unterstützen."
+                                                                    }
+                                                                },
+                                                                {
+                                                                    dialogType: DialogType.PlayerDialog,
+                                                                    text: "Da die Frau ihren Behindertenausweis nicht zeigen möchte, sagst du dem Mann, dass es keinen Sinn hat weiter zu diskutieren.",
+                                                                    next: {
+                                                                        dialogType: DialogType.NarratorDialog,
+                                                                        text: "Etwas widerwillig setzt der Mann seinen Gang zum Supermarkt fort.",
+                                                                        next: {
+                                                                            dialogType: DialogType.NarratorDialog,
+                                                                            text: "Du hast zwar weitere Diskriminierung durch den Mann verhindert, warst aber selbst unsensibel und diskriminierend mit deinem Vorschlag. Warst du besser als der Mann?",
+                                                                        }
+                                                                    }
+                                                                },
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    dialogType: DialogType.PlayerDialog,
+                                                    text: "Du verteidigst die Frau.",
+                                                    next: {
+                                                        dialogType: DialogType.PlayerDialog,
+                                                        text: "Nur weil man es ihr nicht ansieht, heißt das nicht, dass diese Frau keine Behinderung hat. Versetzen Sie sich doch mal in ihre Lage. Fänden Sie es angenehm ständig von Passanten nach Ihrem Ausweis gefragt zu werden? Außerdem haben Sie gar nicht das Recht andere Menschen nach ihrem Behindertenausweis zu fragen.",
+                                                        next: {
+                                                            dialogType: DialogType.NarratorDialog,
+                                                            text: "Gut gemacht! Du hast dich für die Frau eingesetzt und versucht den Mann über sein unsensibles Verhalten aufzuklären. Vielleicht hat er ja etwas aus dieser Situation gelernt.",
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    dialogType: DialogType.PlayerDialog,
+                                                    text: "Sie hat einen Ausweis und du hast mit der Situation nichts zu tun. Also gehst du weiter.",
+                                                    next: {
+                                                        dialogType: DialogType.NarratorDialog,
+                                                        text: "Game Over\nDu hast nicht geholfen, wenn es nötig gewesen wäre. Versuche einzuschreiten, wenn du mitbekommst, dass jemand diskriminiert wird. Wenn du dich nicht selbst traust, kannst du auch auf umstehende Personen zugehen und um Hilfe bitten.\nDurch Zivilcourage kannst du die Welt für mindestens eine Person ein bisschen besser machen."
+                                                    }
+                                                },
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    dialogType: DialogType.PlayerDialog,
+                                    text: "Du gehst hin und schlägst vor, dass die Frau ihren Behindertenausweis vorzeigt um die Situation zu entschärfen.",
+                                    next: {
+                                        dialogType: DialogType.NarratorDialog,
+                                        text: "Die Frau ist von der ganzen Situation sichtlich genervt und weigert sich weiter auf die Diskussion oder die Forderung einzugehen.",
+                                        next: {
+                                            dialogType: DialogType.PlayerOptionDialog,
+                                            choices: [
+                                                {
+                                                    dialogType: DialogType.PlayerDialog,
+                                                    text: "Du bestehst darauf, dass die Frau ihren Behindertenausweis vorzeigt, denn nur so kann der Sachverhalt geklärt werden.",
+                                                    next: {
+                                                        dialogType: DialogType.NarratorDialog,
+                                                        text: "Game Over\nAls Privatperson hast du kein Recht darauf, den (Behinderten-)Ausweis anderer Menschen zu sehen. Du hast sehr unsensibel reagiert und die Frau sogar noch weiter in die Ecke gedrängt durch deine Forderung.\nWenn du eine Diskriminierung mitbekommst, solltest du eingreifen und die diskriminierte Person unterstützen."
+                                                    }
+                                                },
+                                                {
+                                                    dialogType: DialogType.PlayerDialog,
+                                                    text: "Da die Frau ihren Behindertenausweis nicht zeigen möchte, sagst du dem Mann, dass es keinen Sinn hat weiter zu diskutieren.",
+                                                    next: {
+                                                        dialogType: DialogType.NarratorDialog,
+                                                        text: "Etwas widerwillig setzt der Mann seinen Gang zum Supermarkt fort.",
+                                                        next: {
+                                                            dialogType: DialogType.NarratorDialog,
+                                                            text: "Du hast zwar weitere Diskriminierung durch den Mann verhindert, warst aber selbst unsensibel und diskriminierend mit deinem Vorschlag. Warst du besser als der Mann?",
+                                                        }
+                                                    }
+                                                },
+                                            ]
+                                        }
+                                    }
+                                },
+                            ]
+                        }
                     }
-                ]
+                }
             }
         }
     }
