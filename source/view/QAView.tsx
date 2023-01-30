@@ -48,7 +48,7 @@ export const QAView = observer(() => {
 
             <h2 className="document__subtitle">Wo findet das Ehrenamt statt?</h2>
             <p>
-                Das ehrenamtliche Engagement findet im Stadt- und Landkreis Heilbronn statt. Wir suchen Personen, die uns bei Veranstaltungen unterstützen, Grafiken erstellen ehrenamtlich erstellen können oder sich zu Workshopleitungen ausbilden lassen möchten. Je nach Bedarf gibt es viel oder wenig zu tun.
+                Das ehrenamtliche Engagement findet im Stadt- und Landkreis Heilbronn statt. Wir suchen Personen, die uns bei Veranstaltungen unterstützen, Grafiken ehrenamtlich erstellen können oder sich zu Workshopleitungen ausbilden lassen möchten. Je nach Bedarf gibt es viel oder wenig zu tun.
             </p>
 
             <br />
