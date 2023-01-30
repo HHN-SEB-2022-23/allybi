@@ -88,17 +88,19 @@ createMachine({
             inject("AppModel").state = AppState.MAIN_MENU
             return Promise.resolve() as Promise<never>
         },
-        GAME: async () => {
+        GAME: () => {
             const appModel = inject("AppModel")
+            appModel.state = AppState.IN_GAME
+            return Promise.resolve() as Promise<never>
+        },
+        FILTER: async () => {
+            inject("AppModel").state = AppState.FILTER
+
             const gameModel = inject("GameModel")
             gameModel.reset()
             await gameModel.initChapterAsync()
             await gameModel.getAvaliableChaptersAsync()
-            appModel.state = AppState.IN_GAME
-            return Promise.resolve() as Promise<never>
-        },
-        FILTER: () => {
-            inject("AppModel").state = AppState.FILTER
+
             return Promise.resolve() as Promise<never>
         },
         CREDITS: () => {
