@@ -16,7 +16,7 @@ export const sexualitaet: Chapter = {
                     dialogType: DialogType.PlayerDialog,
                     text: "Du denkst nicht, dass du die Meinung von Franziska ändern kannst und tust daher nichts.",
                     next: {
-                        dialogType: DialogType.PlayerDialog,
+                        dialogType: DialogType.NarratorDialog,
                         text: "Bist du dir sicher, dass du nichts tun möchtest?",
                         next: {
                             dialogType: DialogType.PlayerOptionDialog,
