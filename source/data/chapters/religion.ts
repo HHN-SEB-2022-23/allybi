@@ -46,7 +46,7 @@ export const religion: Chapter = {
                                             dialogType: DialogType.PlayerDialog,
                                             text: "Du greifst nicht ein.",
                                             next: {
-                                                dialogType: DialogType.PlayerDialog,
+                                                dialogType: DialogType.NarratorDialog,
                                                 text: "Game Over\nDu hast nicht geholfen, wenn es nötig gewesen wäre. Versuche einzuschreiten, wenn du mitbekommst, dass jemand diskriminiert wird. Wenn du dich nicht selbst traust, kannst du auch auf umstehende Personen zugehen und um Hilfe bitten.\nDurch Zivilcourage kannst du die Welt für mindestens eine Person ein bisschen besser machen."
                                             }
                                         },
