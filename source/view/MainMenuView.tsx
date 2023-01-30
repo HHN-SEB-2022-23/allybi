@@ -22,8 +22,8 @@ export const MainMenuView = observer(() => {
                 <p>Dieses Spiel ist ein textbasiertes Adventuregame, in dem du verschiedene Szenarien aus dem Alltag
                  von diskriminierten Personen miterleben kannst.</p>
                 <p>Wähle einfach "Spiel starten" aus und entscheide, welche zufällig gewählten Stories
-                 du durchspielen möchtest</p>
-                <p>Dieses Spiel ist in Zusammenarbeit mit der adi.hn entstanden</p>
+                 du durchspielen möchtest.</p>
+                <p>Dieses Spiel ist in Zusammenarbeit mit der adi.hn entstanden.</p>
                 <p>Altersempfehlung: 18+</p>
             </div>
 
