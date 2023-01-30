@@ -138,7 +138,7 @@ export const sozialerStatus: Chapter = {
                                     text: "Jungs, das ist ihm offensichtlich unangenehm, schaltet mal einen Gang runter.",
                                     next: {
                                         dialogType: DialogType.PlayerDialog,
-                                        text: "Jeder seichte Witz kann eine andere Person hart treffen. Manche mehr, manche weniger.",
+                                        text: "Jeder Witz kann eine andere Person hart treffen. Manche mehr, manche weniger.",
                                         next: {
                                             dialogType: DialogType.NarratorDialog,
                                             text: "Die zwei gucken verdutzt.",
