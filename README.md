@@ -44,8 +44,8 @@ npm run build
 - René Ott
 - Antonia Friese
 - Frank Mayer
-- Falix Marzioch
-- Jan-Nicklas Jäger
+- Felix Marzioch
+- Jan-Niklas Jäger
 - Büsra Bayiksirt
 
 ## First Party Dependencies
