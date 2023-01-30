@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from "react"
 import { observer } from "mobx-react"
 import { inject } from "../lib/globalDI"
@@ -19,7 +20,7 @@ export const MainMenuView = observer(() => {
             <div>
                 <p>Hi,</p>
                 <p>schön, dass du da bist !</p>
-                <p>Dieses Spiel ist ein textbasiertes Adventuregame, in dem du verschiedene Szenarien aus dem Alltag
+                <p>Dieses Spiel ist ein textbasiertes Adventuregame, in dem du verschiedene fiktive Szenarien aus dem Alltag
                  von diskriminierten Personen miterleben kannst.</p>
                 <p>Wähle einfach "Spiel starten" aus und entscheide, welche zufällig gewählten Stories
                  du durchspielen möchtest.</p>
