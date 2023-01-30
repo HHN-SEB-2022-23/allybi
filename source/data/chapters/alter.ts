@@ -4,7 +4,7 @@ import { DialogType } from "../../types/DialogType"
 import { Tag } from "../../types/Tags"
 
 export const alter: Chapter = {
-    title: "Alter #adultismus #ageism",
+    title: "Alter #Adultismus #Ageism",
     tags: [Tag.alter],
     headDialog: {
         dialogType: DialogType.NarratorDialog,

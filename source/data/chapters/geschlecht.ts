@@ -3,7 +3,7 @@ import { DialogType } from "../../types/DialogType"
 import { Tag } from "../../types/Tags"
 
 export const geschlecht: Chapter = {
-    title: "Geschlecht #sexismus",
+    title: "Geschlecht #Sexismus",
     tags: [Tag.geschlecht],
     headDialog: {
         dialogType: DialogType.NarratorDialog,
