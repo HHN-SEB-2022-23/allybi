@@ -1,3 +1,5 @@
+/* eslint-disable max-lines-per-function */
+/* eslint-disable max-len */
 import React from "react"
 import { observer } from "mobx-react"
 import { inject } from "../lib/globalDI"
@@ -40,10 +42,14 @@ export const QAView = observer(() => {
             </p>
 
             <h2 className="document__subtitle">Ich habe kaum Zeit. Kann ich trotzdem helfen?</h2>
-            <p>Folgt noch</p>
+            <p>
+                Ja klar. Teile Inhalte der adi, erzähl von Veranstaltungstipps und setze dich bei allen Gelegenheiten gegen Diskriminierung und für Vielfalt ein. Auch wenn es nichts mit der adi.hn zu tun hat.
+            </p>
 
             <h2 className="document__subtitle">Wo findet das Ehrenamt statt?</h2>
-            <p>Folgt noch</p>
+            <p>
+                Das ehrenamtliche Engagement findet im Stadt- und Landkreis Heilbronn statt. Wir suchen Personen, die uns bei Veranstaltungen unterstützen, Grafiken erstellen ehrenamtlich erstellen können oder sich zu Workshopleitungen ausbilden lassen möchten. Je nach Bedarf gibt es viel oder wenig zu tun.
+            </p>
 
             <br />
 
