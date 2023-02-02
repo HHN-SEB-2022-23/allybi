@@ -25,7 +25,7 @@ export const MainMenuView = observer(() => {
                 <p>Wähle einfach "Spiel starten" aus und entscheide, welche zufällig gewählten Stories
                  du durchspielen möchtest.</p>
                 <p>Dieses Spiel ist in Zusammenarbeit mit der adi.hn entstanden.</p>
-                <p>Altersempfehlung: 18+</p>
+                <p>Altersempfehlung: 16+</p>
             </div>
 
             <button className="menu__item" onClick={_mainMenuViewModel.startGame}>
