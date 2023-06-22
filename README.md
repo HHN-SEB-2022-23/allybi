@@ -2,7 +2,7 @@
 
 [![Test](https://github.com/HHN-SEB-2022-23/text-based-adventure-game/actions/workflows/test.yml/badge.svg)](https://github.com/HHN-SEB-2022-23/text-based-adventure-game/actions/workflows/test.yml)
 
-![this product is ai free](https://this-product-is-ai-free.github.io/badge.svg)
+[![this product is ai free](https://this-product-is-ai-free.github.io/badge.svg)](https://this-product-is-ai-free.github.io)
 
 Projekt der Vorlesung Design Thinking an der Hochschule Heilbronn, nach Auftrag des [Stadt & Kreis Jugend Ring Heilbronn e.V.](https://www.skjr-hn.de)
 
